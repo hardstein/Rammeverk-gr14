@@ -51,13 +51,13 @@ public class DummyText {
         String firstLetterString = Character.toString(firstLetter);
 
         if (firstLetterString.equals(" ")) {
-            String ny = lower.substring(1); // Removes space if it's the first char.
-            char newfirstLetter = ny.charAt(i);
+            String spaceRemove = lower.substring(1); // Removes space if it's the first char.
+            char newfirstLetter = spaceRemove.charAt(i);
             firstLetterString = Character.toString(newfirstLetter);
             String firstUpper = firstLetterString.toUpperCase();
 //            System.out.println(firstUpper + ny.substring(1) + ".");
 
-            return firstUpper + ny.substring(1) + ".";
+            return firstUpper + spaceRemove.substring(1) + ".";
         } else {
             String firstUpper = firstLetterString.toUpperCase();
 //            System.out.println(firstUpper + lower.substring(1) + ".");
@@ -65,8 +65,8 @@ public class DummyText {
         }
     }
 
-    public static void main(String[] args) {
-        DummyText dummy = new DummyText(5);
-        System.out.println(dummy.createDummyText());
-    }
+//    public static void main(String[] args) {
+//        DummyText dummy = new DummyText(5);
+//        System.out.println(dummy.createDummyText());
+//    }
 }
