@@ -1,10 +1,11 @@
 package com.company;
-import java.io.IOException;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         HTML.starterProject();
         HTML.starterProject("robots");
+        Header hero = new Header();
+
     }
 }
