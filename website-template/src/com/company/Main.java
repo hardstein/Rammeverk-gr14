@@ -16,5 +16,6 @@ public class Main {
         styles.fillCssTemplate();
         JavaScriptTemplate script = new JavaScriptTemplate("./websiteTemplate/script.js");
         script.createBasicScriptFile();
+        
     }
 }
