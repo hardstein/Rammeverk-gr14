@@ -1,6 +1,5 @@
 package com.company;
 
-public class PageType {
-
+public class PageType extends HTML {
 
 }

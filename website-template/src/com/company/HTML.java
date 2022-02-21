@@ -1,6 +1,6 @@
 package com.company;
 
-public class HTML {
+public class HTML implements SemanticElement {
 
     static void starterProject() {
         System.out.println("Starter");
@@ -10,4 +10,23 @@ public class HTML {
         System.out.println("Starter with robots.txt");
     }
 
+    @Override
+    public void header() {
+
+    }
+
+    @Override
+    public void main() {
+
+    }
+
+    @Override
+    public void aside() {
+
+    }
+
+    @Override
+    public void footer() {
+
+    }
 }
