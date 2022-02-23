@@ -3,11 +3,15 @@ package com.company;
 public class HTML implements SemanticElement {
 
     static void starterProject() {
-        System.out.println("Starter");
+
     }
 
     static void starterProject(String robots) {
-        System.out.println("Starter with robots.txt");
+        // With robots.txt
+    }
+
+    static void starterProject(String theme) {
+        // Example a 'dark' theme
     }
 
     @Override

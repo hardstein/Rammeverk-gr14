@@ -16,6 +16,10 @@ public class Article extends PageType implements SemanticElement {
 
     }
 
+    public void main(int fontSize, String fontWeight) {
+
+    }
+
     @Override
     public void aside() {
 
