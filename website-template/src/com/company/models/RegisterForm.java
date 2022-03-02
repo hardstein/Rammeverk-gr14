@@ -1,10 +1,8 @@
 package com.company.models;
 
-import com.company.PageType;
 import com.company.SemanticElement;
 
-public class Article extends PageType implements SemanticElement {
-
+public class RegisterForm implements SemanticElement {
 
     @Override
     public void header() {
@@ -13,14 +11,6 @@ public class Article extends PageType implements SemanticElement {
 
     @Override
     public void main() {
-
-    }
-
-    public void main(String textFile) {
-
-    }
-
-    public void main(int fontSize, String heading, String fontWeight) {
 
     }
 

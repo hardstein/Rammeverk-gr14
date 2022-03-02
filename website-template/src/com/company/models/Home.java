@@ -19,16 +19,6 @@ public class Home extends PageType implements SemanticElement {
 
     }
 
-    public void main(String textFile) {
-
-    }
-
-    // Log in or sign up form
-    // Maybe create a model class for login and register instead?
-    public void main(String component) {
-
-    }
-
     @Override
     public void aside() {
 
@@ -40,6 +30,7 @@ public class Home extends PageType implements SemanticElement {
     }
 
     // Another name?
+    // Scenario 8
     public void completeTemplate() {
         header();
         main();
