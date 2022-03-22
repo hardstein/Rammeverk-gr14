@@ -3,6 +3,5 @@ public enum SiteType {
     HOME, 
     ARTICLE,
     REGISTRATION, 
-    LOGIN
-
+    LOGIN;
 }

@@ -1,5 +1,13 @@
+import Models.*; 
+
 public class Article extends HTML {
     Theme theme; 
+    Header header; 
+    Main main; 
+    Nav nav; 
+    Aside aside; 
+    
+
 
 
     public Article(Theme theme) {
