@@ -56,8 +56,6 @@ public class HTML implements ConstructingSite  {
         }
     }
 
-    
-
     public HTML(SiteType siteType, SiteType siteType2, SiteType siteType3 ) {
 
         if (siteType.equals(SiteType.STARTERPROJECT) || siteType2.equals(SiteType.STARTERPROJECT) || siteType3.equals(SiteType.STARTERPROJECT)) {
@@ -168,5 +166,7 @@ public class HTML implements ConstructingSite  {
         System.out.println("You have parsed CSV your content");
 
     }
+
+    
     
 }
