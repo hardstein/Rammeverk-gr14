@@ -1,7 +1,9 @@
+package websiteGenerator;
+
 public enum Theme {
-    DARK, 
-    LIGHT, 
+    DARK,
+    LIGHT,
     FORREST,
-    WATER, 
+    WATER,
     RETARDTHEME
 }
