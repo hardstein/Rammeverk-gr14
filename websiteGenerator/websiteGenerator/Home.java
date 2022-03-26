@@ -1,6 +1,6 @@
 package websiteGenerator;
 
-public class Home implements SemanticElements {
+public class Home implements websiteGenerator.SemanticElements {
 
     private Theme theme;
     private String headerImageUrl;
