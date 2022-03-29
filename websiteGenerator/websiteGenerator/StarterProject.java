@@ -64,7 +64,6 @@ public class StarterProject implements websiteGenerator.SemanticElements {
         private Builder() {
         }
 
-
         public StarterProject.Builder theme(final Theme theme) {
             this.theme = theme;
             return this;
@@ -91,6 +90,10 @@ public class StarterProject implements websiteGenerator.SemanticElements {
     }
 
     public void createFolder() {
+        if (getFolderName() == null) {
+            setFolderName("starterproject");
+        }
+        System.out.println(getFolderName());
         File file = new File(getFolderName());
 
         boolean bool = file.mkdir();
@@ -103,6 +106,12 @@ public class StarterProject implements websiteGenerator.SemanticElements {
 
     public void htmlStylesTemplate() throws IOException {
         FileWriter fileWriter = new FileWriter("./" + getFolderName() + "/index.html");
+        if (getMainHeading() == null) {
+            setMainHeading("Starter template");
+        }
+        if (getMainContent() == null) {
+            setMainContent("This is a starter project template.");
+        }
         fileWriter.write("<!DOCTYPE html>\n" +
                 "<html lang=\"en\">\n" +
                 "<head>\n" +
@@ -174,7 +183,22 @@ public class StarterProject implements websiteGenerator.SemanticElements {
 
     @Override
     public void completeTemplate() {
-
+        createFolder();
+        try {
+            htmlStylesTemplate();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            createCssFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            createJSFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

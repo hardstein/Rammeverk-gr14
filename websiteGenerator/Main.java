@@ -18,15 +18,17 @@ public class Main {
 
 
         StarterProject starter = StarterProject.createBuilder()
-                .folderName("starterProject")
-                .mainHeading("Cool template")
-                .mainContent("This is the content")
+//                .folderName("starterProject")
+//                .mainHeading("Cool template")
+//                .mainContent("This is the content")
                 .build();
 
-        starter.createFolder();
-        starter.htmlStylesTemplate();
-        starter.createCssFile();
-        starter.createJSFile();
+//        starter.createFolder();
+//        starter.htmlStylesTemplate();
+//        starter.createCssFile();
+//        starter.createJSFile();
+
+        starter.completeTemplate();
 
     }
     
