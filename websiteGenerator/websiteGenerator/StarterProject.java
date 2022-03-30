@@ -6,6 +6,8 @@ import java.io.IOException;
 
 public class StarterProject implements websiteGenerator.SemanticElements {
 
+    private static final String defaultFolder = "";
+
     private Theme theme;
     private String folderName;
     private String mainHeading;
