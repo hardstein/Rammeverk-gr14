@@ -1,4 +1,5 @@
 import websiteGenerator.Pages.Home;
+import websiteGenerator.SemanticElements.Aside;
 import websiteGenerator.SemanticElements.Footer;
 import websiteGenerator.SemanticElements.Header;
 import websiteGenerator.SemanticElements.Nav;
@@ -27,6 +28,10 @@ public class Main {
                         .addMainHeading("Main Title")
                         .addMainContent("This is the content")
                         .build())
+                .aside(Aside.createElementBuilder()
+                        .addAsideTitle("Aside is usefully")
+                        .addAsideText("Awesome aside")
+                        .build())
                 .footer(Footer.createElementBuilder()
                         .addContactName("Group 14")
                         .addContactEmail("gr14@email.com")
@@ -35,6 +40,7 @@ public class Main {
                         .build()
                 )
                 .build();
+
 
     }
 

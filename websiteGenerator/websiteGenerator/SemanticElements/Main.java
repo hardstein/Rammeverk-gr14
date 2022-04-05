@@ -1,6 +1,8 @@
 package websiteGenerator.SemanticElements;
 
-public class Main {
+import websiteGenerator.Util.SemanticElementContent;
+
+public class Main implements SemanticElementContent {
 
     private final String mainHeading;
     private final String mainContent;
@@ -20,6 +22,16 @@ public class Main {
 
     public static Builder createElementBuilder() {
         return new Builder();
+    }
+
+    @Override
+    public String content() {
+        String s = "" +
+                "    <main>\n" +
+                "        <h1>"+mainHeading+"</h1>\n" +
+                "        <p>"+mainContent+"</p>\n" +
+                "    </main>";
+        return s;
     }
 
     public static class Builder {
