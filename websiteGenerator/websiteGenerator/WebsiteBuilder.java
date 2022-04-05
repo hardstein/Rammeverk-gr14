@@ -28,7 +28,6 @@ public class WebsiteBuilder {
        return login; 
    }
 
-
    public static Builder createWebsiteBuilder() {
     return new Builder();
     }   
@@ -48,18 +47,18 @@ public class WebsiteBuilder {
        private Registration registration;
        private Login login;
 
-       public Builder addHome() {
-           this.home = new Home();
+       public Builder addHome(Home home) {
+            this.home = home; 
            return this;
        }
 
-       public Builder addStarterProject() {
-           this.starterProject = new StarterProject();
+       public Builder addStarterProject(StarterProject starterProject) {
+           this.starterProject = starterProject;
            return this;
        }
 
-       public Builder addArticle() {
-           this.article = new Article() ;
+       public Builder addArticle(Article article) {
+           this.article = article ;
            return this;
        }
 
