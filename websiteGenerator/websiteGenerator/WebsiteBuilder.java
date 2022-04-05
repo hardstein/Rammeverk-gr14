@@ -1,11 +1,6 @@
 package websiteGenerator;
 
-import javax.management.openmbean.SimpleType;
-
-import ApiCreation.Article;
-import ApiCreation.Login;
-import ApiCreation.Registration;
-import ApiCreation.StarterProject;
+import Pages; 
 
 public class WebsiteBuilder {
 

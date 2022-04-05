@@ -1,28 +1,16 @@
-import websiteGenerator.Models.*;
+
+package websiteGenerator.Pages; 
+
 import websiteGenerator.SemanticElements.Header;
-import websiteGenerator.SemanticElements.Nav;
+import websiteGenerator.SemanticElements.*;
 import websiteGenerator.Util.Theme;
 
-public class Article extends HTML {
-   Theme theme;
-   Header header;
-   Main main;
-   Nav nav;
-   Aside aside;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+public class Article  {
+   private Theme theme;
+   private Header header;
+   private Main main;
+   private Nav nav;
+   private Aside aside;
 
    public Article(Theme theme) {
        this.theme = theme;
@@ -31,52 +19,6 @@ public class Article extends HTML {
    public Article() {
 
        System.out.println("you have made a article object");
-   }
-
-   @Override
-   public void header() {
-       System.out.println("header");
-
-   }
-
-   public void header(String image) {
-
-       System.out.println("header with chosen picture");
-
-   }
-   @Override
-   public void nav() {
-       System.out.println("nav");
-
-   }
-   @Override
-   public void main() {
-       System.out.println("main");
-
-   }
-
-   public void main(int textSize) {
-       System.out.println("main");
-
-   }
-   @Override
-   public void aside() {
-       System.out.println("aside");
-
-   }
-   @Override
-   public void footer() {
-       System.out.println("footer");
-
-   }
-   @Override
-   public void completeTemplate() {
-       header();
-       nav();
-       main();
-       aside();
-       footer();
-       System.out.println("complete template");
    }
 
    public void title(String titleText, String h1, int textSize) {
