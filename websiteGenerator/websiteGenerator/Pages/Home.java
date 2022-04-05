@@ -1,13 +1,13 @@
 package websiteGenerator.Pages;
 
-import websiteGenerator.Util.SemanticElements;
+import websiteGenerator.Models.Header;
 import websiteGenerator.Util.Theme;
 
-public class Home implements SemanticElements {
+public class Home {
 
     private Theme theme;
-    private String headerImageUrl;
-    private String headerHeading;
+    private Header headerImageUrl;
+    private Header headerHeading;
     private String mainHeading;
     private String mainContent;
     private String heroHeading;
@@ -17,19 +17,19 @@ public class Home implements SemanticElements {
         return theme;
     }
 
-    public String getHeaderImageUrl() {
+    public Header getHeaderImageUrl() {
         return headerImageUrl;
     }
 
-    public void setHeaderImageUrl(String headerImageUrl) {
+    public void setHeaderImageUrl(Header headerImageUrl) {
         this.headerImageUrl = headerImageUrl;
     }
 
-    public String getHeaderHeading() {
+    public Header getHeaderHeading() {
         return headerHeading;
     }
 
-    public void setHeaderHeading(String headerHeading) {
+    public void setHeaderHeading(Header headerHeading) {
         this.headerHeading = headerHeading;
     }
 
@@ -83,8 +83,8 @@ public class Home implements SemanticElements {
 
     public static class Builder {
         private Theme theme;
-        private String headerImageUrl;
-        private String headerHeading;
+        private Header headerImageUrl;
+        private Header headerHeading;
         private String mainHeading;
         private String mainContent;
         private String heroHeading;
@@ -100,7 +100,7 @@ public class Home implements SemanticElements {
 
 
 
-        public Builder headerImageUrl(final String headerImageUrl) {
+        public Builder headerImageUrl(final Header headerImageUrl) {
             this.headerImageUrl = headerImageUrl;
             return this;
         }
@@ -115,7 +115,7 @@ public class Home implements SemanticElements {
             return this;
         }
 
-        public Builder headerHeading(final String headerHeading) {
+        public Builder headerHeading(final Header headerHeading) {
             this.headerHeading = headerHeading;
             return this;
         }
@@ -135,32 +135,33 @@ public class Home implements SemanticElements {
         }
     }
 
-    @Override
+
     public void header() {
+        Header header = new
         System.out.printf("Heading: %s, Image: %s\n", getHeaderHeading(), getHeaderImageUrl());
     }
 
-    @Override
+
     public void nav() {
         System.out.println("nav");
     }
 
-    @Override
+
     public void main() {
         System.out.println("Main: " + getMainHeading() + ". Content :" + getMainContent());
     }
 
-    @Override
+
     public void aside() {
         System.out.println("aside");
     }
 
-    @Override
+
     public void footer() {
         System.out.println("footer");
     }
 
-    @Override
+
     public void completeTemplate() {
         header();
         nav();

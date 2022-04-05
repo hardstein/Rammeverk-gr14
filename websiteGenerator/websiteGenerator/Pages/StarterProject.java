@@ -12,9 +12,9 @@ public class StarterProject implements SemanticElements {
     private static final String defaultFolder = "";
 
     private Theme theme;
-    private String folderName;
-    private String mainHeading;
-    private String mainContent;
+    private String projectName;
+    private String addMainHeading;
+    private String addMainContent;
 
     public Theme getTheme() {
         return theme;
@@ -25,35 +25,35 @@ public class StarterProject implements SemanticElements {
     }
 
     public String getMainHeading() {
-        return mainHeading;
+        return addMainHeading;
     }
 
     public void setMainHeading(String mainHeading) {
-        this.mainHeading = mainHeading;
+        this.addMainHeading = mainHeading;
     }
 
-    public String getMainContent() {
-        return mainContent;
+    public String getAddMainContent() {
+        return addMainContent;
     }
 
-    public void setMainContent(String mainContent) {
-        this.mainContent = mainContent;
+    public void setAddMainContent(String addMainContent) {
+        this.addMainContent = addMainContent;
     }
 
-    public String getFolderName() {
-        return folderName;
+    public String getProjectName() {
+        return projectName;
     }
 
-    public void setFolderName(String folderName) {
-        this.folderName = folderName;
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
     }
 
     private StarterProject(Builder builder) {
         this.theme = builder.theme;
 
-        this.folderName = builder.folderName;
-        this.mainHeading = builder.mainHeading;
-        this.mainContent = builder.mainContent;
+        this.projectName = builder.folderName;
+        this.addMainHeading = builder.mainHeading;
+        this.addMainContent = builder.mainContent;
     }
 
     public static StarterProject.Builder createBuilder() {
@@ -95,11 +95,11 @@ public class StarterProject implements SemanticElements {
     }
 
     public void createFolder() {
-        if (getFolderName() == null) {
-            setFolderName("starterproject");
+        if (getProjectName() == null) {
+            setProjectName("starterproject");
         }
-        System.out.println(getFolderName());
-        File file = new File(getFolderName());
+        System.out.println(getProjectName());
+        File file = new File(getProjectName());
 
         boolean bool = file.mkdir();
         if (bool) {
@@ -110,12 +110,12 @@ public class StarterProject implements SemanticElements {
     }
 
     public void htmlStylesTemplate() throws IOException {
-        FileWriter fileWriter = new FileWriter("./" + getFolderName() + "/index.html");
+        FileWriter fileWriter = new FileWriter("./" + getProjectName() + "/index.html");
         if (getMainHeading() == null) {
             setMainHeading("Starter template");
         }
-        if (getMainContent() == null) {
-            setMainContent("This is a starter project template.");
+        if (getAddMainContent() == null) {
+            setAddMainContent("This is a starter project template.");
         }
         fileWriter.write("<!DOCTYPE html>\n" +
                 "<html lang=\"en\">\n" +
@@ -128,7 +128,7 @@ public class StarterProject implements SemanticElements {
                 "</head>\n" +
                 "<body>\n" +
                 "   <h1>" + getMainHeading() + "</h1>\n" +
-                "   <p>" + getMainContent() + "</p>\n" +
+                "   <p>" + getAddMainContent() + "</p>\n" +
                 "</body>\n" +
                 "</html>");
         System.out.println("HTML template with style was successfully filled");
@@ -136,7 +136,7 @@ public class StarterProject implements SemanticElements {
     }
 
     public void createCssFile() throws IOException {
-        FileWriter fileWriter = new FileWriter("./" + getFolderName() + "/styles.css");
+        FileWriter fileWriter = new FileWriter("./" + getProjectName() + "/styles.css");
         fileWriter.write(
                 """
                         html, body {
@@ -152,7 +152,7 @@ public class StarterProject implements SemanticElements {
     }
 
     public void createJSFile() throws IOException {
-        FileWriter fileWriter = new FileWriter("./" + getFolderName() + "/script.js");
+        FileWriter fileWriter = new FileWriter("./" + getProjectName() + "/script.js");
         fileWriter.write("""
                 (function helloTemplate() {
                     console.log("Hello template");
