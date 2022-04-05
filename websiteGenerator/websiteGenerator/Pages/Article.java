@@ -1,4 +1,6 @@
 import websiteGenerator.Models.*;
+import websiteGenerator.SemanticElements.Header;
+import websiteGenerator.SemanticElements.Nav;
 import websiteGenerator.Util.Theme;
 
 public class Article extends HTML {
@@ -11,7 +13,7 @@ public class Article extends HTML {
 
 
 
-   
+
 
 
 
