@@ -1,6 +1,8 @@
 package websiteGenerator.SemanticElements;
 
-public class Header {
+import websiteGenerator.Util.SemanticElementContent;
+
+public class Header implements SemanticElementContent {
 
     private final String headerImageUrl;
     private final String headerHeading;
@@ -32,6 +34,21 @@ public class Header {
 
     public static Builder createElementBuilder() {
         return new Builder();
+    }
+
+    @Override
+    public String content() {
+        String defaultHeaderImage = "https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg";
+        if (headerImageUrl != null) {
+            defaultHeaderImage = headerImageUrl;
+        }
+
+        String s =
+                "    <header>\n" +
+                        "        <h1>" + headerHeading +"</h1>\n" +
+                        "        <img src=\"" + defaultHeaderImage + "\" alt=\"\">\n" +
+                        "    </header>";
+        return s;
     }
 
     public static class Builder {
@@ -71,17 +88,4 @@ public class Header {
 
     }
 
-    public String headerContent() {
-        String defaultHeaderImage = "https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg";
-        if (headerImageUrl != null) {
-            defaultHeaderImage = headerImageUrl;
-        }
-
-            String s =
-                    "    <header>\n" +
-                    "        <h1>" + headerHeading +"</h1>\n" +
-                    "        <img src=\"" + defaultHeaderImage + "\" alt=\"\">\n" +
-                    "    </header>";
-        return s;
-    }
 }

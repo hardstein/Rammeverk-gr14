@@ -1,6 +1,8 @@
 package websiteGenerator.SemanticElements;
 
-public class Nav {
+import websiteGenerator.Util.SemanticElementContent;
+
+public class Nav implements SemanticElementContent {
 
     private final String[] pageLinks;
     private final String logoImage;
@@ -20,6 +22,23 @@ public class Nav {
 
     public static Builder createElementBuilder() {
         return new Builder();
+    }
+
+    @Override
+    public String content() {
+        String links = "";
+        for (String link : pageLinks) {
+            links += "            <li>\n" +
+                    "                <a href=\"" + link + ".html" + "\">" + link + "</a>\n" +
+                    "            </li>\n";
+        }
+        String s = "" +
+                "    <nav>\n" +
+                "        <ul>\n" +
+                " " + links + "\n" +
+                "        </ul>\n" +
+                "    </nav>";
+        return s;
     }
 
     public static class Builder {

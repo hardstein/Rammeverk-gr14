@@ -1,6 +1,8 @@
 package websiteGenerator.SemanticElements;
 
-public class Footer {
+import websiteGenerator.Util.SemanticElementContent;
+
+public class Footer implements SemanticElementContent {
     private final String contactName;
     private final int contactPhoneNumber;
     private final String contactEmail;
@@ -31,6 +33,16 @@ public class Footer {
 
     public static Builder createElementBuilder() {
         return new Builder();
+    }
+
+    @Override
+    public String content() {
+        String s = "" +
+                "    <footer>\n" +
+                "        <p>Copyright "+ contactName+"</p>\n" +
+                "        <p>Email: " +contactEmail+"</p>\n" +
+                "    </footer>";
+        return s;
     }
 
     public static class Builder {

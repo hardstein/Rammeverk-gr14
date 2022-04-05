@@ -1,9 +1,6 @@
 package websiteGenerator.Pages;
 
-import websiteGenerator.SemanticElements.Footer;
-import websiteGenerator.SemanticElements.Header;
-import websiteGenerator.SemanticElements.Main;
-import websiteGenerator.SemanticElements.Nav;
+import websiteGenerator.SemanticElements.*;
 import websiteGenerator.Util.Theme;
 
 import java.io.FileWriter;
@@ -15,6 +12,7 @@ public class Home {
     private final Header header;
     private final Nav nav;
     private final Main main;
+    private final Aside aside;
     private final Footer footer;
 
     public Theme getTheme() {
@@ -46,8 +44,9 @@ public class Home {
         this.fileName = builder.fileName;
         this.header = builder.header;
         this.nav = builder.nav;
-        this.footer = builder.footer;
         this.main = builder.main;
+        this.aside = builder.aside;
+        this.footer = builder.footer;
     }
 
     public static Builder createPageBuilder() {
@@ -64,8 +63,9 @@ public class Home {
         private String fileName;
         private Header header;
         private Nav nav;
-        private Footer footer;
         private Main main;
+        private Aside aside;
+        private Footer footer;
 
         private Builder() {
         }
@@ -92,6 +92,11 @@ public class Home {
 
         public Builder main(final Main main) {
             this.main = main;
+            return this;
+        }
+
+        public Builder aside(final Aside aside) {
+            this.aside = aside;
             return this;
         }
 
@@ -122,9 +127,11 @@ public class Home {
                     "   <title>Starter Project</title>\n" +
                     "</head>\n" +
                     "<body>\n" +
-                    header.headerContent() + "\n" +
-                    "   <h1>" + heading + "</h1>\n" +
-                    "   <p>" + content + "</p>\n" +
+                    header.content() + "\n" +
+                    nav.content() + "\n" +
+                    main.content() + "\n" +
+                    aside.content() + "\n" +
+                    footer.content() + "\n" +
                     "</body>\n" +
                     "</html>");
             System.out.println("HTML template with style was successfully filled");
