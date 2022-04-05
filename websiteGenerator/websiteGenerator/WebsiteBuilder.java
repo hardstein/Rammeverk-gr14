@@ -4,6 +4,8 @@ import websiteGenerator.Pages.*;
 
 public class WebsiteBuilder {
 
+   private String projectFolder;
+
    private Home home;
    private StarterProject starterProject;
    private Article article;
@@ -38,14 +40,21 @@ public class WebsiteBuilder {
        this.article = builder.article;
        this.login = builder.login;
        this.registration = builder.registration;
+       this.projectFolder = builder.projectFolder; 
    }
 
    public static class Builder {
+       private String projectFolder = "WebsiteProject"; 
        private Home home;
        private StarterProject starterProject;
        private Article article;
        private Registration registration;
        private Login login;
+
+       public Builder addProjectFolder(String projectFolderName) { 
+           this.projectFolder = projectFolderName; 
+           return this; 
+       }
 
        public Builder addHome(Home home) {
             this.home = home; 

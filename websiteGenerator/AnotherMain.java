@@ -71,10 +71,8 @@ public class AnotherMain {
                         .addContactPhoneNumber(14326969)
                         .addSocialMediaLink("github.com/gr14-template")
                         .build()
-                )
-                
+                ) 
                 .build()
-            
             )
             .build(); 
  

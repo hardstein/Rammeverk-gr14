@@ -3,6 +3,7 @@ package websiteGenerator.Pages;
 
 import websiteGenerator.SemanticElements.Header;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -90,6 +91,7 @@ public class Article  {
 
                     FileWriter fileWriter;
                     try {
+                        //File file = new File(this.fileName);
                         fileWriter = new FileWriter(this.fileName);
 
                         fileWriter.write("<!DOCTYPE html>\n" +
