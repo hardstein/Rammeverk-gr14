@@ -1,4 +1,9 @@
-public class Registration extends HTML {
+package websiteGenerator.Pages; 
+
+import websiteGenerator.WebsiteBuilder;
+import websiteGenerator.Util.Theme;
+
+public class Registration {
    Theme theme;
 
    public Registration(Theme theme) {
@@ -10,46 +15,11 @@ public class Registration extends HTML {
        System.out.println("You have made registration object template with theme " + theme);
    }
 
-   @Override
-   public void header() {
-       System.out.println("header");
-
-   }
    public void header(String image) {
 
        System.out.println("header with chosen picture");
 
    }
-   @Override
-   public void nav() {
-       System.out.println("nav");
-
-   }
-   @Override
-   public void main() {
-       System.out.println("main");
-
-   }
-   @Override
-   public void aside() {
-       System.out.println("aside");
-
-   }
-   @Override
-   public void footer() {
-       System.out.println("footer");
-
-   }
-   @Override
-   public void completeTemplate() {
-       header();
-       nav();
-       main();
-       aside();
-       footer();
-       System.out.println("complete template");
-   }
-
 
    public void setTheme(Theme theme) {
        this.theme = theme;
