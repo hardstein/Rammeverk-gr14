@@ -1,13 +1,14 @@
 package websiteGenerator.Pages;
 
-import websiteGenerator.Models.Header;
+import websiteGenerator.SemanticElements.Header;
 import websiteGenerator.Util.Theme;
 
 public class Home {
 
     private Theme theme;
-    private Header headerImageUrl;
-    private Header headerHeading;
+    private Header header;
+//    private Header headerImageUrl;
+//    private Header headerHeading;
     private String mainHeading;
     private String mainContent;
     private String heroHeading;
@@ -17,21 +18,21 @@ public class Home {
         return theme;
     }
 
-    public Header getHeaderImageUrl() {
-        return headerImageUrl;
-    }
-
-    public void setHeaderImageUrl(Header headerImageUrl) {
-        this.headerImageUrl = headerImageUrl;
-    }
-
-    public Header getHeaderHeading() {
-        return headerHeading;
-    }
-
-    public void setHeaderHeading(Header headerHeading) {
-        this.headerHeading = headerHeading;
-    }
+//    public Header getHeaderImageUrl() {
+//        return headerImageUrl;
+//    }
+//
+//    public void setHeaderImageUrl(Header headerImageUrl) {
+//        this.headerImageUrl = headerImageUrl;
+//    }
+//
+//    public Header getHeaderHeading() {
+//        return headerHeading;
+//    }
+//
+//    public void setHeaderHeading(Header headerHeading) {
+//        this.headerHeading = headerHeading;
+//    }
 
     public String getMainHeading() {
         return mainHeading;
@@ -67,8 +68,8 @@ public class Home {
 
     private Home(Builder builder) {
         this.theme = builder.theme;
-        this.headerImageUrl = builder.headerImageUrl;
-        this.headerHeading = builder.headerHeading;
+//        this.headerImageUrl = builder.headerImageUrl;
+//        this.headerHeading = builder.headerHeading;
 
         this.mainHeading = builder.mainHeading;
         this.mainContent = builder.mainContent;
@@ -137,8 +138,9 @@ public class Home {
 
 
     public void header() {
-        Header header = new
-        System.out.printf("Heading: %s, Image: %s\n", getHeaderHeading(), getHeaderImageUrl());
+        Header header = create
+
+//        System.out.printf("Heading: %s, Image: %s\n", getHeaderHeading(), getHeaderImageUrl());
     }
 
 

@@ -4,7 +4,7 @@ import websiteGenerator.Pages.StarterProject;
 import java.io.IOException;
 
 public class Main {
-    
+
     public static void main(String[] args) throws IOException {
         Home home = Home.createBuilder()
                 .mainContent("Cool content")
@@ -17,19 +17,15 @@ public class Main {
         home.hero();
 
 
-        StarterProject starter = StarterProject.createBuilder()
-//                .folderName("starterProject")
-//                .mainHeading("Cool template")
-//                .mainContent("This is the content")
-                .build();
+        // Vår drøm
+//        Home home = HomeBuilder.createBuilder().
+//                addNav().creatBuilder().addImage("nice.png").addText("Nice!").build()
+//                main().addImage("nice.png").addText("Nice!").build()
+//                .build();
+//
+//        ProjectBuilder.build(home)(article).completeProject();
 
-//        starter.createFolder();
-//        starter.htmlStylesTemplate();
-//        starter.createCssFile();
-//        starter.createJSFile();
-
-        starter.completeTemplate();
 
     }
-    
+
 }
