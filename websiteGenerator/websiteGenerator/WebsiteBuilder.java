@@ -2,12 +2,16 @@ package websiteGenerator;
 
 import javax.management.openmbean.SimpleType;
 
+import ApiCreation.Article;
+import ApiCreation.Login;
+import ApiCreation.Registration;
+import ApiCreation.StarterProject;
 import Util.SiteType; 
 
 public class WebsiteBuilder {
 
-   private final Home home;
-   private final StarterProject starterProject;
+   private Home home;
+   private StarterProject starterProject;
    private Article article;
    private Registration registration;
    private Login login;
@@ -28,6 +32,9 @@ public class WebsiteBuilder {
    private WebsiteBuilder(Builder builder) {
        this.home = builder.home;
        this.starterProject = builder.starterProject;
+       this.article = builder.article;
+       this.login = builder.login;
+       this.registration = builder.registration;
    }
 
    public static class Builder {
@@ -37,21 +44,29 @@ public class WebsiteBuilder {
        private Registration registration;
        private Login login;
 
-       public Builder addHome(SiteType home) {
-           this.home = home;
+       public Builder addHome() {
+           this.home = new Home();
            return this;
        }
 
-       public Builder addStarterProject(SiteType starterProject) {
-           this.starterProject = starterProject;
+       public Builder addStarterProject() {
+           this.starterProject = new StarterProject();
            return this;
        }
 
-       public Builder addarticle(SiteType article) {
-           this.article = article;
+       public Builder addArticle() {
+           this.article = new Article() ;
            return this;
        }
 
+       public Builder addRegistration() {
+           this.registration = new Registration();
+           return this;
+       }
+       public Builder addLogin() {
+           this.article = new Login();
+           return this;
+       }
       
        public WebsiteBuilder build() {
            return new WebsiteBuilder(this);
