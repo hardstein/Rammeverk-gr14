@@ -1,5 +1,5 @@
 //import websiteGenerator.Models.*;
-//import websiteGenerator.Theme;
+//import websiteGenerator.Util.Theme;
 //
 //public class Article extends HTML {
 //    Theme theme;

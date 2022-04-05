@@ -1,4 +1,4 @@
-package websiteGenerator;
+package websiteGenerator.Util;
 
 public interface SemanticElements {
     void header();

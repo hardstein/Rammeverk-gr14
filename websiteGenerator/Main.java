@@ -1,5 +1,5 @@
-import websiteGenerator.Home;
-import websiteGenerator.StarterProject;
+import websiteGenerator.Pages.Home;
+import websiteGenerator.Pages.StarterProject;
 
 import java.io.IOException;
 

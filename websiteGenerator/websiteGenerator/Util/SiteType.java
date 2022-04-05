@@ -1,4 +1,4 @@
-package websiteGenerator;
+package websiteGenerator.Util;
 
 public enum SiteType {
     STARTERPROJECT, 

@@ -1,5 +1,5 @@
-//import websiteGenerator.Home;
-//import websiteGenerator.StarterProject;
+//import websiteGenerator.Pages.Home;
+//import websiteGenerator.Pages.StarterProject;
 //
 //public class HTML implements ConstructingSite  {
 //    public Article article;
@@ -13,111 +13,111 @@
 //
 //    }
 //
-//    public HTML(websiteGenerator.SiteType siteType) {
+//    public HTML(websiteGenerator.Util.SiteType siteType) {
 //
-//        if (siteType.equals(websiteGenerator.SiteType.STARTERPROJECT)) {
+//        if (siteType.equals(websiteGenerator.Util.SiteType.STARTERPROJECT)) {
 //
 //            this.starterProject = new StarterProject();
 //
-//        } else if (siteType.equals(websiteGenerator.SiteType.HOME)) {
+//        } else if (siteType.equals(websiteGenerator.Util.SiteType.HOME)) {
 //
 //            this.home = new Home();
 //
-//        } else if (siteType.equals(websiteGenerator.SiteType.ARTICLE)) {
+//        } else if (siteType.equals(websiteGenerator.Util.SiteType.ARTICLE)) {
 //
 //            this.article = new Article();
 //
-//        } else if (siteType.equals(websiteGenerator.SiteType.REGISTRATION)) {
+//        } else if (siteType.equals(websiteGenerator.Util.SiteType.REGISTRATION)) {
 //
 //            this.registration = new Registration();
 //
-//        } else if (siteType.equals(websiteGenerator.SiteType.LOGIN)) {
+//        } else if (siteType.equals(websiteGenerator.Util.SiteType.LOGIN)) {
 //
 //            this.login = new Login();
 //        }
 //    }
 //
-//    public HTML(websiteGenerator.SiteType siteType, websiteGenerator.SiteType siteType2) {
-//        if (siteType.equals(websiteGenerator.SiteType.STARTERPROJECT) || siteType2.equals(websiteGenerator.SiteType.STARTERPROJECT)) {
+//    public HTML(websiteGenerator.Util.SiteType siteType, websiteGenerator.Util.SiteType siteType2) {
+//        if (siteType.equals(websiteGenerator.Util.SiteType.STARTERPROJECT) || siteType2.equals(websiteGenerator.Util.SiteType.STARTERPROJECT)) {
 //            this.starterProject = new StarterProject();
 //        }
-//        if (siteType.equals(websiteGenerator.SiteType.HOME) || siteType2.equals(websiteGenerator.SiteType.HOME)) {
+//        if (siteType.equals(websiteGenerator.Util.SiteType.HOME) || siteType2.equals(websiteGenerator.Util.SiteType.HOME)) {
 //            this.home = new Home();
 //        }
-//        if (siteType.equals(websiteGenerator.SiteType.ARTICLE) || siteType2.equals(websiteGenerator.SiteType.ARTICLE)) {
+//        if (siteType.equals(websiteGenerator.Util.SiteType.ARTICLE) || siteType2.equals(websiteGenerator.Util.SiteType.ARTICLE)) {
 //            this.article = new Article();
 //        }
-//        if (siteType.equals(websiteGenerator.SiteType.REGISTRATION) || siteType2.equals(websiteGenerator.SiteType.REGISTRATION)) {
+//        if (siteType.equals(websiteGenerator.Util.SiteType.REGISTRATION) || siteType2.equals(websiteGenerator.Util.SiteType.REGISTRATION)) {
 //
 //            this.registration = new Registration();
 //        }
-//        if (siteType.equals(websiteGenerator.SiteType.LOGIN) || siteType2.equals(websiteGenerator.SiteType.LOGIN)) {
-//
-//            this.login = new Login();
-//
-//        }
-//    }
-//
-//    public HTML(websiteGenerator.SiteType siteType, websiteGenerator.SiteType siteType2, websiteGenerator.SiteType siteType3 ) {
-//
-//        if (siteType.equals(websiteGenerator.SiteType.STARTERPROJECT) || siteType2.equals(websiteGenerator.SiteType.STARTERPROJECT) || siteType3.equals(websiteGenerator.SiteType.STARTERPROJECT)) {
-//            this.starterProject = new StarterProject();
-//        }
-//        if (siteType.equals(websiteGenerator.SiteType.HOME) || siteType2.equals(websiteGenerator.SiteType.HOME) || siteType3.equals(websiteGenerator.SiteType.HOME)) {
-//            this.home = new Home();
-//        }
-//        if (siteType.equals(websiteGenerator.SiteType.ARTICLE) || siteType2.equals(websiteGenerator.SiteType.ARTICLE) || siteType3.equals(websiteGenerator.SiteType.ARTICLE)) {
-//            this.article = new Article();
-//        }
-//        if (siteType.equals(websiteGenerator.SiteType.REGISTRATION) || siteType2.equals(websiteGenerator.SiteType.REGISTRATION) || siteType3.equals(websiteGenerator.SiteType.REGISTRATION)) {
-//
-//            this.registration = new Registration();
-//        }
-//        if (siteType.equals(websiteGenerator.SiteType.LOGIN) || siteType2.equals(websiteGenerator.SiteType.LOGIN) || siteType3.equals(websiteGenerator.SiteType.LOGIN) ) {
+//        if (siteType.equals(websiteGenerator.Util.SiteType.LOGIN) || siteType2.equals(websiteGenerator.Util.SiteType.LOGIN)) {
 //
 //            this.login = new Login();
 //
 //        }
 //    }
 //
-//    public HTML(websiteGenerator.SiteType siteType, websiteGenerator.SiteType siteType2, websiteGenerator.SiteType siteType3, websiteGenerator.SiteType siteType4 ) {
+//    public HTML(websiteGenerator.Util.SiteType siteType, websiteGenerator.Util.SiteType siteType2, websiteGenerator.Util.SiteType siteType3 ) {
 //
-//        if (siteType.equals(websiteGenerator.SiteType.STARTERPROJECT) || siteType2.equals(websiteGenerator.SiteType.STARTERPROJECT) || siteType3.equals(websiteGenerator.SiteType.STARTERPROJECT) || siteType4.equals(websiteGenerator.SiteType.STARTERPROJECT)) {
+//        if (siteType.equals(websiteGenerator.Util.SiteType.STARTERPROJECT) || siteType2.equals(websiteGenerator.Util.SiteType.STARTERPROJECT) || siteType3.equals(websiteGenerator.Util.SiteType.STARTERPROJECT)) {
 //            this.starterProject = new StarterProject();
 //        }
-//        if (siteType.equals(websiteGenerator.SiteType.HOME) || siteType2.equals(websiteGenerator.SiteType.HOME) || siteType3.equals(websiteGenerator.SiteType.HOME) || siteType4.equals(websiteGenerator.SiteType.HOME)) {
+//        if (siteType.equals(websiteGenerator.Util.SiteType.HOME) || siteType2.equals(websiteGenerator.Util.SiteType.HOME) || siteType3.equals(websiteGenerator.Util.SiteType.HOME)) {
 //            this.home = new Home();
 //        }
-//        if (siteType.equals(websiteGenerator.SiteType.ARTICLE) || siteType2.equals(websiteGenerator.SiteType.ARTICLE) || siteType3.equals(websiteGenerator.SiteType.ARTICLE) || siteType4.equals(websiteGenerator.SiteType.ARTICLE)) {
+//        if (siteType.equals(websiteGenerator.Util.SiteType.ARTICLE) || siteType2.equals(websiteGenerator.Util.SiteType.ARTICLE) || siteType3.equals(websiteGenerator.Util.SiteType.ARTICLE)) {
 //            this.article = new Article();
 //        }
-//        if (siteType.equals(websiteGenerator.SiteType.REGISTRATION) || siteType2.equals(websiteGenerator.SiteType.REGISTRATION) || siteType3.equals(websiteGenerator.SiteType.REGISTRATION) || siteType4.equals(websiteGenerator.SiteType.REGISTRATION)) {
+//        if (siteType.equals(websiteGenerator.Util.SiteType.REGISTRATION) || siteType2.equals(websiteGenerator.Util.SiteType.REGISTRATION) || siteType3.equals(websiteGenerator.Util.SiteType.REGISTRATION)) {
 //
 //            this.registration = new Registration();
 //        }
-//        if (siteType.equals(websiteGenerator.SiteType.LOGIN) || siteType2.equals(websiteGenerator.SiteType.LOGIN) || siteType3.equals(websiteGenerator.SiteType.LOGIN) || siteType4.equals(websiteGenerator.SiteType.LOGIN)  ) {
+//        if (siteType.equals(websiteGenerator.Util.SiteType.LOGIN) || siteType2.equals(websiteGenerator.Util.SiteType.LOGIN) || siteType3.equals(websiteGenerator.Util.SiteType.LOGIN) ) {
+//
+//            this.login = new Login();
+//
+//        }
+//    }
+//
+//    public HTML(websiteGenerator.Util.SiteType siteType, websiteGenerator.Util.SiteType siteType2, websiteGenerator.Util.SiteType siteType3, websiteGenerator.Util.SiteType siteType4 ) {
+//
+//        if (siteType.equals(websiteGenerator.Util.SiteType.STARTERPROJECT) || siteType2.equals(websiteGenerator.Util.SiteType.STARTERPROJECT) || siteType3.equals(websiteGenerator.Util.SiteType.STARTERPROJECT) || siteType4.equals(websiteGenerator.Util.SiteType.STARTERPROJECT)) {
+//            this.starterProject = new StarterProject();
+//        }
+//        if (siteType.equals(websiteGenerator.Util.SiteType.HOME) || siteType2.equals(websiteGenerator.Util.SiteType.HOME) || siteType3.equals(websiteGenerator.Util.SiteType.HOME) || siteType4.equals(websiteGenerator.Util.SiteType.HOME)) {
+//            this.home = new Home();
+//        }
+//        if (siteType.equals(websiteGenerator.Util.SiteType.ARTICLE) || siteType2.equals(websiteGenerator.Util.SiteType.ARTICLE) || siteType3.equals(websiteGenerator.Util.SiteType.ARTICLE) || siteType4.equals(websiteGenerator.Util.SiteType.ARTICLE)) {
+//            this.article = new Article();
+//        }
+//        if (siteType.equals(websiteGenerator.Util.SiteType.REGISTRATION) || siteType2.equals(websiteGenerator.Util.SiteType.REGISTRATION) || siteType3.equals(websiteGenerator.Util.SiteType.REGISTRATION) || siteType4.equals(websiteGenerator.Util.SiteType.REGISTRATION)) {
+//
+//            this.registration = new Registration();
+//        }
+//        if (siteType.equals(websiteGenerator.Util.SiteType.LOGIN) || siteType2.equals(websiteGenerator.Util.SiteType.LOGIN) || siteType3.equals(websiteGenerator.Util.SiteType.LOGIN) || siteType4.equals(websiteGenerator.Util.SiteType.LOGIN)  ) {
 //
 //            this.login = new Login();
 //        }
 //    }
 //
-//    public HTML(websiteGenerator.SiteType siteType, websiteGenerator.SiteType siteType2, websiteGenerator.SiteType siteType3, websiteGenerator.SiteType siteType4, websiteGenerator.SiteType siteType5 ) {
+//    public HTML(websiteGenerator.Util.SiteType siteType, websiteGenerator.Util.SiteType siteType2, websiteGenerator.Util.SiteType siteType3, websiteGenerator.Util.SiteType siteType4, websiteGenerator.Util.SiteType siteType5 ) {
 //
-//        if (siteType.equals(websiteGenerator.SiteType.STARTERPROJECT) || siteType2.equals(websiteGenerator.SiteType.STARTERPROJECT) || siteType3.equals(websiteGenerator.SiteType.STARTERPROJECT) || siteType4.equals(websiteGenerator.SiteType.STARTERPROJECT) || siteType5.equals(websiteGenerator.SiteType.STARTERPROJECT)) {
+//        if (siteType.equals(websiteGenerator.Util.SiteType.STARTERPROJECT) || siteType2.equals(websiteGenerator.Util.SiteType.STARTERPROJECT) || siteType3.equals(websiteGenerator.Util.SiteType.STARTERPROJECT) || siteType4.equals(websiteGenerator.Util.SiteType.STARTERPROJECT) || siteType5.equals(websiteGenerator.Util.SiteType.STARTERPROJECT)) {
 //            this.starterProject = new StarterProject();
 //        }
-//        if (siteType.equals(websiteGenerator.SiteType.HOME) || siteType2.equals(websiteGenerator.SiteType.HOME) || siteType3.equals(websiteGenerator.SiteType.HOME) || siteType4.equals(websiteGenerator.SiteType.HOME) || siteType5.equals(websiteGenerator.SiteType.HOME)) {
+//        if (siteType.equals(websiteGenerator.Util.SiteType.HOME) || siteType2.equals(websiteGenerator.Util.SiteType.HOME) || siteType3.equals(websiteGenerator.Util.SiteType.HOME) || siteType4.equals(websiteGenerator.Util.SiteType.HOME) || siteType5.equals(websiteGenerator.Util.SiteType.HOME)) {
 //            this.home = new Home();
 //        }
-//        if (siteType.equals(websiteGenerator.SiteType.ARTICLE) || siteType2.equals(websiteGenerator.SiteType.ARTICLE) || siteType3.equals(websiteGenerator.SiteType.ARTICLE) || siteType4.equals(websiteGenerator.SiteType.ARTICLE) || siteType5.equals(websiteGenerator.SiteType.ARTICLE)) {
+//        if (siteType.equals(websiteGenerator.Util.SiteType.ARTICLE) || siteType2.equals(websiteGenerator.Util.SiteType.ARTICLE) || siteType3.equals(websiteGenerator.Util.SiteType.ARTICLE) || siteType4.equals(websiteGenerator.Util.SiteType.ARTICLE) || siteType5.equals(websiteGenerator.Util.SiteType.ARTICLE)) {
 //            this.article = new Article();
 //        }
 //
-//        if (siteType.equals(websiteGenerator.SiteType.REGISTRATION) || siteType2.equals(websiteGenerator.SiteType.REGISTRATION) || siteType3.equals(websiteGenerator.SiteType.REGISTRATION) || siteType4.equals(websiteGenerator.SiteType.REGISTRATION) || siteType5.equals(websiteGenerator.SiteType.REGISTRATION)) {
+//        if (siteType.equals(websiteGenerator.Util.SiteType.REGISTRATION) || siteType2.equals(websiteGenerator.Util.SiteType.REGISTRATION) || siteType3.equals(websiteGenerator.Util.SiteType.REGISTRATION) || siteType4.equals(websiteGenerator.Util.SiteType.REGISTRATION) || siteType5.equals(websiteGenerator.Util.SiteType.REGISTRATION)) {
 //
 //            this.registration = new Registration();
 //        }
-//        if (siteType.equals(websiteGenerator.SiteType.LOGIN) || siteType2.equals(websiteGenerator.SiteType.LOGIN) || siteType3.equals(websiteGenerator.SiteType.LOGIN) || siteType4.equals(websiteGenerator.SiteType.LOGIN) || siteType5.equals(websiteGenerator.SiteType.LOGIN)  ) {
+//        if (siteType.equals(websiteGenerator.Util.SiteType.LOGIN) || siteType2.equals(websiteGenerator.Util.SiteType.LOGIN) || siteType3.equals(websiteGenerator.Util.SiteType.LOGIN) || siteType4.equals(websiteGenerator.Util.SiteType.LOGIN) || siteType5.equals(websiteGenerator.Util.SiteType.LOGIN)  ) {
 //
 //            this.login = new Login();
 //        }

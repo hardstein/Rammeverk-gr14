@@ -1,4 +1,4 @@
-package websiteGenerator;
+package websiteGenerator.Util;
 
 public interface Parsers {
     void textFileParser(String textfile);

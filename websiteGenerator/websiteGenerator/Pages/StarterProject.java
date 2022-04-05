@@ -1,10 +1,13 @@
-package websiteGenerator;
+package websiteGenerator.Pages;
+
+import websiteGenerator.Util.SemanticElements;
+import websiteGenerator.Util.Theme;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class StarterProject implements websiteGenerator.SemanticElements {
+public class StarterProject implements SemanticElements {
 
     private static final String defaultFolder = "";
 
