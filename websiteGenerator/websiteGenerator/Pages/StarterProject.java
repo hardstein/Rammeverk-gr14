@@ -15,6 +15,8 @@ public class StarterProject {
     private String addMainHeading;
     private String addMainContent;
 
+    public StarterProject() {}
+
     public Theme getTheme() {
         return theme;
     }

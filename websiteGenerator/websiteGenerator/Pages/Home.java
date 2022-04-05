@@ -10,12 +10,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Home {
-    private final String fileName;
-    private final Theme theme;
-    private final Header header;
-    private final Nav nav;
-    private final Main main;
-    private final Footer footer;
+    private  String fileName;
+    private  Theme theme;
+    private  Header header;
+    private  Nav nav;
+    private  Main main;
+    private  Footer footer;
+
+    public Home() {} 
 
     public Theme getTheme() {
         return theme;

@@ -1,6 +1,6 @@
 package websiteGenerator;
 
-import Pages;
+import websiteGenerator.Pages.*; 
 
 public class WebsiteBuilder {
 
@@ -19,19 +19,19 @@ public class WebsiteBuilder {
    }
 
    public Article getArticle() {
-       return article;
+       return article; 
    }
    public Registration getRegistration() {
-       return registration;
+       return registration; 
    }
    public Login getLogin() {
-       return login;
+       return login; 
    }
 
 
    public static Builder createWebsiteBuilder() {
     return new Builder();
-    }
+    }   
 
    private WebsiteBuilder(Builder builder) {
        this.home = builder.home;
@@ -68,10 +68,10 @@ public class WebsiteBuilder {
            return this;
        }
        public Builder addLogin() {
-           this.article = new Login();
+           this.login = new Login();
            return this;
        }
-
+      
        public WebsiteBuilder build() {
            return new WebsiteBuilder(this);
        }
