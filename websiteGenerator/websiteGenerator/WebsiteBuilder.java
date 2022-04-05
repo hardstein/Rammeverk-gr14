@@ -1,5 +1,9 @@
 package websiteGenerator;
 
+import javax.management.openmbean.SimpleType;
+
+import Util.SiteType; 
+
 public class WebsiteBuilder {
 
    private final Home home;
@@ -28,23 +32,23 @@ public class WebsiteBuilder {
 
    public static class Builder {
        private Home home;
-       private StarterProject StarterProject;
+       private StarterProject starterProject;
        private Article article;
        private Registration registration;
        private Login login;
 
-       public Builder addHome(final Home home) {
-           this.Home = home;
+       public Builder addHome(SiteType home) {
+           this.home = home;
            return this;
        }
 
-       public Builder addStarterProject(final StarterProject starterProject) {
-           this.addStarterProject = starterProject;
+       public Builder addStarterProject(SiteType starterProject) {
+           this.starterProject = starterProject;
            return this;
        }
 
-       public Builder addarticle(final StarterProject starterProject) {
-           this.addStarterProject = starterProject;
+       public Builder addarticle(SiteType article) {
+           this.article = article;
            return this;
        }
 
