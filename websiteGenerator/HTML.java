@@ -13,111 +13,111 @@
 //
 //    }
 //
-//    public HTML(SiteType siteType) {
+//    public HTML(websiteGenerator.SiteType siteType) {
 //
-//        if (siteType.equals(SiteType.STARTERPROJECT)) {
+//        if (siteType.equals(websiteGenerator.SiteType.STARTERPROJECT)) {
 //
 //            this.starterProject = new StarterProject();
 //
-//        } else if (siteType.equals(SiteType.HOME)) {
+//        } else if (siteType.equals(websiteGenerator.SiteType.HOME)) {
 //
 //            this.home = new Home();
 //
-//        } else if (siteType.equals(SiteType.ARTICLE)) {
+//        } else if (siteType.equals(websiteGenerator.SiteType.ARTICLE)) {
 //
 //            this.article = new Article();
 //
-//        } else if (siteType.equals(SiteType.REGISTRATION)) {
+//        } else if (siteType.equals(websiteGenerator.SiteType.REGISTRATION)) {
 //
 //            this.registration = new Registration();
 //
-//        } else if (siteType.equals(SiteType.LOGIN)) {
+//        } else if (siteType.equals(websiteGenerator.SiteType.LOGIN)) {
 //
 //            this.login = new Login();
 //        }
 //    }
 //
-//    public HTML(SiteType siteType, SiteType siteType2) {
-//        if (siteType.equals(SiteType.STARTERPROJECT) || siteType2.equals(SiteType.STARTERPROJECT)) {
+//    public HTML(websiteGenerator.SiteType siteType, websiteGenerator.SiteType siteType2) {
+//        if (siteType.equals(websiteGenerator.SiteType.STARTERPROJECT) || siteType2.equals(websiteGenerator.SiteType.STARTERPROJECT)) {
 //            this.starterProject = new StarterProject();
 //        }
-//        if (siteType.equals(SiteType.HOME) || siteType2.equals(SiteType.HOME)) {
+//        if (siteType.equals(websiteGenerator.SiteType.HOME) || siteType2.equals(websiteGenerator.SiteType.HOME)) {
 //            this.home = new Home();
 //        }
-//        if (siteType.equals(SiteType.ARTICLE) || siteType2.equals(SiteType.ARTICLE)) {
+//        if (siteType.equals(websiteGenerator.SiteType.ARTICLE) || siteType2.equals(websiteGenerator.SiteType.ARTICLE)) {
 //            this.article = new Article();
 //        }
-//        if (siteType.equals(SiteType.REGISTRATION) || siteType2.equals(SiteType.REGISTRATION)) {
+//        if (siteType.equals(websiteGenerator.SiteType.REGISTRATION) || siteType2.equals(websiteGenerator.SiteType.REGISTRATION)) {
 //
 //            this.registration = new Registration();
 //        }
-//        if (siteType.equals(SiteType.LOGIN) || siteType2.equals(SiteType.LOGIN)) {
-//
-//            this.login = new Login();
-//
-//        }
-//    }
-//
-//    public HTML(SiteType siteType, SiteType siteType2, SiteType siteType3 ) {
-//
-//        if (siteType.equals(SiteType.STARTERPROJECT) || siteType2.equals(SiteType.STARTERPROJECT) || siteType3.equals(SiteType.STARTERPROJECT)) {
-//            this.starterProject = new StarterProject();
-//        }
-//        if (siteType.equals(SiteType.HOME) || siteType2.equals(SiteType.HOME) || siteType3.equals(SiteType.HOME)) {
-//            this.home = new Home();
-//        }
-//        if (siteType.equals(SiteType.ARTICLE) || siteType2.equals(SiteType.ARTICLE) || siteType3.equals(SiteType.ARTICLE)) {
-//            this.article = new Article();
-//        }
-//        if (siteType.equals(SiteType.REGISTRATION) || siteType2.equals(SiteType.REGISTRATION) || siteType3.equals(SiteType.REGISTRATION)) {
-//
-//            this.registration = new Registration();
-//        }
-//        if (siteType.equals(SiteType.LOGIN) || siteType2.equals(SiteType.LOGIN) || siteType3.equals(SiteType.LOGIN) ) {
+//        if (siteType.equals(websiteGenerator.SiteType.LOGIN) || siteType2.equals(websiteGenerator.SiteType.LOGIN)) {
 //
 //            this.login = new Login();
 //
 //        }
 //    }
 //
-//    public HTML(SiteType siteType, SiteType siteType2, SiteType siteType3, SiteType siteType4 ) {
+//    public HTML(websiteGenerator.SiteType siteType, websiteGenerator.SiteType siteType2, websiteGenerator.SiteType siteType3 ) {
 //
-//        if (siteType.equals(SiteType.STARTERPROJECT) || siteType2.equals(SiteType.STARTERPROJECT) || siteType3.equals(SiteType.STARTERPROJECT) || siteType4.equals(SiteType.STARTERPROJECT)) {
+//        if (siteType.equals(websiteGenerator.SiteType.STARTERPROJECT) || siteType2.equals(websiteGenerator.SiteType.STARTERPROJECT) || siteType3.equals(websiteGenerator.SiteType.STARTERPROJECT)) {
 //            this.starterProject = new StarterProject();
 //        }
-//        if (siteType.equals(SiteType.HOME) || siteType2.equals(SiteType.HOME) || siteType3.equals(SiteType.HOME) || siteType4.equals(SiteType.HOME)) {
+//        if (siteType.equals(websiteGenerator.SiteType.HOME) || siteType2.equals(websiteGenerator.SiteType.HOME) || siteType3.equals(websiteGenerator.SiteType.HOME)) {
 //            this.home = new Home();
 //        }
-//        if (siteType.equals(SiteType.ARTICLE) || siteType2.equals(SiteType.ARTICLE) || siteType3.equals(SiteType.ARTICLE) || siteType4.equals(SiteType.ARTICLE)) {
+//        if (siteType.equals(websiteGenerator.SiteType.ARTICLE) || siteType2.equals(websiteGenerator.SiteType.ARTICLE) || siteType3.equals(websiteGenerator.SiteType.ARTICLE)) {
 //            this.article = new Article();
 //        }
-//        if (siteType.equals(SiteType.REGISTRATION) || siteType2.equals(SiteType.REGISTRATION) || siteType3.equals(SiteType.REGISTRATION) || siteType4.equals(SiteType.REGISTRATION)) {
+//        if (siteType.equals(websiteGenerator.SiteType.REGISTRATION) || siteType2.equals(websiteGenerator.SiteType.REGISTRATION) || siteType3.equals(websiteGenerator.SiteType.REGISTRATION)) {
 //
 //            this.registration = new Registration();
 //        }
-//        if (siteType.equals(SiteType.LOGIN) || siteType2.equals(SiteType.LOGIN) || siteType3.equals(SiteType.LOGIN) || siteType4.equals(SiteType.LOGIN)  ) {
+//        if (siteType.equals(websiteGenerator.SiteType.LOGIN) || siteType2.equals(websiteGenerator.SiteType.LOGIN) || siteType3.equals(websiteGenerator.SiteType.LOGIN) ) {
+//
+//            this.login = new Login();
+//
+//        }
+//    }
+//
+//    public HTML(websiteGenerator.SiteType siteType, websiteGenerator.SiteType siteType2, websiteGenerator.SiteType siteType3, websiteGenerator.SiteType siteType4 ) {
+//
+//        if (siteType.equals(websiteGenerator.SiteType.STARTERPROJECT) || siteType2.equals(websiteGenerator.SiteType.STARTERPROJECT) || siteType3.equals(websiteGenerator.SiteType.STARTERPROJECT) || siteType4.equals(websiteGenerator.SiteType.STARTERPROJECT)) {
+//            this.starterProject = new StarterProject();
+//        }
+//        if (siteType.equals(websiteGenerator.SiteType.HOME) || siteType2.equals(websiteGenerator.SiteType.HOME) || siteType3.equals(websiteGenerator.SiteType.HOME) || siteType4.equals(websiteGenerator.SiteType.HOME)) {
+//            this.home = new Home();
+//        }
+//        if (siteType.equals(websiteGenerator.SiteType.ARTICLE) || siteType2.equals(websiteGenerator.SiteType.ARTICLE) || siteType3.equals(websiteGenerator.SiteType.ARTICLE) || siteType4.equals(websiteGenerator.SiteType.ARTICLE)) {
+//            this.article = new Article();
+//        }
+//        if (siteType.equals(websiteGenerator.SiteType.REGISTRATION) || siteType2.equals(websiteGenerator.SiteType.REGISTRATION) || siteType3.equals(websiteGenerator.SiteType.REGISTRATION) || siteType4.equals(websiteGenerator.SiteType.REGISTRATION)) {
+//
+//            this.registration = new Registration();
+//        }
+//        if (siteType.equals(websiteGenerator.SiteType.LOGIN) || siteType2.equals(websiteGenerator.SiteType.LOGIN) || siteType3.equals(websiteGenerator.SiteType.LOGIN) || siteType4.equals(websiteGenerator.SiteType.LOGIN)  ) {
 //
 //            this.login = new Login();
 //        }
 //    }
 //
-//    public HTML(SiteType siteType, SiteType siteType2, SiteType siteType3, SiteType siteType4, SiteType siteType5 ) {
+//    public HTML(websiteGenerator.SiteType siteType, websiteGenerator.SiteType siteType2, websiteGenerator.SiteType siteType3, websiteGenerator.SiteType siteType4, websiteGenerator.SiteType siteType5 ) {
 //
-//        if (siteType.equals(SiteType.STARTERPROJECT) || siteType2.equals(SiteType.STARTERPROJECT) || siteType3.equals(SiteType.STARTERPROJECT) || siteType4.equals(SiteType.STARTERPROJECT) || siteType5.equals(SiteType.STARTERPROJECT)) {
+//        if (siteType.equals(websiteGenerator.SiteType.STARTERPROJECT) || siteType2.equals(websiteGenerator.SiteType.STARTERPROJECT) || siteType3.equals(websiteGenerator.SiteType.STARTERPROJECT) || siteType4.equals(websiteGenerator.SiteType.STARTERPROJECT) || siteType5.equals(websiteGenerator.SiteType.STARTERPROJECT)) {
 //            this.starterProject = new StarterProject();
 //        }
-//        if (siteType.equals(SiteType.HOME) || siteType2.equals(SiteType.HOME) || siteType3.equals(SiteType.HOME) || siteType4.equals(SiteType.HOME) || siteType5.equals(SiteType.HOME)) {
+//        if (siteType.equals(websiteGenerator.SiteType.HOME) || siteType2.equals(websiteGenerator.SiteType.HOME) || siteType3.equals(websiteGenerator.SiteType.HOME) || siteType4.equals(websiteGenerator.SiteType.HOME) || siteType5.equals(websiteGenerator.SiteType.HOME)) {
 //            this.home = new Home();
 //        }
-//        if (siteType.equals(SiteType.ARTICLE) || siteType2.equals(SiteType.ARTICLE) || siteType3.equals(SiteType.ARTICLE) || siteType4.equals(SiteType.ARTICLE) || siteType5.equals(SiteType.ARTICLE)) {
+//        if (siteType.equals(websiteGenerator.SiteType.ARTICLE) || siteType2.equals(websiteGenerator.SiteType.ARTICLE) || siteType3.equals(websiteGenerator.SiteType.ARTICLE) || siteType4.equals(websiteGenerator.SiteType.ARTICLE) || siteType5.equals(websiteGenerator.SiteType.ARTICLE)) {
 //            this.article = new Article();
 //        }
 //
-//        if (siteType.equals(SiteType.REGISTRATION) || siteType2.equals(SiteType.REGISTRATION) || siteType3.equals(SiteType.REGISTRATION) || siteType4.equals(SiteType.REGISTRATION) || siteType5.equals(SiteType.REGISTRATION)) {
+//        if (siteType.equals(websiteGenerator.SiteType.REGISTRATION) || siteType2.equals(websiteGenerator.SiteType.REGISTRATION) || siteType3.equals(websiteGenerator.SiteType.REGISTRATION) || siteType4.equals(websiteGenerator.SiteType.REGISTRATION) || siteType5.equals(websiteGenerator.SiteType.REGISTRATION)) {
 //
 //            this.registration = new Registration();
 //        }
-//        if (siteType.equals(SiteType.LOGIN) || siteType2.equals(SiteType.LOGIN) || siteType3.equals(SiteType.LOGIN) || siteType4.equals(SiteType.LOGIN) || siteType5.equals(SiteType.LOGIN)  ) {
+//        if (siteType.equals(websiteGenerator.SiteType.LOGIN) || siteType2.equals(websiteGenerator.SiteType.LOGIN) || siteType3.equals(websiteGenerator.SiteType.LOGIN) || siteType4.equals(websiteGenerator.SiteType.LOGIN) || siteType5.equals(websiteGenerator.SiteType.LOGIN)  ) {
 //
 //            this.login = new Login();
 //        }

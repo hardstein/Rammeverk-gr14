@@ -1,4 +1,4 @@
-//import Models.*;
+//import websiteGenerator.Models.*;
 //import websiteGenerator.Theme;
 //
 //public class Article extends HTML {

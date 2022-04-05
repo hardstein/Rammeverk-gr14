@@ -45,7 +45,7 @@ STARTERPROJECT, HOME, ARTICLE, REGISTRATION, LOGIN
 Example:
 
 ```java
-HTML project=new HTML(SiteType.<<insert chosenTemplate>>);
+HTML project=new HTML(websiteGenerator.SiteType.<<insert chosenTemplate>>);
 
 project.<<chosenTemplate>>; 
 ```
@@ -53,7 +53,7 @@ project.<<chosenTemplate>>;
 You can make more than one template, like this.
 
 ```java
-HTML project=new HTML(SiteType.HOME,Sitetype.ARTICLE,Sitetype.REGISTRATION,Sitetype.LOGIN,Sitetype.STARTERPROJECT);
+HTML project=new HTML(websiteGenerator.SiteType.HOME,Sitetype.ARTICLE,Sitetype.REGISTRATION,Sitetype.LOGIN,Sitetype.STARTERPROJECT);
 
 ```
 

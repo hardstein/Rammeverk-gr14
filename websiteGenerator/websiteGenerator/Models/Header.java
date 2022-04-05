@@ -1,4 +1,4 @@
-package Models;
+package websiteGenerator.Models;
 
 public class Header {
 

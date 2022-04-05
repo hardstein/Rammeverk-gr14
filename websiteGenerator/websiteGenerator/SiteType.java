@@ -1,3 +1,5 @@
+package websiteGenerator;
+
 public enum SiteType {
     STARTERPROJECT, 
     HOME, 
