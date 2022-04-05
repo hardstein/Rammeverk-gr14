@@ -1,13 +1,12 @@
 package websiteGenerator.Pages;
 
-import websiteGenerator.Util.SemanticElements;
 import websiteGenerator.Util.Theme;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class StarterProject implements SemanticElements {
+public class StarterProject {
 
     private static final String defaultFolder = "";
 
@@ -161,32 +160,7 @@ public class StarterProject implements SemanticElements {
         fileWriter.close();
     }
 
-    @Override
-    public void header() {
 
-    }
-
-    @Override
-    public void nav() {
-
-    }
-
-    @Override
-    public void main() {
-
-    }
-
-    @Override
-    public void aside() {
-
-    }
-
-    @Override
-    public void footer() {
-
-    }
-
-    @Override
     public void completeTemplate() {
         createFolder();
         try {

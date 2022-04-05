@@ -1,6 +1,6 @@
 package websiteGenerator;
 
-public class BuilderWebsiteTemplate {
+public class WebsiteBuilder {
 
    private final Home home;
    private final StarterProject starterProject;
@@ -21,7 +21,7 @@ public class BuilderWebsiteTemplate {
     return new Builder();
     }   
 
-   private BuilderWebsiteTemplate(Builder builder) {
+   private WebsiteBuilder(Builder builder) {
        this.home = builder.home;
        this.starterProject = builder.starterProject;
    }
@@ -49,8 +49,8 @@ public class BuilderWebsiteTemplate {
        }
 
       
-       public BuilderWebsiteTemplate build() {
-           return new BuilderWebsiteTemplate(this);
+       public WebsiteBuilder build() {
+           return new WebsiteBuilder(this);
        }
    }
 }
