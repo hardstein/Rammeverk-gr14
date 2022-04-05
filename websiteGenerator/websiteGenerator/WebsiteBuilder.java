@@ -6,7 +6,6 @@ import ApiCreation.Article;
 import ApiCreation.Login;
 import ApiCreation.Registration;
 import ApiCreation.StarterProject;
-import Util.SiteType; 
 
 public class WebsiteBuilder {
 
@@ -22,6 +21,16 @@ public class WebsiteBuilder {
 
    public StarterProject getStarterProject() {
        return starterProject;
+   }
+
+   public Article getArticle() {
+       return article; 
+   }
+   public Registration getRegistration() {
+       return registration; 
+   }
+   public Login getLogin() {
+       return login; 
    }
 
 
