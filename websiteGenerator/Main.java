@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         Home home = Home.createPageBuilder()
-                .mainContent("Cool content")
+                .setFilename("homepage.html")
                 .header(Header.createElementBuilder()
                         .addHeaderHeading("Nice Title")
                         .addHeaderImageUrl("background.png")
@@ -22,6 +22,11 @@ public class Main {
                         .addLogoImage("GR14.logo")
                         .build()
                 )
+                // Blir problemer pga. klassenavn.
+                .main(websiteGenerator.SemanticElements.Main.createElementBuilder()
+                        .addMainHeading("Main Title")
+                        .addMainContent("This is the content")
+                        .build())
                 .footer(Footer.createElementBuilder()
                         .addContactName("Group 14")
                         .addContactEmail("gr14@email.com")

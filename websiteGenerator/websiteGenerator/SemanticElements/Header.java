@@ -7,27 +7,27 @@ public class Header {
     private final String heroHeading;
     private final String heroImageUrl;
 
-    public String getAddHeaderImageUrl() {
+    public String getHeaderImageUrl() {
         return headerImageUrl;
     }
 
-    public String getAddHeaderHeading() {
+    public String getHeaderHeading() {
         return headerHeading;
     }
 
-    public String getAddHeroHeading() {
+    public String getHeroHeading() {
         return heroHeading;
     }
 
-    public String getAddHeroImageUrl() {
+    public String getHeroImageUrl() {
         return heroImageUrl;
     }
 
     private Header(Builder builder) {
-        this.headerImageUrl = builder.addHeaderImageUrl;
-        this.headerHeading = builder.addHeaderHeading;
-        this.heroHeading = builder.addHeroHeading;
-        this.heroImageUrl = builder.addHeroImageUrl;
+        this.headerImageUrl = builder.headerImageUrl;
+        this.headerHeading = builder.headerHeading;
+        this.heroHeading = builder.heroHeading;
+        this.heroImageUrl = builder.heroImageUrl;
     }
 
     public static Builder createElementBuilder() {
@@ -35,39 +35,53 @@ public class Header {
     }
 
     public static class Builder {
-        private String addHeaderImageUrl;
-        private String addHeaderHeading;
-        private String addHeroHeading;
-        private String addHeroImageUrl;
+        private String headerImageUrl;
+        private String headerHeading;
+        private String heroHeading;
+        private String heroImageUrl;
 
         private Builder() {
 
         }
 
         public Builder addHeaderImageUrl(final String addHeaderImageUrl) {
-            this.addHeaderImageUrl = addHeaderImageUrl;
+            this.headerImageUrl = addHeaderImageUrl;
             return this;
         }
 
         public Builder addHeaderHeading(final String addHeaderHeading) {
-            this.addHeaderHeading = addHeaderHeading;
+            this.headerHeading = addHeaderHeading;
             return this;
         }
 
         public Builder addHeroHeading(final String addHeroHeading) {
-            this.addHeroHeading = addHeroHeading;
+            this.heroHeading = addHeroHeading;
             return this;
         }
 
         public Builder addHeroImageUrl(final String addHeroImageUrl) {
-            this.addHeroImageUrl = addHeroImageUrl;
+            this.heroImageUrl = addHeroImageUrl;
             return this;
         }
 
-        public Header build(){
+        public Header build() {
+
             return new Header(this);
         }
 
     }
 
+    public String headerContent() {
+        String defaultHeaderImage = "https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg";
+        if (headerImageUrl != null) {
+            defaultHeaderImage = headerImageUrl;
+        }
+
+            String s =
+                    "    <header>\n" +
+                    "        <h1>" + headerHeading +"</h1>\n" +
+                    "        <img src=\"" + defaultHeaderImage + "\" alt=\"\">\n" +
+                    "    </header>";
+        return s;
+    }
 }
