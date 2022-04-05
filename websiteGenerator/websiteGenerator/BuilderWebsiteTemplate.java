@@ -1,42 +1,56 @@
 package websiteGenerator;
 
-import websiteGenerator.Pages.Home;
-import websiteGenerator.Pages.StarterProject;
-
 public class BuilderWebsiteTemplate {
 
-    private final Home home;
-    private final StarterProject starterProject;
+   private final Home home;
+   private final StarterProject starterProject;
+   private Article article;
+   private Registration registration;
+   private Login login;
 
-    public Home getHome() {
-        return home;
-    }
+   public Home getHome() {
+       return home;
+   }
 
-    public StarterProject getStarterProject() {
-        return starterProject;
-    }
+   public StarterProject getStarterProject() {
+       return starterProject;
+   }
 
-    private BuilderWebsiteTemplate(Builder builder) {
-        this.home = builder.home;
-        this.starterProject = builder.starterProject;
-    }
 
-    public static class Builder {
-        private Home home;
-        private StarterProject starterProject;
+   public static Builder createBuilder() {
+    return new Builder();
+    }   
 
-        public Builder home(final Home home) {
-            this.home = home;
-            return this;
-        }
+   private BuilderWebsiteTemplate(Builder builder) {
+       this.home = builder.home;
+       this.starterProject = builder.starterProject;
+   }
 
-        public Builder starterProject(final StarterProject starterProject) {
-            this.starterProject = starterProject;
-            return this;
-        }
+   public static class Builder {
+       private Home home;
+       private StarterProject StarterProject;
+       private Article article;
+       private Registration registration;
+       private Login login;
 
-        public BuilderWebsiteTemplate build() {
-            return new BuilderWebsiteTemplate(this);
-        }
-    }
+       public Builder addHome(final Home home) {
+           this.Home = home;
+           return this;
+       }
+
+       public Builder addStarterProject(final StarterProject starterProject) {
+           this.addStarterProject = starterProject;
+           return this;
+       }
+
+       public Builder addarticle(final StarterProject starterProject) {
+           this.addStarterProject = starterProject;
+           return this;
+       }
+
+      
+       public BuilderWebsiteTemplate build() {
+           return new BuilderWebsiteTemplate(this);
+       }
+   }
 }
