@@ -34,7 +34,7 @@ public class WebsiteBuilder {
    }
 
 
-   public static Builder createBuilder() {
+   public static Builder createWebsiteBuilder() {
     return new Builder();
     }   
 
