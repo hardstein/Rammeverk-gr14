@@ -138,7 +138,6 @@ public class Home {
 
 
     public void header() {
-        Header header = create
 
 //        System.out.printf("Heading: %s, Image: %s\n", getHeaderHeading(), getHeaderImageUrl());
     }
