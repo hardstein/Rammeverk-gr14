@@ -7,16 +7,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Home {
-<<<<<<< HEAD
-    private  String fileName;
-    private  Theme theme;
-    private  Header header;
-    private  Nav nav;
-    private  Main main;
-    private  Footer footer;
-
-    public Home() {} 
-=======
     private final String fileName;
     private final Theme theme;
     private final Header header;
@@ -24,7 +14,6 @@ public class Home {
     private final Main main;
     private final Aside aside;
     private final Footer footer;
->>>>>>> a28662a6d7d467988f77ee4a9782ecb7d2fbc612
 
     public Theme getTheme() {
         return theme;

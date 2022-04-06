@@ -10,27 +10,10 @@ import java.io.IOException;
 import websiteGenerator.SemanticElements.*;
 import websiteGenerator.Util.Theme;
 
-public class Article  {
+public class Article extends Page  {
 
    private String heading;
-   private String content;
-
-
-   private String fileName; 
    private Theme theme;
-   private Header header;
-   private Main main;
-   private Nav nav;
-   private Aside aside;
-   private Footer footer; 
-
-   public Article(Theme theme) {
-       this.theme = theme;
-       System.out.println("you have made a article object with chosen theme " + theme);
-   }
-   public Article() {
-       System.out.println("you have made an article object");
-   }
 
    public static Builder createArticlePageBuilder() {
     return new Builder();
@@ -38,12 +21,12 @@ public class Article  {
 
    private Article(Builder builder) {
        this.heading = builder.heading; 
-       this.content = builder.content; 
-       this.fileName = builder.fileName; 
-       this.header = builder.header;
-       this.main = builder.main;
-       this.nav = builder.nav;
-       this.aside = builder.aside;
+       super.content = builder.content; 
+       super.fileName = builder.fileName; 
+       super.header = builder.header;
+       super.main = builder.main;
+       super.nav = builder.nav;
+       super.aside = builder.aside;
    }
 
    public static class Builder {
@@ -62,7 +45,6 @@ public class Article  {
            return this; 
 
        }
-
 
        public Builder addHeader(Header header) {
            this.header = header;
