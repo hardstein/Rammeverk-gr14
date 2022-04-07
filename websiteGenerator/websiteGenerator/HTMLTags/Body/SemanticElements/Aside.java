@@ -1,4 +1,4 @@
-package websiteGenerator.SemanticElements;
+package websiteGenerator.HTMLTags.Body.SemanticElements;
 
 import websiteGenerator.Util.SemanticElementContent;
 

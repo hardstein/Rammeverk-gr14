@@ -27,6 +27,7 @@ public class Article extends Page  {
        super.main = builder.main;
        super.nav = builder.nav;
        super.aside = builder.aside;
+       super.html = builder.html; 
    }
 
    public static class Builder {

@@ -1,7 +1,9 @@
 package websiteGenerator.Pages;
 
+import websiteGenerator.HTMLTags.Html;
 import websiteGenerator.HTMLTags.Body.SemanticElements.*;
 import websiteGenerator.Util.Generator;
+import websiteGenerator.Util.HTMLLanguageOptions;
 import websiteGenerator.Util.Theme;
 
 import java.io.FileWriter;
@@ -48,6 +50,7 @@ public class Home extends Page implements Generator {
         super.main = builder.main;
         super.aside = builder.aside;
         super.footer = builder.footer;
+        super.html = builder.html; 
 //        this.theme = builder.theme;
 //        this.fileName = builder.fileName;
 //        this.header = builder.header;
@@ -127,7 +130,13 @@ public class Home extends Page implements Generator {
         private Builder() {
         }
 
-        public Builder theme(final Theme theme) {
+        public Builder addLanguage(HTMLLanguageOptions lang) {
+            this.html.setStartTag(lang);; 
+            return this; 
+ 
+        }
+
+        public Builder addTheme(final Theme theme) {
             this.theme = theme;
             return this;
         }
@@ -137,27 +146,27 @@ public class Home extends Page implements Generator {
             return this;
         }
 
-        public Builder header(final Header header) {
+        public Builder addHeader(final Header header) {
             this.header = header;
             return this;
         }
 
-        public Builder nav(final Nav nav) {
+        public Builder addNav(final Nav nav) {
             this.nav = nav;
             return this;
         }
 
-        public Builder main(final Main main) {
+        public Builder addMain(final Main main) {
             this.main = main;
             return this;
         }
 
-        public Builder aside(final Aside aside) {
+        public Builder addAside(final Aside aside) {
             this.aside = aside;
             return this;
         }
 
-        public Builder footer(final Footer footer) {
+        public Builder addFooter(final Footer footer) {
             this.footer = footer;
             return this;
         }

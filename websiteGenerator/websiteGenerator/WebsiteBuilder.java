@@ -63,7 +63,7 @@ public class WebsiteBuilder implements Generator {
     public void generate() {
         String htmlHeadElement = """
                 <!DOCTYPE html>
-                <html lang="en">
+                
                 <head>
                     <meta charset="UTF-8">
                     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -95,7 +95,7 @@ public class WebsiteBuilder implements Generator {
                                 page.getMain().getContentOfElement() + "\n" +
                                 page.getAside().getContentOfElement() + "\n" +
                                 "</body>\n" +
-                                "</html>");
+                                page.getHtml().getEndTag());
                 fileWriter.close();
             } catch (IOException e) {
                 e.printStackTrace();

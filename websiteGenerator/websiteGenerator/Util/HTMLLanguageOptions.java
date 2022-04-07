@@ -4,7 +4,7 @@ public enum HTMLLanguageOptions {
     EN("en"), 
     NB("nb");  
 
-    String lang = ""; 
+    public String lang = ""; 
 
     HTMLLanguageOptions(String lang) {
         this.lang = lang; 

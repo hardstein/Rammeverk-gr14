@@ -79,4 +79,8 @@ public abstract class Page {
    public void setFooter(Footer footer) {
       this.footer = footer;
    }
+
+   public Html getHtml() {
+       return html;
+   }
 }

@@ -3,8 +3,9 @@
 import java.io.IOException;
 
 import websiteGenerator.WebsiteBuilder;
+import websiteGenerator.HTMLTags.Body.SemanticElements.*;
 import websiteGenerator.Pages.*;
-import websiteGenerator.SemanticElements.*;
+import websiteGenerator.Util.HTMLLanguageOptions;
 
 public class AnotherMain {
     public static void main(String[] args) throws IOException {
@@ -58,6 +59,7 @@ public class AnotherMain {
 
         // Creating pages
         Article article = Article.createArticlePageBuilder()
+                .addLanguage(HTMLLanguageOptions.NB)
                 .addHeader(articleHeader)
                 .addNav(nav)
                 .addMain(articleMain)
@@ -67,11 +69,11 @@ public class AnotherMain {
 
         Home homePage = Home.createPageBuilder()
                 .setFilename("homepage.html")
-                .header(homeHeader)
-                .nav(nav)
-                .main(homeMain)
-                .aside(aside)
-                .footer(footer)
+                .addHeader(homeHeader)
+                .addNav(nav)
+                .addMain(homeMain)
+                .addAside(aside)
+                .addFooter(footer)
                 .build(); 
 
 
