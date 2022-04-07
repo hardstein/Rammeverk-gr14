@@ -1,5 +1,6 @@
 package websiteGenerator.Pages;
 
+import websiteGenerator.HTMLTags.HeadTag.Head;
 import websiteGenerator.HTMLTags.Html;
 import websiteGenerator.HTMLTags.Body.SemanticElements.*;
 import websiteGenerator.Util.Generator;
@@ -51,6 +52,7 @@ public class Home extends Page implements Generator {
         super.aside = builder.aside;
         super.footer = builder.footer;
         super.html = builder.html; 
+        super.head = builder.head;
 //        this.theme = builder.theme;
 //        this.fileName = builder.fileName;
 //        this.header = builder.header;
@@ -120,12 +122,14 @@ public class Home extends Page implements Generator {
         private Html html = Html.createHTMLTag(HTMLLanguageOptions.EN);
 
         private Theme theme;
+
         private String fileName;
         private Header header;
         private Nav nav;
         private Main main;
         private Aside aside;
         private Footer footer;
+        private Head head;
 
         private Builder() {
         }
@@ -171,20 +175,15 @@ public class Home extends Page implements Generator {
             return this;
         }
 
+        public Builder addHead(final Head head) {
+            this.head = head;
+            return this;
+        }
+
         public Home build() throws IOException {
             return new Home(this);
         }
 
     }
 
-    public void hero() {
-        System.out.println("Hero header: " + header.getHeroHeading() + " and image " + header.getHeroImageUrl());
-    }
-
-    public void navbar() {
-        System.out.println(nav.getAddLogoImage());
-        for (String link : nav.getAddPageLinks()) {
-            System.out.println(link);
-        }
-    }
 }

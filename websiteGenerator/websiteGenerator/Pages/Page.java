@@ -1,5 +1,6 @@
 package websiteGenerator.Pages;
 
+import websiteGenerator.HTMLTags.HeadTag.Head;
 import websiteGenerator.HTMLTags.Html;
 import websiteGenerator.HTMLTags.Body.SemanticElements.*;
 import websiteGenerator.Util.*;
@@ -8,13 +9,26 @@ public abstract class Page {
    protected String fileName; 
    protected String content; 
 
-   protected Html html; 
+   protected Html html;
+   protected Head head;
    protected Theme theme;
    protected Header header;
    protected Main main;
    protected Nav nav;
    protected Aside aside;
    protected Footer footer;
+
+   public void setHtml(Html html) {
+      this.html = html;
+   }
+
+   public Head getHead() {
+      return head;
+   }
+
+   public void setHead(Head head) {
+      this.head = head;
+   }
 
    public String getFileName() {
       return fileName;

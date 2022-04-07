@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import websiteGenerator.HTMLTags.HeadTag.Head;
 import websiteGenerator.HTMLTags.Html;
 import websiteGenerator.HTMLTags.Body.SemanticElements.*;
 import websiteGenerator.Util.HTMLLanguageOptions;
@@ -28,6 +29,7 @@ public class Article extends Page  {
        super.nav = builder.nav;
        super.aside = builder.aside;
        super.html = builder.html; 
+       super.head = builder.head;
    }
 
    public static class Builder {
@@ -38,6 +40,7 @@ public class Article extends Page  {
        private Html html = Html.createHTMLTag(HTMLLanguageOptions.EN); 
 
        private Header header;
+       private Head head;
        private Main main;
        private Nav nav;
        private Aside aside;
@@ -74,6 +77,10 @@ public class Article extends Page  {
        }
        public Builder addFooter(Footer footer) {
            this.footer = footer;
+           return this;
+       }
+       public Builder addHead(Head head) {
+           this.head = head;
            return this;
        }
       

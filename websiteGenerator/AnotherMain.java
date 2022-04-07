@@ -2,6 +2,7 @@
 
 import java.io.IOException;
 
+import websiteGenerator.HTMLTags.HeadTag.Head;
 import websiteGenerator.WebsiteBuilder;
 import websiteGenerator.HTMLTags.Body.SemanticElements.*;
 import websiteGenerator.Pages.*;
@@ -12,6 +13,7 @@ public class AnotherMain {
 
         //Creating page content
 
+        Head head = new Head("styles.css", "DENNE ER NY HEAD TITLE");
         // These will be the same for all pages: 
         Footer footer = Footer.createElementBuilder()
                         .addContactName("Group 14")
@@ -59,6 +61,7 @@ public class AnotherMain {
 
         // Creating pages
         Article article = Article.createArticlePageBuilder()
+                .addHead(head)
                 .addLanguage(HTMLLanguageOptions.NB)
                 .addHeader(articleHeader)
                 .addNav(nav)
@@ -69,6 +72,7 @@ public class AnotherMain {
 
         Home homePage = Home.createPageBuilder()
                 .setFilename("homepage.html")
+                .addHead(head)
                 .addHeader(homeHeader)
                 .addNav(nav)
                 .addMain(homeMain)

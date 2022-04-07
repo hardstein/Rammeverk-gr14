@@ -61,16 +61,14 @@ public class WebsiteBuilder implements Generator {
 
     @Override
     public void generate() {
-        String htmlHeadElement = """
-                <!DOCTYPE html>
-                
-                <head>
-                    <meta charset="UTF-8">
-                    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Website template</title>
-                </head>
-                   """;
+        String htmlHeadElement = "<!DOCTYPE html>\n";
+//                "                \n" +
+//                "                <head>\n" +
+//                "                    <meta charset=\"UTF-8\">\n" +
+//                "                    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n" +
+//                "                    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
+//                "                    <title>Website template</title>\n" +
+//                "                </head>";
         if (projectFolder == null) {
             projectFolder = ("starterproject");
         }
@@ -89,6 +87,8 @@ public class WebsiteBuilder implements Generator {
                 FileWriter fileWriter = new FileWriter("./" + projectFolder + "/" + page.getFileName());
                 fileWriter.write(
                         htmlHeadElement +
+                                page.getHtml().getStartTag() + "\n" +
+                                page.getHead().getContentOfElement() + "\n" +
                                 "<body>\n" +
                                 page.getHeader().getContentOfElement() + "\n" +
                                 page.getNav().getContentOfElement() + "\n" +
