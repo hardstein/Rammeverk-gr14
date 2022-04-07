@@ -46,12 +46,21 @@ public class Nav implements SemanticElementContent {
         StringBuilder content = new StringBuilder();
         StringBuilder links = new StringBuilder();
         for (String link : pageLinks) {
-            links.append("            <li>\n" + "                <a href=\"").append(link).append(".html").append("\">").append(link).append("</a>\n").append("            </li>");
+            links.append("            <li>\n")
+                    .append("                <a href=\"")
+                    .append(link)
+                    .append(".html")
+                    .append("\">")
+                    .append(link)
+                    .append("</a>\n")
+                    .append("            </li>");
         }
-        content.append("""
-                    <nav>
-                        <ul>
-                \s""").append(links).append("\n").append("        </ul>\n").append("    </nav>");
+        content.append("    <nav> \n")
+                .append("        <ul>\n")
+                .append(links)
+                .append("\n")
+                .append("        </ul>\n")
+                .append("    </nav>");
 
         return content;
     }
