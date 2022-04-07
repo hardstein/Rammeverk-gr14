@@ -9,7 +9,7 @@ import websiteGenerator.WebsiteBuilder;
 
 import java.io.IOException;
 
-public class Main {
+public class FirstMain {
 
     public static void main(String[] args) throws IOException {
 
