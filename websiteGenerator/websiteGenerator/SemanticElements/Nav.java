@@ -24,21 +24,36 @@ public class Nav implements SemanticElementContent {
         return new Builder();
     }
 
+//    @Override
+//    public String content() {
+//        String links = "";
+//        for (String link : pageLinks) {
+//            links += "            <li>\n" +
+//                    "                <a href=\"" + link + ".html" + "\">" + link + "</a>\n" +
+//                    "            </li>\n";
+//        }
+//        String s = "" +
+//                "    <nav>\n" +
+//                "        <ul>\n" +
+//                " " + links + "\n" +
+//                "        </ul>\n" +
+//                "    </nav>";
+//        return s;
+//    }
+
     @Override
-    public String content() {
-        String links = "";
+    public StringBuilder getContentOfElement() {
+        StringBuilder content = new StringBuilder();
+        StringBuilder links = new StringBuilder();
         for (String link : pageLinks) {
-            links += "            <li>\n" +
-                    "                <a href=\"" + link + ".html" + "\">" + link + "</a>\n" +
-                    "            </li>\n";
+            links.append("            <li>\n" + "                <a href=\"").append(link).append(".html").append("\">").append(link).append("</a>\n").append("            </li>");
         }
-        String s = "" +
-                "    <nav>\n" +
-                "        <ul>\n" +
-                " " + links + "\n" +
-                "        </ul>\n" +
-                "    </nav>";
-        return s;
+        content.append("""
+                    <nav>
+                        <ul>
+                \s""").append(links).append("\n").append("        </ul>\n").append("    </nav>");
+
+        return content;
     }
 
     public static class Builder {

@@ -24,14 +24,27 @@ public class Aside implements SemanticElementContent {
         return new Builder();
     }
 
+//    @Override
+//    public String content() {
+//        String content = "" +
+//                "    <aside>\n" +
+//                "        <h2>" + asideTitle + "</h2>\n" +
+//                "        <p>" + asideText + "</p>\n" +
+//                "    </aside>" +
+//                "";
+//        return content;
+//    }
+
     @Override
-    public String content() {
-        String content = "" +
-                "    <aside>\n" +
-                "        <h2>" + asideTitle + "</h2>\n" +
-                "        <p>" + asideText + "</p>\n" +
-                "    </aside>" +
-                "";
+    public StringBuilder getContentOfElement() {
+        StringBuilder content = new StringBuilder();
+        content.append("    <aside>\n" + "        <h2>")
+                .append(asideTitle)
+                .append("</h2>\n")
+                .append("        <p>")
+                .append(asideText)
+                .append("</p>\n")
+                .append("    </aside>");
         return content;
     }
 

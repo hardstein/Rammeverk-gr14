@@ -2,5 +2,6 @@ package websiteGenerator.Util;
 
 public interface SemanticElementContent {
 
-    String content();
+//    String content();
+    StringBuilder getContentOfElement();
 }

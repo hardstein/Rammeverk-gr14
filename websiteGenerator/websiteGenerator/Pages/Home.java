@@ -1,19 +1,20 @@
 package websiteGenerator.Pages;
 
 import websiteGenerator.SemanticElements.*;
+import websiteGenerator.Util.Generator;
 import websiteGenerator.Util.Theme;
 
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Home {
-    private final String fileName;
-    private final Theme theme;
-    private final Header header;
-    private final Nav nav;
-    private final Main main;
-    private final Aside aside;
-    private final Footer footer;
+public class Home extends Page implements Generator {
+//    private final String fileName;
+//    private final Theme theme;
+//    private final Header header;
+//    private final Nav nav;
+//    private final Main main;
+//    private final Aside aside;
+//    private final Footer footer;
 
     public Theme getTheme() {
         return theme;
@@ -40,17 +41,71 @@ public class Home {
     }
 
     private Home(Builder builder) {
-        this.theme = builder.theme;
-        this.fileName = builder.fileName;
-        this.header = builder.header;
-        this.nav = builder.nav;
-        this.main = builder.main;
-        this.aside = builder.aside;
-        this.footer = builder.footer;
+        super.theme = builder.theme;
+        super.fileName = builder.fileName;
+        super.header = builder.header;
+        super.nav = builder.nav;
+        super.main = builder.main;
+        super.aside = builder.aside;
+        super.footer = builder.footer;
+//        this.theme = builder.theme;
+//        this.fileName = builder.fileName;
+//        this.header = builder.header;
+//        this.nav = builder.nav;
+//        this.main = builder.main;
+//        this.aside = builder.aside;
+//        this.footer = builder.footer;
     }
 
     public static Builder createPageBuilder() {
         return new Builder();
+    }
+
+    @Override
+    public void generate() {
+        // Trenger refaktorering
+//        if (fileName != null) {
+//            filename = fileName;
+//        }
+        FileWriter fileWriter = null;
+        try {
+            fileWriter = new FileWriter(fileName);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+//        if (header.getHeaderHeading() != null) {
+//            heading = header.getHeaderHeading();
+//        }
+//        if (main.getMainContent() != null) {
+//            content = main.getMainContent();
+//        }
+        try {
+            fileWriter.write("<!DOCTYPE html>\n" +
+                    "<html lang=\"en\">\n" +
+                    "<head>\n" +
+                    "   <meta charset=\"UTF-8\">\n" +
+                    "   <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n" +
+                    "   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
+                    "   <link rel=\"stylesheet\" href=\"" + "styles.css" + "\">\n" +
+                    "   <title>Starter Project</title>\n" +
+                    "</head>\n" +
+                    "<body>\n" +
+                    header.getContentOfElement() + "\n" +
+                    nav.getContentOfElement() + "\n" +
+                    main.getContentOfElement() + "\n" +
+                    aside.getContentOfElement() + "\n" +
+                    footer.getContentOfElement() + "\n" +
+                    "</body>\n" +
+                    "</html>");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("HTML template with style was successfully filled");
+        try {
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static class Builder {
@@ -106,37 +161,6 @@ public class Home {
         }
 
         public Home build() throws IOException {
-            // Trenger refaktorering
-            if (fileName != null) {
-                filename = fileName;
-            }
-            FileWriter fileWriter = new FileWriter(filename);
-            if (header.getHeaderHeading() != null) {
-                heading = header.getHeaderHeading();
-            }
-            if (main.getMainContent() != null) {
-                content = main.getMainContent();
-            }
-            fileWriter.write("<!DOCTYPE html>\n" +
-                    "<html lang=\"en\">\n" +
-                    "<head>\n" +
-                    "   <meta charset=\"UTF-8\">\n" +
-                    "   <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n" +
-                    "   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
-                    "   <link rel=\"stylesheet\" href=\"" + "styles.css" + "\">\n" +
-                    "   <title>Starter Project</title>\n" +
-                    "</head>\n" +
-                    "<body>\n" +
-                    header.content() + "\n" +
-                    nav.content() + "\n" +
-                    main.content() + "\n" +
-                    aside.content() + "\n" +
-                    footer.content() + "\n" +
-                    "</body>\n" +
-                    "</html>");
-            System.out.println("HTML template with style was successfully filled");
-            fileWriter.close();
-
             return new Home(this);
         }
 

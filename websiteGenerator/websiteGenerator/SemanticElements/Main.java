@@ -24,14 +24,18 @@ public class Main implements SemanticElementContent {
         return new Builder();
     }
 
+
     @Override
-    public String content() {
-        String s = "" +
-                "    <main>\n" +
-                "        <h1>"+mainHeading+"</h1>\n" +
-                "        <p>"+mainContent+"</p>\n" +
-                "    </main>";
-        return s;
+    public StringBuilder getContentOfElement() {
+        StringBuilder content = new StringBuilder();
+        content.append("    <main>\n" + "        <h1>")
+                .append(mainHeading)
+                .append("</h1>\n")
+                .append("        <p>")
+                .append(mainContent)
+                .append("</p>\n")
+                .append("    </main>");
+        return content;
     }
 
     public static class Builder {

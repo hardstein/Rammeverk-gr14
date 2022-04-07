@@ -71,36 +71,36 @@ public class Article extends Page  {
       
        public Article build() {
 
-                    FileWriter fileWriter;
-                    try {
-                        //File file = new File(this.fileName);
-                        fileWriter = new FileWriter(this.fileName);
-
-                        fileWriter.write("<!DOCTYPE html>\n" +
-                            "<html lang=\"en\">\n" +
-                            "<head>\n" +
-                            "   <meta charset=\"UTF-8\">\n" +
-                            "   <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n" +
-                            "   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
-                            "   <link rel=\"stylesheet\" href=\"" + "styles.css" + "\">\n" +
-                            "   <title>Starter Project</title>\n" +
-                            "</head>\n" +
-                            "<body>\n" +
-                            this.header.content() + "\n" +
-                            this.nav.content() + "\n" +
-                            this.main.content() + "\n" +
-                            this.aside.content() + "\n" +
-                            this.footer.content() + "\n" +
-                            "</body>\n" +
-                            "</html>");
-
-                        fileWriter.close();
-
-                        System.out.println("HTML template with style was successfully filled");
-                    } catch (IOException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    }
+//                    FileWriter fileWriter;
+//                    try {
+//                        //File file = new File(this.fileName);
+//                        fileWriter = new FileWriter(this.fileName);
+//
+//                        fileWriter.write("<!DOCTYPE html>\n" +
+//                            "<html lang=\"en\">\n" +
+//                            "<head>\n" +
+//                            "   <meta charset=\"UTF-8\">\n" +
+//                            "   <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n" +
+//                            "   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
+//                            "   <link rel=\"stylesheet\" href=\"" + "styles.css" + "\">\n" +
+//                            "   <title>Starter Project</title>\n" +
+//                            "</head>\n" +
+//                            "<body>\n" +
+//                            this.header.content() + "\n" +
+//                            this.nav.content() + "\n" +
+//                            this.main.content() + "\n" +
+//                            this.aside.content() + "\n" +
+//                            this.footer.content() + "\n" +
+//                            "</body>\n" +
+//                            "</html>");
+//
+//                        fileWriter.close();
+//
+//                        System.out.println("HTML template with style was successfully filled");
+//                    } catch (IOException e) {
+//                        // TODO Auto-generated catch block
+//                        e.printStackTrace();
+//                    }
 
                     return new Article(this);
        }

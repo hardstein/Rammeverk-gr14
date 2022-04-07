@@ -35,14 +35,19 @@ public class Footer implements SemanticElementContent {
         return new Builder();
     }
 
+//    @Override
+//    public String content() {
+//        String s = "" +
+//                "    <footer>\n" +
+//                "        <p>Copyright "+ contactName+"</p>\n" +
+//                "        <p>Email: " +contactEmail+"</p>\n" +
+//                "    </footer>";
+//        return s;
+//    }
+
     @Override
-    public String content() {
-        String s = "" +
-                "    <footer>\n" +
-                "        <p>Copyright "+ contactName+"</p>\n" +
-                "        <p>Email: " +contactEmail+"</p>\n" +
-                "    </footer>";
-        return s;
+    public StringBuilder getContentOfElement() {
+        return null;
     }
 
     public static class Builder {

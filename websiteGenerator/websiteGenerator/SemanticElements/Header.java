@@ -36,19 +36,32 @@ public class Header implements SemanticElementContent {
         return new Builder();
     }
 
-    @Override
-    public String content() {
-        String defaultHeaderImage = "https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg";
-        if (headerImageUrl != null) {
-            defaultHeaderImage = headerImageUrl;
-        }
+//    @Override
+//    public String content() {
+//        String defaultHeaderImage = "https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg";
+//        if (headerImageUrl != null) {
+//            defaultHeaderImage = headerImageUrl;
+//        }
+//
+//        String s =
+//                "    <header>\n" +
+//                        "        <h1>" + headerHeading +"</h1>\n" +
+//                        "        <img src=\"" + defaultHeaderImage + "\" alt=\"\">\n" +
+//                        "    </header>";
+//        return s;
+//    }
 
-        String s =
-                "    <header>\n" +
-                        "        <h1>" + headerHeading +"</h1>\n" +
-                        "        <img src=\"" + defaultHeaderImage + "\" alt=\"\">\n" +
-                        "    </header>";
-        return s;
+    @Override
+    public StringBuilder getContentOfElement() {
+        StringBuilder content = new StringBuilder();
+        content.append("    <header>\n" + "        <h1>")
+                .append(headerHeading)
+                .append("</h1>\n")
+                .append("        <img src=\"")
+                .append(headerImageUrl)
+                .append("\" alt=\"\">\n")
+                .append("    </header>");
+        return content;
     }
 
     public static class Builder {
