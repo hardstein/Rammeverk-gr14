@@ -20,12 +20,14 @@ public class AnotherMain {
                         .build(); 
 
         Aside aside = Aside.createElementBuilder()
-                        .addAsideTitle("Aside is usefully")
+                        .addAsideTitle("Aside is usefull")
                         .addAsideText("Awesome aside")
                         .build(); 
+        
+        String[] menu = new String[]{"home", "registration", "login"}; 
 
         Nav nav = Nav.createElementBuilder()
-                .addPageLinks(new String[]{"home", "registration", "login"})
+                .addPageLinks(menu)
                 .addLogoImage("GR14.logo")
                 .build();
 
@@ -53,7 +55,7 @@ public class AnotherMain {
                 .addMainHeading("Main Title")
                 .addMainContent("This is the content")
                 .build(); 
-                
+
         // Creating pages
         Article article = Article.createArticlePageBuilder()
                 .addHeader(articleHeader)
@@ -72,8 +74,11 @@ public class AnotherMain {
                 .footer(footer)
                 .build(); 
 
+
+        // Making project:         
+        Page[] HTMLpages = new Page[] {homePage, article}; 
         WebsiteBuilder project = WebsiteBuilder.createWebsiteBuilder()
-        .addPages(new Page[]{homePage, article})
+        .addPages(HTMLpages)
         .build();
 
         project.generate();
