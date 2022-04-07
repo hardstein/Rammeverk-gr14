@@ -91,6 +91,7 @@ public class AnotherMain {
         project.generate();
 
 
+        System.out.println();
     }
     
 }

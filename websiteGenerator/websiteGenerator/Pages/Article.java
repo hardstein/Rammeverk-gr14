@@ -37,7 +37,7 @@ public class Article extends Page  {
        private String heading = "Starter template";
        private String content = "This is a starter article template.";
 
-       private Html html = Html.createHTMLTag(HTMLLanguageOptions.EN); 
+       private Html html = Html.createHTMLTag(HTMLLanguageOptions.EN);
 
        private Header header;
        private Head head;
@@ -52,7 +52,7 @@ public class Article extends Page  {
 
        }
        public Builder addLanguage(HTMLLanguageOptions lang) {
-           this.html.setStartTag(lang);; 
+           this.html.setStartTag(lang);
            return this; 
 
        }

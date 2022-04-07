@@ -23,8 +23,8 @@ public class Html {
     }
 
 
-    public void setStartTag(HTMLLanguageOptions value) {
-        this.startTag = "<html lang=" + "\"" + language + "\">";
+    public void setStartTag(HTMLLanguageOptions language) {
+        this.startTag = "<html lang=" + "\"" + language.lang + "\">";
     }
 
 
