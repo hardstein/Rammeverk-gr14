@@ -1,8 +1,8 @@
 package websiteGenerator.HTMLTags.Body.SemanticElements;
 
-import websiteGenerator.Util.SemanticElementContent;
+import websiteGenerator.Util.GetHTMLTagContent;
 
-public class Header implements SemanticElementContent {
+public class Header implements GetHTMLTagContent {
 
     private final String headerImageUrl;
     private final String headerHeading;
@@ -36,21 +36,6 @@ public class Header implements SemanticElementContent {
         return new Builder();
     }
 
-//    @Override
-//    public String content() {
-//        String defaultHeaderImage = "https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg";
-//        if (headerImageUrl != null) {
-//            defaultHeaderImage = headerImageUrl;
-//        }
-//
-//        String s =
-//                "    <header>\n" +
-//                        "        <h1>" + headerHeading +"</h1>\n" +
-//                        "        <img src=\"" + defaultHeaderImage + "\" alt=\"\">\n" +
-//                        "    </header>";
-//        return s;
-//    }
-
     @Override
     public StringBuilder getContentOfElement() {
         StringBuilder content = new StringBuilder();
@@ -70,9 +55,6 @@ public class Header implements SemanticElementContent {
         private String heroHeading;
         private String heroImageUrl;
 
-        private Builder() {
-
-        }
 
         public Builder addHeaderImageUrl(final String addHeaderImageUrl) {
             this.headerImageUrl = addHeaderImageUrl;

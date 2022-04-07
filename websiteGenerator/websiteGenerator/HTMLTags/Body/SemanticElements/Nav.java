@@ -1,8 +1,8 @@
 package websiteGenerator.HTMLTags.Body.SemanticElements;
 
-import websiteGenerator.Util.SemanticElementContent;
+import websiteGenerator.Util.GetHTMLTagContent;
 
-public class Nav implements SemanticElementContent {
+public class Nav implements GetHTMLTagContent {
 
     private final String[] pageLinks;
     private final String logoImage;
@@ -23,23 +23,6 @@ public class Nav implements SemanticElementContent {
     public static Builder createElementBuilder() {
         return new Builder();
     }
-
-//    @Override
-//    public String content() {
-//        String links = "";
-//        for (String link : pageLinks) {
-//            links += "            <li>\n" +
-//                    "                <a href=\"" + link + ".html" + "\">" + link + "</a>\n" +
-//                    "            </li>\n";
-//        }
-//        String s = "" +
-//                "    <nav>\n" +
-//                "        <ul>\n" +
-//                " " + links + "\n" +
-//                "        </ul>\n" +
-//                "    </nav>";
-//        return s;
-//    }
 
     @Override
     public StringBuilder getContentOfElement() {

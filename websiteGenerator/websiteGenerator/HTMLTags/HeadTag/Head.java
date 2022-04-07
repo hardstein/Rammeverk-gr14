@@ -1,8 +1,8 @@
 package websiteGenerator.HTMLTags.HeadTag;
 
-import websiteGenerator.Util.SemanticElementContent;
+import websiteGenerator.Util.GetHTMLTagContent;
 
-public class Head implements SemanticElementContent {
+public class Head implements GetHTMLTagContent {
 
     private String style;
     private String title;
@@ -35,6 +35,7 @@ public class Head implements SemanticElementContent {
                 "    <meta charset=\"UTF-8\">\n" +
                 "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n" +
                 "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
+                "    <link rel=\"stylesheet\" href=\""+style+"\">\n" +
                 "    <title>"+ title +"</title>\n" +
                 "</head>");
 

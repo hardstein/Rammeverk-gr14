@@ -1,8 +1,8 @@
 package websiteGenerator.HTMLTags.Body.SemanticElements;
 
-import websiteGenerator.Util.SemanticElementContent;
+import websiteGenerator.Util.GetHTMLTagContent;
 
-public class Aside implements SemanticElementContent {
+public class Aside implements GetHTMLTagContent {
     private final String asideTitle;
     private final String asideText;
 
@@ -23,17 +23,6 @@ public class Aside implements SemanticElementContent {
     public static Builder createElementBuilder() {
         return new Builder();
     }
-
-//    @Override
-//    public String content() {
-//        String content = "" +
-//                "    <aside>\n" +
-//                "        <h2>" + asideTitle + "</h2>\n" +
-//                "        <p>" + asideText + "</p>\n" +
-//                "    </aside>" +
-//                "";
-//        return content;
-//    }
 
     @Override
     public StringBuilder getContentOfElement() {

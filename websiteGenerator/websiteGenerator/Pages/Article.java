@@ -1,10 +1,4 @@
-
-package websiteGenerator.Pages; 
-
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-
+package websiteGenerator.Pages;
 import websiteGenerator.HTMLTags.HeadTag.Head;
 import websiteGenerator.HTMLTags.Html;
 import websiteGenerator.HTMLTags.Body.SemanticElements.*;
@@ -13,33 +7,29 @@ import websiteGenerator.Util.Theme;
 
 public class Article extends Page  {
 
-   private String heading;
-   private Theme theme;
-
    public static Builder createArticlePageBuilder() {
     return new Builder();
     }   
 
    private Article(Builder builder) {
-       this.heading = builder.heading; 
-       super.content = builder.content; 
+       super.theme = builder.theme;
        super.fileName = builder.fileName; 
        super.header = builder.header;
        super.main = builder.main;
        super.nav = builder.nav;
        super.aside = builder.aside;
-       super.html = builder.html; 
+       super.footer = builder.footer;
+       super.html = builder.html;
        super.head = builder.head;
    }
 
    public static class Builder {
-       private String fileName = "article.html"; 
-       private String heading = "Starter template";
-       private String content = "This is a starter article template.";
+       private String fileName = "article.html";
 
        private Html html = Html.createHTMLTag(HTMLLanguageOptions.EN);
 
        private Header header;
+       private Theme theme;
        private Head head;
        private Main main;
        private Nav nav;

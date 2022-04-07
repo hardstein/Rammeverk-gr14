@@ -1,8 +1,8 @@
 package websiteGenerator.HTMLTags.Body.SemanticElements;
 
-import websiteGenerator.Util.SemanticElementContent;
+import websiteGenerator.Util.GetHTMLTagContent;
 
-public class Main implements SemanticElementContent {
+public class Main implements GetHTMLTagContent {
 
     private final String mainHeading;
     private final String mainContent;

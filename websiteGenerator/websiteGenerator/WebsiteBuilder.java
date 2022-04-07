@@ -11,31 +11,6 @@ public class WebsiteBuilder implements Generator {
 
     private String projectFolder;
     private Page[] pages;
-    private Home home;
-    private StarterProject starterProject;
-    private Article article;
-    private Registration registration;
-    private Login login;
-
-    public Home getHome() {
-        return home;
-    }
-
-    public StarterProject getStarterProject() {
-        return starterProject;
-    }
-
-    public Article getArticle() {
-        return article;
-    }
-
-    public Registration getRegistration() {
-        return registration;
-    }
-
-    public Login getLogin() {
-        return login;
-    }
 
     public Page[] getPages() {
         return pages;
@@ -51,11 +26,6 @@ public class WebsiteBuilder implements Generator {
 
     private WebsiteBuilder(Builder builder) {
         this.pages = builder.page;
-        this.home = builder.home;
-        this.starterProject = builder.starterProject;
-        this.article = builder.article;
-        this.login = builder.login;
-        this.registration = builder.registration;
         this.projectFolder = builder.projectFolder;
     }
 
@@ -94,6 +64,7 @@ public class WebsiteBuilder implements Generator {
                                 page.getNav().getContentOfElement() + "\n" +
                                 page.getMain().getContentOfElement() + "\n" +
                                 page.getAside().getContentOfElement() + "\n" +
+                                page.getFooter().getContentOfElement() + "\n" +
                                 "</body>\n" +
                                 page.getHtml().getEndTag());
                 fileWriter.close();
@@ -107,11 +78,6 @@ public class WebsiteBuilder implements Generator {
     public static class Builder {
         private String projectFolder = "WebsiteProject";
         private Page[] page;
-        private Home home;
-        private StarterProject starterProject;
-        private Article article;
-        private Registration registration;
-        private Login login;
 
         public Builder addProjectFolder(String projectFolderName) {
             this.projectFolder = projectFolderName;
@@ -120,31 +86,6 @@ public class WebsiteBuilder implements Generator {
 
         public Builder addPages(Page[] page) {
             this.page = page;
-            return this;
-        }
-
-        public Builder addHome(Home home) {
-            this.home = home;
-            return this;
-        }
-
-        public Builder addStarterProject(StarterProject starterProject) {
-            this.starterProject = starterProject;
-            return this;
-        }
-
-        public Builder addArticle(Article article) {
-            this.article = article;
-            return this;
-        }
-
-        public Builder addRegistration() {
-            this.registration = new Registration();
-            return this;
-        }
-
-        public Builder addLogin() {
-            this.login = new Login();
             return this;
         }
 

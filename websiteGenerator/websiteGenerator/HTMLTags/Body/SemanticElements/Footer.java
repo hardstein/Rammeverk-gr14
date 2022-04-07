@@ -1,8 +1,8 @@
 package websiteGenerator.HTMLTags.Body.SemanticElements;
 
-import websiteGenerator.Util.SemanticElementContent;
+import websiteGenerator.Util.GetHTMLTagContent;
 
-public class Footer implements SemanticElementContent {
+public class Footer implements GetHTMLTagContent {
     private final String contactName;
     private final int contactPhoneNumber;
     private final String contactEmail;
@@ -35,19 +35,17 @@ public class Footer implements SemanticElementContent {
         return new Builder();
     }
 
-//    @Override
-//    public String content() {
-//        String s = "" +
-//                "    <footer>\n" +
-//                "        <p>Copyright "+ contactName+"</p>\n" +
-//                "        <p>Email: " +contactEmail+"</p>\n" +
-//                "    </footer>";
-//        return s;
-//    }
-
     @Override
     public StringBuilder getContentOfElement() {
-        return null;
+        StringBuilder content = new StringBuilder();
+        content.append("    <footer>\n")
+                .append("        <p>Contact name:").append(contactName).append("</p>\n")
+                .append("        <p>Email:").append(contactEmail).append(" </p>\n")
+                .append("        <p><a href=\"mailto:").append(contactEmail).append("\">").append(contactEmail).append("</a></p>\n")
+                .append("        <p>&copy; <em id=\"date\"></em>").append(contactName).append("</p>\n")
+                .append("        <p>Contact name:").append(contactName).append("</p>\n")
+                .append("    </footer>");
+        return content;
     }
 
     public static class Builder {

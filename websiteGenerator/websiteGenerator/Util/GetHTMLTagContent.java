@@ -1,6 +1,6 @@
 package websiteGenerator.Util;
 
-public interface SemanticElementContent {
+public interface GetHTMLTagContent {
 
 //    String content();
     StringBuilder getContentOfElement();

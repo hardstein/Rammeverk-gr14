@@ -1,7 +1,5 @@
 package websiteGenerator.HTMLTags;
 
-import javax.naming.ldap.StartTlsRequest;
-
 import websiteGenerator.Util.HTMLLanguageOptions;
 
 public class Html {

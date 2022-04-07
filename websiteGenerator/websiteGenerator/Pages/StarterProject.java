@@ -1,7 +1,5 @@
 package websiteGenerator.Pages;
-
 import websiteGenerator.Util.Theme;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
