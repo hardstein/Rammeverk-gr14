@@ -7,7 +7,13 @@ public class Head implements GetHTMLTagContent {
     private String style;
     private String title;
 
-    public Head(String style, String title) {
+    public static Head createHead(String style, String title) {
+
+        return new Head(style, title); 
+        
+    }
+
+    private Head(String style, String title) {
         this.style = style;
         this.title = title;
     }

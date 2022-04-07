@@ -12,8 +12,7 @@ public class AnotherMain {
     public static void main(String[] args) throws IOException {
 
         //Creating page content
-
-        Head head = new Head("styles.css", "DENNE ER NY HEAD TITLE");
+        Head head = Head.createHead("styles.css", "DENNE ER NY HEAD TITLE"); 
         // These will be the same for all pages: 
         Footer footer = Footer.createElementBuilder()
                         .addContactName("Group 14")
