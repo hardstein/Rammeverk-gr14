@@ -1,6 +1,6 @@
 package websiteGenerator.Pages;
 
-import websiteGenerator.SemanticElements.*;
+import websiteGenerator.HTMLTags.Body.SemanticElements.*;
 import websiteGenerator.Util.Generator;
 import websiteGenerator.Util.Theme;
 
@@ -113,6 +113,8 @@ public class Home extends Page implements Generator {
         String filename = "homepage.html";
         String heading = "Starter template";
         String content = "This is a starter project template.";
+
+        private Html html = Html.createHTMLTag(HTMLLanguageOptions.EN);
 
         private Theme theme;
         private String fileName;
