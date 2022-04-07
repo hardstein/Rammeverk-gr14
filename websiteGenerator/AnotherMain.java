@@ -24,7 +24,7 @@ public class AnotherMain {
                         .addAsideText("Awesome aside")
                         .build(); 
         
-        String[] menu = new String[]{"home", "registration", "login"}; 
+        String[] menu = new String[]{"home", "registration", "login", "banan"}; 
 
         Nav nav = Nav.createElementBuilder()
                 .addPageLinks(menu)
@@ -78,6 +78,7 @@ public class AnotherMain {
         // Making project:         
         Page[] HTMLpages = new Page[] {homePage, article}; 
         WebsiteBuilder project = WebsiteBuilder.createWebsiteBuilder()
+        .addProjectFolder("dog")
         .addPages(HTMLpages)
         .build();
 
