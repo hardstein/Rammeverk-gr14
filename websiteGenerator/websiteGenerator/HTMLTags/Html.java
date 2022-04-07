@@ -1,14 +1,17 @@
 package websiteGenerator.HTMLTags;
 
+import javax.naming.ldap.StartTlsRequest;
+
 import websiteGenerator.Util.HTMLLanguageOptions;
 
 public class Html {
 
     private String startTag; 
+
     private String language; 
     private final String endTag = "</html>";
    
-    public Html createHTMLTag(HTMLLanguageOptions value) { 
+    public static Html createHTMLTag(HTMLLanguageOptions value) { 
 
         String lang = value.lang; 
         return new Html(lang);
@@ -17,6 +20,11 @@ public class Html {
 
     private Html(String language) {
         this.startTag = "<html lang=" + "\"" + language + "\">"; 
+    }
+
+
+    public void setStartTag(HTMLLanguageOptions value) {
+        this.startTag = "<html lang=" + "\"" + language + "\">";
     }
 
 

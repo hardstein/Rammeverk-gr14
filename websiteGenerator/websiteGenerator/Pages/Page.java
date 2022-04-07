@@ -1,13 +1,14 @@
 package websiteGenerator.Pages;
 
-import websiteGenerator.SemanticElements.*;
+import websiteGenerator.HTMLTags.Html;
+import websiteGenerator.HTMLTags.Body.SemanticElements.*;
 import websiteGenerator.Util.*;
 
 public abstract class Page {
    protected String fileName; 
    protected String content; 
 
-
+   protected Html html; 
    protected Theme theme;
    protected Header header;
    protected Main main;

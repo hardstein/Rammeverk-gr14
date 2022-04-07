@@ -1,13 +1,13 @@
 
 package websiteGenerator.Pages; 
 
-import websiteGenerator.SemanticElements.Header;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import websiteGenerator.SemanticElements.*;
+import websiteGenerator.HTMLTags.Html;
+import websiteGenerator.HTMLTags.Body.SemanticElements.*;
+import websiteGenerator.Util.HTMLLanguageOptions;
 import websiteGenerator.Util.Theme;
 
 public class Article extends Page  {
@@ -34,6 +34,8 @@ public class Article extends Page  {
        private String heading = "Starter template";
        private String content = "This is a starter article template.";
 
+       private Html html = Html.createHTMLTag(HTMLLanguageOptions.EN); 
+
        private Header header;
        private Main main;
        private Nav nav;
@@ -42,6 +44,11 @@ public class Article extends Page  {
 
        public Builder addFileName(String fileName) {
            this.fileName = fileName; 
+           return this; 
+
+       }
+       public Builder addLanguage(HTMLLanguageOptions lang) {
+           this.html.setStartTag(lang);; 
            return this; 
 
        }
