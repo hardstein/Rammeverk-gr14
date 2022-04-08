@@ -11,37 +11,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Home extends Page implements Generator {
-//    private final String fileName;
-//    private final Theme theme;
-//    private final Header header;
-//    private final Nav nav;
-//    private final Main main;
-//    private final Aside aside;
-//    private final Footer footer;
-
-    public Theme getTheme() {
-        return theme;
-    }
-
-    public String getFileName() {
-        return fileName;
-    }
-
-    public Header getHeader() {
-        return header;
-    }
-
-    public Nav getNav() {
-        return nav;
-    }
-
-    public Main getMain() {
-        return main;
-    }
-
-    public Footer getFooter() {
-        return footer;
-    }
 
     private Home(Builder builder) {
         super.theme = builder.theme;
@@ -53,13 +22,6 @@ public class Home extends Page implements Generator {
         super.footer = builder.footer;
         super.html = builder.html; 
         super.head = builder.head;
-//        this.theme = builder.theme;
-//        this.fileName = builder.fileName;
-//        this.header = builder.header;
-//        this.nav = builder.nav;
-//        this.main = builder.main;
-//        this.aside = builder.aside;
-//        this.footer = builder.footer;
     }
 
     public static Builder createPageBuilder() {
@@ -68,22 +30,12 @@ public class Home extends Page implements Generator {
 
     @Override
     public void generate() {
-        // Trenger refaktorering
-//        if (fileName != null) {
-//            filename = fileName;
-//        }
         FileWriter fileWriter = null;
         try {
             fileWriter = new FileWriter(fileName);
         } catch (IOException e) {
             e.printStackTrace();
         }
-//        if (header.getHeaderHeading() != null) {
-//            heading = header.getHeaderHeading();
-//        }
-//        if (main.getMainContent() != null) {
-//            content = main.getMainContent();
-//        }
         try {
             fileWriter.write("<!DOCTYPE html>\n" +
                     "<html lang=\"en\">\n" +

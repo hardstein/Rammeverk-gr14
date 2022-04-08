@@ -61,7 +61,7 @@ public class AnotherMain {
         // Creating pages
         Article article = Article.createArticlePageBuilder()
                 .addHead(head)
-                .addLanguage(HTMLLanguageOptions.NB)
+                .setLanguage(HTMLLanguageOptions.NB)
                 .addHeader(articleHeader)
                 .addNav(nav)
                 .addMain(articleMain)
