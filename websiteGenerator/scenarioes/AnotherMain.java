@@ -1,4 +1,4 @@
-
+package scenarioes;
 
 import java.io.IOException;
 
@@ -8,8 +8,18 @@ import websiteGenerator.HTMLTags.Body.SemanticElements.*;
 import websiteGenerator.Pages.*;
 import websiteGenerator.Util.HTMLLanguageOptions;
 
+/**
+ * @hidden demonstration of framework, not a part of the library
+ */
 public class AnotherMain {
     public static void main(String[] args) throws IOException {
+
+        // Scenarioes:
+        // 1.
+        // 2.
+        // 7.
+        // 9.
+        // 14.
 
         //Creating page content
         Head head = Head.createHead("styles.css", "DENNE ER NY HEAD TITLE"); 
