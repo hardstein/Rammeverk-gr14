@@ -3,7 +3,6 @@ package websiteGenerator.Pages;
 import websiteGenerator.HTMLTags.HeadTag.Head;
 import websiteGenerator.HTMLTags.Html;
 import websiteGenerator.HTMLTags.Body.SemanticElements.*;
-import websiteGenerator.Util.Generator;
 import websiteGenerator.Util.HTMLLanguageOptions;
 import websiteGenerator.Util.Theme;
 
