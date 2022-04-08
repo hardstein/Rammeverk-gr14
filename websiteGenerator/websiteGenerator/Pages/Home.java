@@ -13,7 +13,7 @@ import java.io.IOException;
 /**
  * Class for a Home page.
  */
-public class Home extends Page implements Generator {
+public class Home extends Page {
 
     private Home(Builder builder) {
         super.theme = builder.theme;
@@ -33,43 +33,6 @@ public class Home extends Page implements Generator {
      */
     public static Builder createPageBuilder() {
         return new Builder();
-    }
-
-    @Override
-    public void generate() {
-        FileWriter fileWriter = null;
-        try {
-            fileWriter = new FileWriter(fileName);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            fileWriter.write("<!DOCTYPE html>\n" +
-                    "<html lang=\"en\">\n" +
-                    "<head>\n" +
-                    "   <meta charset=\"UTF-8\">\n" +
-                    "   <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n" +
-                    "   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
-                    "   <link rel=\"stylesheet\" href=\"" + "styles.css" + "\">\n" +
-                    "   <title>Starter Project</title>\n" +
-                    "</head>\n" +
-                    "<body>\n" +
-                    header.getContentOfElement() + "\n" +
-                    nav.getContentOfElement() + "\n" +
-                    main.getContentOfElement() + "\n" +
-                    aside.getContentOfElement() + "\n" +
-                    footer.getContentOfElement() + "\n" +
-                    "</body>\n" +
-                    "</html>");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println("HTML template with style was successfully filled");
-        try {
-            fileWriter.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     /**

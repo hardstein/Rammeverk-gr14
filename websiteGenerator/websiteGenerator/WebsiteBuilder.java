@@ -1,13 +1,12 @@
 package websiteGenerator;
 
 import websiteGenerator.Pages.*;
-import websiteGenerator.Util.Generator;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class WebsiteBuilder implements Generator {
+public class WebsiteBuilder {
 
     private String projectFolder;
     private Page[] pages;
@@ -29,16 +28,8 @@ public class WebsiteBuilder implements Generator {
         this.projectFolder = builder.projectFolder;
     }
 
-    @Override
     public void generate() {
         String htmlHeadElement = "<!DOCTYPE html>\n";
-//                "                \n" +
-//                "                <head>\n" +
-//                "                    <meta charset=\"UTF-8\">\n" +
-//                "                    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n" +
-//                "                    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
-//                "                    <title>Website template</title>\n" +
-//                "                </head>";
         if (projectFolder == null) {
             projectFolder = ("starterproject");
         }
