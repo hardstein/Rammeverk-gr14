@@ -10,6 +10,9 @@ import websiteGenerator.Util.Theme;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * Class for a Home page.
+ */
 public class Home extends Page implements Generator {
 
     private Home(Builder builder) {
@@ -24,6 +27,10 @@ public class Home extends Page implements Generator {
         super.head = builder.head;
     }
 
+    /**
+     * this is a factory for builder.
+     * @return a new Builder
+     */
     public static Builder createPageBuilder() {
         return new Builder();
     }
@@ -65,74 +72,147 @@ public class Home extends Page implements Generator {
         }
     }
 
+    /**
+     * Class Builder used to create a home page object.
+     */
     public static class Builder {
-        // Default values
-        String filename = "homepage.html";
-        String heading = "Starter template";
-        String content = "This is a starter project template.";
-
+        /**
+         * The name of the file. Default is "home.html".
+         */
+        private String fileName = "home.html";
+        /**
+         * The html-tag in the html file, used to set language the file.
+         * Default is english (EN).
+         */
         private Html html = Html.createHTMLTag(HTMLLanguageOptions.EN);
-
-        private Theme theme;
-
-        private String fileName;
+        /**
+         * The header-tag used by the html file.
+         */
         private Header header;
-        private Nav nav;
-        private Main main;
-        private Aside aside;
-        private Footer footer;
+        /**
+         * The color theme used by the html file.
+         */
+        private Theme theme;
+        /**
+         * The head-tag used by the html file.
+         */
         private Head head;
+        /**
+         * The main-tag used by the html file.
+         */
+        private Main main;
+        /**
+         * The nav-tag used by the html file.
+         */
+        private Nav nav;
+        /**
+         * The aside-tag used by the html file.
+         */
+        private Aside aside;
+        /**
+         * The footer-tag used by the html file.
+         */
+        private Footer footer;
 
-        private Builder() {
+
+
+        /**
+         * Add file name to a page.
+         * @param fileName a string used as the name for the file.
+         * @return Builder object when done.
+         */
+        public Builder addFileName(String fileName) {
+            this.fileName = fileName;
+            return this;
+
         }
 
-        public Builder addLanguage(HTMLLanguageOptions lang) {
-            this.html.setStartTag(lang);; 
-            return this; 
- 
-        }
-
-        public Builder addTheme(final Theme theme) {
+        /**
+         * Add a theme to a page.
+         * @param theme emun used to specify the theme.
+         * @return Builder object when done.
+         */
+        public Builder addTheme(Theme theme) {
             this.theme = theme;
             return this;
         }
 
-        public Builder setFilename(final String fileName) {
-            this.fileName = fileName;
+        /**
+         * Set ISO language code for the file.
+         * @param lang enum used to select a language of the web page.
+         * @return Builder object when done.
+         */
+        public Builder setLanguage(HTMLLanguageOptions lang) {
+            this.html.setStartTag(lang);
             return this;
+
         }
 
-        public Builder addHeader(final Header header) {
+        /**
+         * Add header-tag to the file.
+         * @param header The header used in the page.
+         * @return Builder object when done.
+         */
+        public Builder addHeader(Header header) {
             this.header = header;
             return this;
         }
 
-        public Builder addNav(final Nav nav) {
-            this.nav = nav;
-            return this;
-        }
-
-        public Builder addMain(final Main main) {
+        /**
+         * Add main-tag to the file.
+         * @param main The main used in the page.
+         * @return Builder object when done.
+         */
+        public Builder addMain(Main main) {
             this.main = main;
             return this;
         }
 
-        public Builder addAside(final Aside aside) {
+        /**
+         * Add nav-tag to the file.
+         * @param nav The nav used in the page.
+         * @return Builder object when done.
+         */
+        public Builder addNav(Nav nav) {
+            this.nav = nav;
+            return this;
+        }
+
+        /**
+         * Add aside-tag to the file.
+         * @param aside The aside used in the page.
+         * @return Builder object when done.
+         */
+        public Builder addAside(Aside aside) {
             this.aside = aside;
             return this;
         }
 
-        public Builder addFooter(final Footer footer) {
+        /**
+         * Add footer-tag to the file.
+         * @param footer The footer used in the page.
+         * @return Builder object when done.
+         */
+        public Builder addFooter(Footer footer) {
             this.footer = footer;
             return this;
         }
 
-        public Builder addHead(final Head head) {
+        /**
+         * Add head-tag to the file.
+         * @param head The head used in the page.
+         * @return Builder object when done.
+         */
+        public Builder addHead(Head head) {
             this.head = head;
             return this;
         }
 
-        public Home build() throws IOException {
+        /**
+         * Builds the page.
+         * @return Home with values set by the user, or default.
+         */
+        public Home build() {
             return new Home(this);
         }
 

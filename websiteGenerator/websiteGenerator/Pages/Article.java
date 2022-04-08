@@ -41,6 +41,7 @@ public class Article extends Page  {
        private String fileName = "article.html";
         /**
          * The html-tag in the html file, used to set language the file.
+         * Default is english (EN).
          */
        private Html html = Html.createHTMLTag(HTMLLanguageOptions.EN);
         /**
@@ -84,7 +85,7 @@ public class Article extends Page  {
        }
 
         /**
-         * Add an theme to a page.
+         * Add a theme to a page.
          * @param theme emun used to specify the theme.
          * @return Builder object when done.
          */
@@ -94,8 +95,8 @@ public class Article extends Page  {
         }
 
         /**
-         * Set language for the file.
-         * @param lang enum used to select a language for the html file.
+         * Set ISO language code for the file.
+         * @param lang enum used to select a language of the web page.
          * @return Builder object when done.
          */
        public Builder setLanguage(HTMLLanguageOptions lang) {

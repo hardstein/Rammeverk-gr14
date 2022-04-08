@@ -70,7 +70,7 @@ public class AnotherMain {
                 .build();
 
         Home homePage = Home.createPageBuilder()
-                .setFilename("homepage.html")
+                .addFileName("homepage.html")
                 .addHead(head)
                 .addHeader(homeHeader)
                 .addNav(nav)
