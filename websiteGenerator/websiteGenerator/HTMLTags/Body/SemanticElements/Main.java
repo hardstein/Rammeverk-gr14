@@ -25,6 +25,11 @@ public class Main implements GetHTMLTagContent {
     }
 
 
+    /**
+     * This will give you the entire main tag structure for your page
+     *
+     * @return the final main tag content
+     */
     @Override
     public StringBuilder getContentOfElement() {
         StringBuilder content = new StringBuilder();

@@ -24,6 +24,11 @@ public class Nav implements GetHTMLTagContent {
         return new Builder();
     }
 
+    /**
+     * This will give you the entire nav tag structure for your page
+     *
+     * @return the final nav tag content
+     */
     @Override
     public StringBuilder getContentOfElement() {
         StringBuilder content = new StringBuilder();
