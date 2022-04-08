@@ -3,6 +3,7 @@ package scenarioes;
 import java.io.IOException;
 
 import websiteGenerator.HTMLTags.HeadTag.Head;
+import websiteGenerator.Util.Theme;
 import websiteGenerator.WebsiteBuilder;
 import websiteGenerator.HTMLTags.Body.SemanticElements.*;
 import websiteGenerator.Pages.*;
@@ -14,16 +15,13 @@ import websiteGenerator.Util.HTMLLanguageOptions;
 public class AnotherMain {
     public static void main(String[] args) throws IOException {
 
-        // Scenarioes:
-        // 1.
-        // 2.
-        // 7.
-        // 9.
-        // 14.
+        // Demonstration of our API (We will show a solution for all the scenarios here)
+        // For now you can find scenario: 1, 3, 7, 9, 14
 
         //Creating page content
         Head head = Head.createHead("styles.css", "DENNE ER NY HEAD TITLE"); 
-        // These will be the same for all pages: 
+        // These will be the same for all pages:
+        // Scenario 7:
         Footer footer = Footer.createElementBuilder()
                         .addContactName("Group 14")
                         .addContactEmail("gr14@email.com")
@@ -38,6 +36,7 @@ public class AnotherMain {
         
         String[] menu = new String[]{"home", "registration", "login", "banan"}; 
 
+        // Scenario 3:
         Nav nav = Nav.createElementBuilder()
                 .addPageLinks(menu)
                 .addLogoImage("GR14.logo")
@@ -90,15 +89,17 @@ public class AnotherMain {
                 .build(); 
 
 
-        // Making project:         
+        // Making project:
+        // Scenario 1, 9 and 14:
         Page[] HTMLpages = new Page[] {homePage, article}; 
         WebsiteBuilder project = WebsiteBuilder.createWebsiteBuilder()
-        .addProjectFolder("dog")
-        .addPages(HTMLpages)
-        .build();
+                .addRobots()
+                .addTheme(Theme.DARK)
+                .addProjectFolder("testFolder")
+                .addHTMLPages(HTMLpages)
+                .build();
 
         project.generate();
-
 
         System.out.println();
     }
