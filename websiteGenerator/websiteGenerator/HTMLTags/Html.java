@@ -19,11 +19,9 @@ public class Html {
      * @param value this value will edit the lang attribute in the html tag
      * @return HTML object
      */
-    public static Html createHTMLTag(HTMLLanguageOptions value) { 
-
+    public static Html createHTMLTag(HTMLLanguageOptions value) {
         String lang = value.lang; 
         return new Html(lang);
-
     }
 
     /**

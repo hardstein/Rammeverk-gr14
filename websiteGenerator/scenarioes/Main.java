@@ -94,7 +94,7 @@ public class Main {
         Page[] HTMLpages = new Page[] {homePage, article}; 
         WebsiteBuilder project = WebsiteBuilder.createWebsiteBuilder()
                 .addRobots()
-                .addTheme(Theme.DARK)
+                .addTheme(Theme.LIGHT)
                 .addProjectFolder("testFolder")
                 .addHTMLPages(HTMLpages)
                 .build();

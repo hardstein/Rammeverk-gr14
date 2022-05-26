@@ -68,7 +68,8 @@ public class Nav implements GetHTMLTagContent {
                     .append(link)
                     .append("</a>\n");
         }
-        content.append("    <nav class=\"navbar navbar-dark bg-dark navbar-expand-md\"> \n")
+//        content.append("    <nav class=\"navbar navbar-dark bg-dark navbar-expand-md\"> \n")
+        content.append("    <nav class=\"navbar navbar-light navbar-expand-md\"> \n")
                 .append("        <a href=\"#\" class=\"navbar-brand\">Logo</a>\n" +
                         "        <button class=\"navbar-toggler\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbar\">\n" +
                         "            <span class=\"navbar-toggler-icon \"></span>\n" +

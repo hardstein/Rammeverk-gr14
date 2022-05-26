@@ -60,7 +60,8 @@ public class Header implements GetHTMLTagContent {
     @Override
     public StringBuilder getContentOfElement() {
         StringBuilder content = new StringBuilder();
-        content.append("    <header>\n" + "        <h1>")
+        content.append("    <header>\n")
+                .append("    <h1>")
                 .append(headerHeading)
                 .append("</h1>\n")
                 .append("        <img src=\"")
@@ -134,9 +135,7 @@ public class Header implements GetHTMLTagContent {
          *
          * @return Header object
          */
-
         public Header build() {
-
             return new Header(this);
         }
 

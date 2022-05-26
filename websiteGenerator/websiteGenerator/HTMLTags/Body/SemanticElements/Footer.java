@@ -80,10 +80,9 @@ public class Footer implements GetHTMLTagContent {
         StringBuilder content = new StringBuilder();
         content.append("    <footer class=\"footer mt-auto d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top text-white\">\n")
                 .append("        <div>\n")
-                .append("        <p>Contact name:").append(contactName).append("</p>\n")
-                .append("        <p>Email:").append(contactEmail).append(" </p>\n")
-                .append("        <p><a href=\"mailto:").append(contactEmail).append("\">").append(contactEmail).append("</a></p>\n")
+//                .append("        <p>Contact name:").append(contactName).append("</p>\n")
                 .append("        <p>&copy; <em id=\"date\"></em>").append(contactName).append("</p>\n")
+                .append("        <p><a href=\"mailto:").append(contactEmail).append("\">").append(contactEmail).append("</a></p>\n")
                 .append("        </div>\n")
                 // Social media links
                 .append("        <ul class=\"nav col-md-4 justify-content-end list-unstyled d-flex\">\n" +
