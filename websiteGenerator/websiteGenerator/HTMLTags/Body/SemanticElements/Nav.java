@@ -60,20 +60,25 @@ public class Nav implements GetHTMLTagContent {
         StringBuilder content = new StringBuilder();
         StringBuilder links = new StringBuilder();
         for (String link : pageLinks) {
-            links.append("            <li>\n")
-                    .append("                <a href=\"")
+//            links.append("            <li>\n")
+            links.append("            <a class=\"nav-link\" href=\"")
                     .append(link)
                     .append(".html")
                     .append("\">")
                     .append(link)
-                    .append("</a>\n")
-                    .append("            </li>");
+                    .append("</a>\n");
         }
-        content.append("    <nav> \n")
-                .append("        <ul>\n")
+        content.append("    <nav class=\"navbar navbar-dark bg-dark navbar-expand-md\"> \n")
+                .append("        <a href=\"#\" class=\"navbar-brand\">Logo</a>\n" +
+                        "        <button class=\"navbar-toggler\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbar\">\n" +
+                        "            <span class=\"navbar-toggler-icon \"></span>\n" +
+                        "        </button>\n")
+                .append("        <div class=\"navbar-collapse collapse \" id=\"navbar\">\n")
+                .append("        <ul class=\"navbar-nav\">\n")
                 .append(links)
-                .append("\n")
+//                .append("\n")
                 .append("        </ul>\n")
+                .append("        </div>\n")
                 .append("    </nav>");
 
         return content;

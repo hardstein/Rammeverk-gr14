@@ -12,7 +12,7 @@ import websiteGenerator.Util.HTMLLanguageOptions;
 /**
  * @hidden demonstration of framework, not a part of the library
  */
-public class AnotherMain {
+public class Main {
     public static void main(String[] args) throws IOException {
 
         // Demonstration of our API (We will show a solution for all the scenarios here)
@@ -44,7 +44,7 @@ public class AnotherMain {
 
         // Different main content on pages: 
         // Article: 
-        Main articleMain = Main.createElementBuilder()
+        websiteGenerator.HTMLTags.Body.SemanticElements.Main articleMain = websiteGenerator.HTMLTags.Body.SemanticElements.Main.createElementBuilder()
                 .addMainHeading("Main Title in the article template")
                 .addMainContent("This is the content article template")
                 .build(); 
@@ -62,7 +62,7 @@ public class AnotherMain {
                         .addHeroImageUrl("hero.png")
                         .build(); 
 
-        Main homeMain = Main.createElementBuilder()
+        websiteGenerator.HTMLTags.Body.SemanticElements.Main homeMain = websiteGenerator.HTMLTags.Body.SemanticElements.Main.createElementBuilder()
                 .addMainHeading("Main Title")
                 .addMainContent("This is the content")
                 .build(); 
