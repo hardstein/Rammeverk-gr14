@@ -4,16 +4,32 @@ public enum Theme {
     DARK("dark"),
     LIGHT("light");
 
-    public String themeColor;
+    private String themeColor;
 
-    public String fontColor;
+    private String fontColor;
 
     Theme(String themeColor) {
         this.themeColor = themeColor;
         this.fontColor =  themeColor.equals("dark") ? "white" : "black";
     }
 
-//    DARK,
+    public String getThemeColor() {
+        return themeColor;
+    }
+
+    public void setThemeColor(String themeColor) {
+        this.themeColor = themeColor;
+    }
+
+    public String getFontColor() {
+        return fontColor;
+    }
+
+    public void setFontColor(String fontColor) {
+        this.fontColor = fontColor;
+    }
+
+    //    DARK,
 //    LIGHT,
 //    FORREST,
 //    WATER,

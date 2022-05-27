@@ -83,7 +83,7 @@ public class WebsiteBuilder {
                                 page.getHtml().getStartTag() + "\n" +
                                 page.getHead().getContentOfElement() + "\n" +
                                 // Add Theme
-                                "<body class=\"container h-100 bg-" + theme.themeColor +" text-" + theme.fontColor + "\">\n" +
+                                "<body class=\"container h-100 bg-" + theme.getThemeColor() +" text-" + theme.getFontColor() + "\">\n" +
                                 page.getHeader().getContentOfElement() + "\n" +
                                 page.getNav().getContentOfElement(theme) + "\n" +
                                 page.getMain().getContentOfElement() + "\n" +

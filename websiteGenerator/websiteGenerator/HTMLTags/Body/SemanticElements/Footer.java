@@ -104,10 +104,9 @@ public class Footer implements GetHTMLTagContent {
     @Override
     public StringBuilder getContentOfElement(Theme theme) {
         StringBuilder content = new StringBuilder();
-        String color = theme.fontColor;
+        String color = theme.getFontColor();
         content.append("    <footer class=\"footer mt-auto d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top text-" + color +"\">\n")
                 .append("        <div>\n")
-//                .append("        <p>Contact name:").append(contactName).append("</p>\n")
                 .append("        <p>&copy; <em id=\"date\"></em>").append(contactName).append("</p>\n")
                 .append("        <p><a href=\"mailto:").append(contactEmail).append("\">").append(contactEmail).append("</a></p>\n")
                 .append("        </div>\n")

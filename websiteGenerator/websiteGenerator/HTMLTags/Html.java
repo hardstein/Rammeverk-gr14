@@ -20,7 +20,7 @@ public class Html {
      * @return HTML object
      */
     public static Html createHTMLTag(HTMLLanguageOptions value) {
-        String lang = value.lang; 
+        String lang = value.getLang();
         return new Html(lang);
     }
 
@@ -39,7 +39,7 @@ public class Html {
      * @param language a enum value with a specific ISO code for language
      */
     public void setStartTag(HTMLLanguageOptions language) {
-        this.startTag = "<html lang=" + "\"" + language.lang + "\">";
+        this.startTag = "<html lang=" + "\"" + language.getLang() + "\">";
     }
 
     /**
