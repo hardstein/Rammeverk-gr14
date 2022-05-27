@@ -1,7 +1,10 @@
 package websiteGenerator.HTMLTags.Body.SemanticElements;
 
+import websiteGenerator.Pages.Page;
 import websiteGenerator.Util.GetHTMLTagContent;
 import websiteGenerator.Util.Theme;
+
+import java.util.ArrayList;
 
 /**
  * A class for semantic nav tag
@@ -10,7 +13,7 @@ import websiteGenerator.Util.Theme;
  */
 public class Nav implements GetHTMLTagContent {
 
-    private final String[] pageLinks;
+//    private final String[] pageLinks;
     private final String logoImage;
 
     /**
@@ -18,9 +21,9 @@ public class Nav implements GetHTMLTagContent {
      *
      * @return a list of page lings
      */
-    public String[] getAddPageLinks() {
-        return pageLinks;
-    }
+//    public String[] getAddPageLinks() {
+//        return pageLinks;
+//    }
 
     /**
      * Getter for image logo path
@@ -37,7 +40,7 @@ public class Nav implements GetHTMLTagContent {
      * @param builder
      */
     private Nav(Builder builder) {
-        this.pageLinks = builder.addPageLinks;
+//        this.pageLinks = builder.addPageLinks;
         this.logoImage = builder.addLogoImage;
     }
 
@@ -61,20 +64,54 @@ public class Nav implements GetHTMLTagContent {
      *
      * @return the final nav tag content
      */
+//    @Override
+//    public StringBuilder getContentOfElement(Theme theme) {
+//        StringBuilder content = new StringBuilder();
+//        StringBuilder links = new StringBuilder();
+//        for (String link : pageLinks) {
+//            links.append("            <a class=\"nav-link\" href=\"")
+//                    .append(link)
+//                    .append(".html")
+//                    .append("\">")
+//                    .append(link)
+//                    .append("</a>\n");
+//        }
+//        content.append("    <nav class=\"navbar navbar-" + theme.getThemeColor() + " navbar-expand-md\"> \n")
+//                .append("        <a href=\"#\" class=\"navbar-brand\">Logo</a>\n" +
+//                        "        <button class=\"navbar-toggler\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbar\">\n" +
+//                        "            <span class=\"navbar-toggler-icon \"></span>\n" +
+//                        "        </button>\n")
+//                .append("        <div class=\"navbar-collapse collapse \" id=\"navbar\">\n")
+//                .append("        <ul class=\"navbar-nav\">\n")
+//                .append(links)
+//                .append("        </ul>\n")
+//                .append("        </div>\n")
+//                .append("    </nav>");
+//
+//        return content;
+//    }
+
     @Override
     public StringBuilder getContentOfElement(Theme theme) {
+        return null;
+    }
+
+    public StringBuilder getContentOfElementWithLinks(Theme theme, Page[] pages) {
+        ArrayList<String> navlinks = new ArrayList<>();
+        for (Page page: pages) {
+            navlinks.add(page.getFileName());
+        }
+
         StringBuilder content = new StringBuilder();
         StringBuilder links = new StringBuilder();
-        for (String link : pageLinks) {
-//            links.append("            <li>\n")
+        for (String link : navlinks) {
             links.append("            <a class=\"nav-link\" href=\"")
                     .append(link)
-                    .append(".html")
                     .append("\">")
-                    .append(link)
+                    .append(link.substring(0, link.length() - 5)) // Removes the 5 last character from the string,
+                    // which is ".html".
                     .append("</a>\n");
         }
-//        content.append("    <nav class=\"navbar navbar-dark bg-dark navbar-expand-md\"> \n")
         content.append("    <nav class=\"navbar navbar-" + theme.getThemeColor() + " navbar-expand-md\"> \n")
                 .append("        <a href=\"#\" class=\"navbar-brand\">Logo</a>\n" +
                         "        <button class=\"navbar-toggler\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbar\">\n" +
@@ -83,11 +120,9 @@ public class Nav implements GetHTMLTagContent {
                 .append("        <div class=\"navbar-collapse collapse \" id=\"navbar\">\n")
                 .append("        <ul class=\"navbar-nav\">\n")
                 .append(links)
-//                .append("\n")
                 .append("        </ul>\n")
                 .append("        </div>\n")
                 .append("    </nav>");
-
         return content;
     }
 
@@ -95,7 +130,7 @@ public class Nav implements GetHTMLTagContent {
      * Builder class for building a header {@link Nav}
      */
     public static class Builder {
-        private String[] addPageLinks;
+//        private String[] addPageLinks;
         private String addLogoImage;
 
         /**
@@ -103,10 +138,10 @@ public class Nav implements GetHTMLTagContent {
          * @param addPageLink
          * @return list of pagelinks for menu
          */
-        public Builder addPageLinks(final String[] addPageLink) {
-            this.addPageLinks = addPageLink;
-            return this;
-        }
+//        public Builder addPageLinks(final String[] addPageLink) {
+//            this.addPageLinks = addPageLink;
+//            return this;
+//        }
 
         /**
          * Adds image logo path for picture in you navbar

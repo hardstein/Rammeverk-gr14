@@ -34,11 +34,11 @@ public class Main {
                         .addAsideText("Awesome aside")
                         .build(); 
         
-        String[] menu = new String[]{"home", "registration", "login", "banan"}; 
+//        String[] menu = new String[]{"home", "registration", "login", "banan"};
 
         // Scenario 3:
         Nav nav = Nav.createElementBuilder()
-                .addPageLinks(menu)
+//                .addPageLinks(menu)
                 .addLogoImage("GR14.logo")
                 .build();
 
