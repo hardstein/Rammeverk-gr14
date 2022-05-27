@@ -1,6 +1,7 @@
 package websiteGenerator.HTMLTags.Body.SemanticElements;
 
 import websiteGenerator.Util.GetHTMLTagContent;
+import websiteGenerator.Util.Theme;
 
 /**
  * A class for semantic main tag
@@ -66,6 +67,11 @@ public class Main implements GetHTMLTagContent {
                 .append("</p>\n")
                 .append("    </main>");
         return content;
+    }
+
+    @Override
+    public StringBuilder getContentOfElement(Theme theme) {
+        return null;
     }
 
     /**

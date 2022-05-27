@@ -1,6 +1,7 @@
 package websiteGenerator.HTMLTags.Body.SemanticElements;
 
 import websiteGenerator.Util.GetHTMLTagContent;
+import websiteGenerator.Util.Theme;
 
 /**
  * A class for semantic header tag
@@ -69,6 +70,11 @@ public class Header implements GetHTMLTagContent {
                 .append("\" alt=\"\">\n")
                 .append("    </header>");
         return content;
+    }
+
+    @Override
+    public StringBuilder getContentOfElement(Theme theme) {
+        return null;
     }
 
     /**

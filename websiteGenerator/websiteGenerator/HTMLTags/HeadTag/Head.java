@@ -1,6 +1,7 @@
 package websiteGenerator.HTMLTags.HeadTag;
 
 import websiteGenerator.Util.GetHTMLTagContent;
+import websiteGenerator.Util.Theme;
 
 /**
  * Class for body tag
@@ -91,5 +92,10 @@ public class Head implements GetHTMLTagContent {
                 "</head>");
 
         return content;
+    }
+
+    @Override
+    public StringBuilder getContentOfElement(Theme theme) {
+        return null;
     }
 }

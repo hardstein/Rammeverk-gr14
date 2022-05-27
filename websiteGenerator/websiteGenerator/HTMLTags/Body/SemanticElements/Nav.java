@@ -1,6 +1,7 @@
 package websiteGenerator.HTMLTags.Body.SemanticElements;
 
 import websiteGenerator.Util.GetHTMLTagContent;
+import websiteGenerator.Util.Theme;
 
 /**
  * A class for semantic nav tag
@@ -50,13 +51,18 @@ public class Nav implements GetHTMLTagContent {
         return new Builder();
     }
 
+    @Override
+    public StringBuilder getContentOfElement() {
+        return null;
+    }
+
     /**
      * This will give you the entire nav tag structure for your page
      *
      * @return the final nav tag content
      */
     @Override
-    public StringBuilder getContentOfElement() {
+    public StringBuilder getContentOfElement(Theme theme) {
         StringBuilder content = new StringBuilder();
         StringBuilder links = new StringBuilder();
         for (String link : pageLinks) {
@@ -69,7 +75,7 @@ public class Nav implements GetHTMLTagContent {
                     .append("</a>\n");
         }
 //        content.append("    <nav class=\"navbar navbar-dark bg-dark navbar-expand-md\"> \n")
-        content.append("    <nav class=\"navbar navbar-light navbar-expand-md\"> \n")
+        content.append("    <nav class=\"navbar navbar-" + theme.themeColor + " navbar-expand-md\"> \n")
                 .append("        <a href=\"#\" class=\"navbar-brand\">Logo</a>\n" +
                         "        <button class=\"navbar-toggler\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbar\">\n" +
                         "            <span class=\"navbar-toggler-icon \"></span>\n" +

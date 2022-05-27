@@ -1,6 +1,7 @@
 package websiteGenerator.HTMLTags.Body.SemanticElements;
 
 import websiteGenerator.Util.GetHTMLTagContent;
+import websiteGenerator.Util.Theme;
 
 /**
  * class for defining and building an aside element for a Page {@link websiteGenerator.Pages.Page}
@@ -65,6 +66,11 @@ public class Aside implements GetHTMLTagContent {
                 .append("</p>\n")
                 .append("    </aside>");
         return content;
+    }
+
+    @Override
+    public StringBuilder getContentOfElement(Theme theme) {
+        return null;
     }
 
     /**
