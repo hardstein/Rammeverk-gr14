@@ -3,6 +3,7 @@ package scenarioes;
 import java.io.IOException;
 
 import websiteGenerator.HTMLTags.HeadTag.Head;
+import websiteGenerator.Util.Form;
 import websiteGenerator.Util.Theme;
 import websiteGenerator.WebsiteBuilder;
 import websiteGenerator.HTMLTags.Body.SemanticElements.*;
@@ -19,21 +20,22 @@ public class Main {
         // For now you can find scenario: 1, 3, 7, 9, 14
 
         //Creating page content
-        Head head = Head.createHead("styles.css", "DENNE ER NY HEAD TITLE"); 
+        Head head = Head.createHead("styles.css", "DENNE ER NY HEAD TITLE");
         // These will be the same for all pages:
         // Scenario 7:
         Footer footer = Footer.createElementBuilder()
-                        .addContactName("Group 14")
-                        .addContactEmail("gr14@email.com")
-                        .addContactPhoneNumber(14326969)
-                        .addSocialMediaLink("github.com/gr14-template")
-                        .build(); 
+                .addContactName("Group 14")
+                .addContactEmail("gr14@email.com")
+                .addContactPhoneNumber(14326969)
+                .addGithubSocialMediaLink("github.com/gr14-template")
+                .addFacebookSocialMediaLink("fb fakelink g14")
+                .build();
 
         Aside aside = Aside.createElementBuilder()
-                        .addAsideTitle("Aside is usefull")
-                        .addAsideText("Awesome aside")
-                        .build(); 
-        
+                .addAsideTitle("Aside is usefull")
+                .addAsideText("Awesome aside")
+                .build();
+
 //        String[] menu = new String[]{"home", "registration", "login", "banan"};
 
         // Scenario 3:
@@ -47,25 +49,25 @@ public class Main {
         websiteGenerator.HTMLTags.Body.SemanticElements.Main articleMain = websiteGenerator.HTMLTags.Body.SemanticElements.Main.createElementBuilder()
                 .addMainHeading("Main Title in the article template")
                 .addMainContent("This is the content article template")
-                .build(); 
+                .build();
 
         Header articleHeader = Header.createElementBuilder()
                 .addHeaderHeading("ARTICLE ER NICE")
                 .addHeaderImageUrl("background.png")
-                .build(); 
-        
+                .build();
+
         // Home: 
-       Header homeHeader =  Header.createElementBuilder()
-                        .addHeaderHeading("MAN TRENGER EN HOMEPAGE")
-                        .addHeaderImageUrl("background.png")
-                        .addHeroHeading("Hero-Title")
-                        .addHeroImageUrl("hero.png")
-                        .build(); 
+        Header homeHeader = Header.createElementBuilder()
+                .addHeaderHeading("MAN TRENGER EN HOMEPAGE")
+                .addHeaderImageUrl("background.png")
+                .addHeroHeading("Hero-Title")
+                .addHeroImageUrl("hero.png")
+                .build();
 
         websiteGenerator.HTMLTags.Body.SemanticElements.Main homeMain = websiteGenerator.HTMLTags.Body.SemanticElements.Main.createElementBuilder()
                 .addMainHeading("Main Title")
-                .addMainContent("This is the content")
-                .build(); 
+                .addMainContent("This is the content inside the frontpage.")
+                .build();
 
         // Creating pages
         Article article = Article.createArticlePageBuilder()
@@ -86,12 +88,31 @@ public class Main {
                 .addMain(homeMain)
                 .addAside(aside)
                 .addFooter(footer)
-                .build(); 
+                .build();
 
+
+        // Testing login form
+        Form loginForm = Form.createFormBuilder()
+                .addButtonLabel("Log in")
+                .build();
+
+        websiteGenerator.HTMLTags.Body.SemanticElements.Main loginMain = websiteGenerator.HTMLTags.Body.SemanticElements.Main.createElementBuilder()
+                .addMainHeading("Log in")
+                .addMainContent(loginForm)
+                .build();
+
+        Login loginPage = Login.createPageBuilder()
+                .addHead(head)
+                .addMain(loginMain)
+                .addNav(nav)
+                .addHeader(homeHeader)
+                .addAside(aside)
+                .addFooter(footer)
+                .build();
 
         // Making project:
         // Scenario 1, 9 and 14:
-        Page[] HTMLpages = new Page[] {homePage, article}; 
+        Page[] HTMLpages = new Page[]{homePage, article, loginPage};
         WebsiteBuilder project = WebsiteBuilder.createWebsiteBuilder()
                 .addRobots()
                 .addTheme(Theme.LIGHT)
@@ -103,5 +124,5 @@ public class Main {
 
         System.out.println();
     }
-    
+
 }

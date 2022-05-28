@@ -93,7 +93,6 @@ public class Header implements GetHTMLTagContent {
          * @param addHeaderImageUrl
          * @return image url
          */
-
         public Builder addHeaderImageUrl(final String addHeaderImageUrl) {
             this.headerImageUrl = addHeaderImageUrl;
             return this;
@@ -105,7 +104,6 @@ public class Header implements GetHTMLTagContent {
          * @param addHeaderHeading
          * @return header heading
          */
-
         public Builder addHeaderHeading(final String addHeaderHeading) {
             this.headerHeading = addHeaderHeading;
             return this;
@@ -126,7 +124,6 @@ public class Header implements GetHTMLTagContent {
         /**
          * Adds hero image url
          *
-         *
          * @param addHeroImageUrl
          * @return image url
          */
@@ -137,7 +134,6 @@ public class Header implements GetHTMLTagContent {
 
         /**
          * Builds the object
-         *
          *
          * @return Header object
          */

@@ -1,5 +1,6 @@
 package websiteGenerator.HTMLTags.Body.SemanticElements;
 
+import websiteGenerator.Util.Form;
 import websiteGenerator.Util.GetHTMLTagContent;
 import websiteGenerator.Util.Theme;
 
@@ -12,6 +13,7 @@ public class Main implements GetHTMLTagContent {
 
     private final String mainHeading;
     private final String mainContent;
+    private final Form form;
 
     /**
      * Getter for main heading
@@ -39,6 +41,7 @@ public class Main implements GetHTMLTagContent {
     private Main(Builder builder) {
         this.mainHeading = builder.mainHeading;
         this.mainContent = builder.mainContent;
+        this.form = builder.form;
     }
 
     /**
@@ -59,13 +62,14 @@ public class Main implements GetHTMLTagContent {
     @Override
     public StringBuilder getContentOfElement() {
         StringBuilder content = new StringBuilder();
-        content.append("    <main>\n" + "        <h1>")
-                .append(mainHeading)
-                .append("</h1>\n")
-                .append("        <p>")
-                .append(mainContent)
-                .append("</p>\n")
-                .append("    </main>");
+        content.append("    <main>\n");
+        if (mainHeading != null)
+            content.append("        <h1>" + mainHeading + "</h1>\n");
+        if (mainContent != null)
+            content.append("        <p>" + mainContent + "</p>\n");
+        if (form != null)
+            content.append(form.createLoginForm() + "\n");
+        content.append("    </main>");
         return content;
     }
 
@@ -80,6 +84,7 @@ public class Main implements GetHTMLTagContent {
     public static class Builder {
         private String mainHeading;
         private String mainContent;
+        private Form form;
 
         /**
          * Adds the main heading
@@ -103,6 +108,12 @@ public class Main implements GetHTMLTagContent {
             return this;
         }
 
+        // Main with form
+        public Builder addMainContent(Form loginForm) {
+            this.form = loginForm;
+            return this;
+        }
+
         /**
          * Builds the complete Main object
          *
@@ -111,5 +122,6 @@ public class Main implements GetHTMLTagContent {
         public Main build() {
             return new Main(this);
         }
+
     }
 }

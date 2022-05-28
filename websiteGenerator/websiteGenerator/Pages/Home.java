@@ -86,7 +86,6 @@ public class Home extends Page {
         public Builder addFileName(String fileName) {
             this.fileName = fileName;
             return this;
-
         }
 
         /**

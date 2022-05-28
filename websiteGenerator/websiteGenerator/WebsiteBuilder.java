@@ -88,6 +88,9 @@ public class WebsiteBuilder {
 //                                page.getNav().getContentOfElement(theme) + "\n" +
                                 page.getNav().getContentOfElementWithLinks(theme, pages) + "\n" +
                                 page.getMain().getContentOfElement() + "\n" +
+//                                page.getMain().getMainHeading() + "\n" +
+//                                page.getMain().getMainContent() + "\n" +
+//                                page.getMain().getForm() + "\n" +
                                 page.getAside().getContentOfElement() + "\n" +
                                 page.getFooter().getContentOfElement(theme) + "\n" +
                                 "    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2\" crossorigin=\"anonymous\"></script>\n" +
