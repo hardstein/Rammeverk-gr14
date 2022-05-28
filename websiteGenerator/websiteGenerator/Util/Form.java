@@ -5,6 +5,8 @@ public class Form {
     private final String emailField;
     private final String nameField;
     private final String passwordField;
+    private final String numberField;
+    private final String numberLabel;
     private final String submitButton;
     private final String passwordLabel;
     private final String buttonLabel;
@@ -26,6 +28,8 @@ public class Form {
         this.emailField = builder.emailField;
         this.nameField = builder.nameField;
         this.passwordField = builder.passwordField;
+        this.numberField = builder.numberField;
+        this.numberLabel = builder.numberLabel;
         this.submitButton = builder.submitButton;
         this.passwordLabel = builder.passwordLabel;
         this.buttonLabel = builder.buttonLabel;
@@ -58,6 +62,7 @@ public class Form {
         form.append(emailField + "\n");
         form.append(nameField + "\n");
         form.append(passwordField + "\n");
+        form.append(numberField + "\n");
         form.append(submitButton + "\n");
         form.append("</form>");
         return form;
@@ -78,6 +83,8 @@ public class Form {
         private String emailField = "";
         private String nameField = "";
         private String passwordField = "";
+        private String numberField = "";
+        private String numberLabel = "Number";
         private String submitButton = "";
         private String passwordLabel = "Password";
         private String buttonLabel = "Submit";
@@ -126,6 +133,22 @@ public class Form {
             return this;
         }
 
+
+
+        public Builder addNumberField() {
+            this.numberField =
+            "<div class=\"form-group mt-3 mb-3\">\n" +
+            "   <label for=\"number\">" + numberLabel + "</label>\n" +
+            "   <input type=\"number\" class=\"col-md-3\" id=\"number\" aria-describedby=\"number\" placeholder=\"...\">\n" +
+            "</div>";
+            return this;
+        }
+
+        public Builder addNumberLabel(String numberLabel) {
+            this.numberLabel = numberLabel;
+            return this;
+        }
+
         /**
          * Adds label to password input
          *
@@ -157,16 +180,6 @@ public class Form {
             return new Form(this);
         }
 
-        @Override
-        public String toString() {
-            return
-                    emailLabel + '\'' +
-                    emailField + '\'' +
-                    nameField + '\'' +
-                    passwordLabel + '\'' +
-                    buttonLabel + '\''
-                    ;
-        }
     }
 
 }

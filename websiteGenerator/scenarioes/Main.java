@@ -46,8 +46,10 @@ public class Main {
         // Testing form
         Form articleForm = Form.createFormBuilder()
                 .addNameField()
-                .addButtonLabel("Register")
                 .addEmailField()
+                .addNumberLabel("Age")
+                .addNumberField()
+                .addButtonLabel("Register")
                 .addSubmitButton()
                 .build();
         // Different main content on pages:
