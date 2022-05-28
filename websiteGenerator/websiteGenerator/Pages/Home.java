@@ -6,9 +6,6 @@ import websiteGenerator.HTMLTags.Body.SemanticElements.*;
 import websiteGenerator.Util.HTMLLanguageOptions;
 import websiteGenerator.Util.Theme;
 
-import java.io.FileWriter;
-import java.io.IOException;
-
 /**
  * Class for a Home page.
  */
@@ -106,7 +103,6 @@ public class Home extends Page {
         public Builder setLanguage(HTMLLanguageOptions lang) {
             this.html.setStartTag(lang);
             return this;
-
         }
 
         /**

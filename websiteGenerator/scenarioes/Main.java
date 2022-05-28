@@ -16,6 +16,7 @@ import websiteGenerator.Util.HTMLLanguageOptions;
 public class Main {
     public static void main(String[] args) throws IOException {
 
+        String heroImageUrl = "https://images.unsplash.com/photo-1534171472159-edb6d1e0b63c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60";
         // Demonstration of our API (We will show a solution for all the scenarios here)
         // For now you can find scenario: 1, 3, 7, 9, 14
 
@@ -36,19 +37,19 @@ public class Main {
                 .addAsideText("Awesome aside")
                 .build();
 
-//        String[] menu = new String[]{"home", "registration", "login", "banan"};
 
         // Scenario 3:
         Nav nav = Nav.createElementBuilder()
-//                .addPageLinks(menu)
                 .addLogoImage("GR14.logo")
                 .build();
 
         // Different main content on pages: 
         // Article: 
         websiteGenerator.HTMLTags.Body.SemanticElements.Main articleMain = websiteGenerator.HTMLTags.Body.SemanticElements.Main.createElementBuilder()
-                .addMainHeading("Main Title in the article template")
-                .addMainContent("This is the content article template")
+                .addMainHeading("Title in the article template")
+                .addIntroduction("This is the introduction")
+                .addMainBody("This is the content article template")
+                .addConclusion("The conclusion is...")
                 .build();
 
         Header articleHeader = Header.createElementBuilder()
@@ -58,18 +59,17 @@ public class Main {
 
         // Home: 
         Header homeHeader = Header.createElementBuilder()
-                .addHeaderHeading("MAN TRENGER EN HOMEPAGE")
-                .addHeaderImageUrl("background.png")
                 .addHeroHeading("Hero-Title")
-                .addHeroImageUrl("hero.png")
+                .addHeroImageUrl(heroImageUrl)
                 .build();
 
         websiteGenerator.HTMLTags.Body.SemanticElements.Main homeMain = websiteGenerator.HTMLTags.Body.SemanticElements.Main.createElementBuilder()
                 .addMainHeading("Main Title")
-                .addMainContent("This is the content inside the frontpage.")
+                .addMainBody("This is the content inside the frontpage.")
                 .build();
 
         // Creating pages
+        Header loginHeader = Header.createElementBuilder().build();
         Article article = Article.createArticlePageBuilder()
                 .addHead(head)
                 .setLanguage(HTMLLanguageOptions.NB)
@@ -98,14 +98,14 @@ public class Main {
 
         websiteGenerator.HTMLTags.Body.SemanticElements.Main loginMain = websiteGenerator.HTMLTags.Body.SemanticElements.Main.createElementBuilder()
                 .addMainHeading("Log in")
-                .addMainContent(loginForm)
+                .addMainBody(loginForm)
                 .build();
 
         Login loginPage = Login.createPageBuilder()
                 .addHead(head)
                 .addMain(loginMain)
                 .addNav(nav)
-                .addHeader(homeHeader)
+                .addHeader(loginHeader)
                 .addAside(aside)
                 .addFooter(footer)
                 .build();
@@ -115,7 +115,7 @@ public class Main {
         Page[] HTMLpages = new Page[]{homePage, article, loginPage};
         WebsiteBuilder project = WebsiteBuilder.createWebsiteBuilder()
                 .addRobots()
-                .addTheme(Theme.LIGHT)
+                .addTheme(Theme.DARK)
                 .addProjectFolder("testFolder")
                 .addHTMLPages(HTMLpages)
                 .build();

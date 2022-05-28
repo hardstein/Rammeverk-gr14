@@ -58,9 +58,9 @@ public class Aside implements GetHTMLTagContent {
     @Override
     public StringBuilder getContentOfElement() {
         StringBuilder content = new StringBuilder();
-        content.append("    <aside>\n" + "        <h2>")
+        content.append("    <aside>\n" + "        <h3>")
                 .append(asideTitle)
-                .append("</h2>\n")
+                .append("</h3>\n")
                 .append("        <p>")
                 .append(asideText)
                 .append("</p>\n")

@@ -80,8 +80,7 @@ public class Article extends Page  {
          */
        public Builder addFileName(String fileName) {
            this.fileName = fileName; 
-           return this; 
-
+           return this;
        }
 
         /**

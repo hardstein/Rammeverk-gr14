@@ -3,6 +3,8 @@ package websiteGenerator.HTMLTags.Body.SemanticElements;
 import websiteGenerator.Util.GetHTMLTagContent;
 import websiteGenerator.Util.Theme;
 
+import java.util.ArrayList;
+
 /**
  * A class for semantic header tag
  *
@@ -14,7 +16,6 @@ public class Header implements GetHTMLTagContent {
     private final String headerHeading;
     private final String heroHeading;
     private final String heroImageUrl;
-
 
     public String getHeaderImageUrl() {
         return headerImageUrl;
@@ -61,14 +62,16 @@ public class Header implements GetHTMLTagContent {
     @Override
     public StringBuilder getContentOfElement() {
         StringBuilder content = new StringBuilder();
-        content.append("    <header>\n")
-                .append("    <h1>")
-                .append(headerHeading)
-                .append("</h1>\n")
-                .append("        <img src=\"")
-                .append(headerImageUrl)
-                .append("\" alt=\"\">\n")
-                .append("    </header>");
+        content.append("    <header>\n");
+        if (headerHeading != null)
+            content.append("    <h1>" + headerHeading + "</h1>\n");
+        if (headerImageUrl != null)
+            content.append("        <img src=\"" + headerImageUrl + "\" alt=\"\">\n");
+        if (heroImageUrl != null)
+            content.append("        <div class=\"bg-image text-center mb-1\" style=\"background-image: url('" + heroImageUrl + "'); padding: 7rem;\">\n")
+                    .append("          <h1 class=\"mb-3 h1\">" + heroHeading + "</h1>\n")
+                    .append("        </div>\n");
+        content.append("    </header>");
         return content;
     }
 
@@ -85,7 +88,6 @@ public class Header implements GetHTMLTagContent {
         private String headerHeading;
         private String heroHeading;
         private String heroImageUrl;
-
 
         /**
          * Adds a string of header image url

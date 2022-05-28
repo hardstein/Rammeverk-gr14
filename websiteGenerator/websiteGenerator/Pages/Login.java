@@ -81,22 +81,6 @@ public class Login extends Page {
          */
         private Footer footer;
 
-
-//        public Builder addEmailLabel(String emailLabel) {
-//            this.emailLabel = emailLabel;
-//            return this;
-//        }
-//
-//        public Builder addPasswordLabel(String passwordLabel) {
-//            this.passwordLabel = passwordLabel;
-//            return this;
-//        }
-//
-//        public Builder addButtonLabel(String buttonLabel) {
-//            this.buttonLabel = Builder.this.buttonLabel;
-//            return this;
-//        }
-
         /**
          * Add file name to a page.
          *
@@ -128,7 +112,6 @@ public class Login extends Page {
         public Builder setLanguage(HTMLLanguageOptions lang) {
             this.html.setStartTag(lang);
             return this;
-
         }
 
         /**

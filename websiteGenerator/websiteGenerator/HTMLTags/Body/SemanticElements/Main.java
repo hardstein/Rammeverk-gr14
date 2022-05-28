@@ -1,5 +1,6 @@
 package websiteGenerator.HTMLTags.Body.SemanticElements;
 
+import websiteGenerator.Pages.Article;
 import websiteGenerator.Util.Form;
 import websiteGenerator.Util.GetHTMLTagContent;
 import websiteGenerator.Util.Theme;
@@ -12,7 +13,9 @@ import websiteGenerator.Util.Theme;
 public class Main implements GetHTMLTagContent {
 
     private final String mainHeading;
-    private final String mainContent;
+    private final String introduction;
+    private final String body;
+    private final String conclusion;
     private final Form form;
 
     /**
@@ -24,12 +27,12 @@ public class Main implements GetHTMLTagContent {
     }
 
     /**
-     * Getter for main content
+     * Getter for main body / content
      *
-     * @return main content
+     * @return main body
      */
     public String getMainContent() {
-        return mainContent;
+        return body;
     }
 
     /**
@@ -37,10 +40,11 @@ public class Main implements GetHTMLTagContent {
      *
      * @param builder
      */
-
     private Main(Builder builder) {
         this.mainHeading = builder.mainHeading;
-        this.mainContent = builder.mainContent;
+        this.introduction = builder.introduction;
+        this.body = builder.body;
+        this.conclusion = builder.conclusion;
         this.form = builder.form;
     }
 
@@ -64,9 +68,13 @@ public class Main implements GetHTMLTagContent {
         StringBuilder content = new StringBuilder();
         content.append("    <main>\n");
         if (mainHeading != null)
-            content.append("        <h1>" + mainHeading + "</h1>\n");
-        if (mainContent != null)
-            content.append("        <p>" + mainContent + "</p>\n");
+            content.append("        <h2>" + mainHeading + "</h2>\n");
+        if (introduction != null)
+            content.append("        <p>" + introduction + "</p>\n");
+        if (body != null)
+            content.append("        <p>" + body + "</p>\n");
+        if (conclusion != null)
+            content.append("        <p>" + conclusion + "</p>\n");
         if (form != null)
             content.append(form.createLoginForm() + "\n");
         content.append("    </main>");
@@ -83,8 +91,11 @@ public class Main implements GetHTMLTagContent {
      */
     public static class Builder {
         private String mainHeading;
-        private String mainContent;
+        private String introduction;
+        private String body;
+        private String conclusion;
         private Form form;
+
 
         /**
          * Adds the main heading
@@ -97,19 +108,35 @@ public class Main implements GetHTMLTagContent {
             return this;
         }
 
+
+        public Builder addIntroduction(String introduction) {
+            this.introduction = introduction;
+            return this;
+        }
+
+        public Builder addBody(String body) {
+            this.body = body;
+            return this;
+        }
+
+        public Builder addConclusion(String conclusion) {
+            this.conclusion = conclusion;
+            return this;
+        }
+
         /**
-         * Adds the main content
+         * Adds the main body
          *
-         * @param mainContent
+         * @param body
          * @return main content string text
          */
-        public Builder addMainContent(String mainContent) {
-            this.mainContent = mainContent;
+        public Builder addMainBody(String body) {
+            this.body = body;
             return this;
         }
 
         // Main with form
-        public Builder addMainContent(Form loginForm) {
+        public Builder addMainBody(Form loginForm) {
             this.form = loginForm;
             return this;
         }
