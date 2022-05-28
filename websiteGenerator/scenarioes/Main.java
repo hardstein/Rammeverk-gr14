@@ -43,12 +43,20 @@ public class Main {
                 .addLogoImage("GR14.logo")
                 .build();
 
-        // Different main content on pages: 
+        // Testing form
+        Form articleForm = Form.createFormBuilder()
+                .addNameField()
+                .addButtonLabel("Register")
+                .addEmailField()
+                .addSubmitButton()
+                .build();
+        // Different main content on pages:
         // Article: 
         websiteGenerator.HTMLTags.Body.SemanticElements.Main articleMain = websiteGenerator.HTMLTags.Body.SemanticElements.Main.createElementBuilder()
                 .addMainHeading("Title in the article template")
                 .addIntroduction("This is the introduction")
                 .addMainBody("This is the content article template")
+                .addForm(articleForm)
                 .addConclusion("The conclusion is...")
                 .build();
 
@@ -94,6 +102,9 @@ public class Main {
         // Testing login form
         Form loginForm = Form.createFormBuilder()
                 .addButtonLabel("Log in")
+                .addEmailField()
+                .addPasswordField()
+                .addSubmitButton()
                 .build();
 
         websiteGenerator.HTMLTags.Body.SemanticElements.Main loginMain = websiteGenerator.HTMLTags.Body.SemanticElements.Main.createElementBuilder()

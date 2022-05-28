@@ -1,6 +1,5 @@
 package websiteGenerator.HTMLTags.Body.SemanticElements;
 
-import websiteGenerator.Pages.Article;
 import websiteGenerator.Util.Form;
 import websiteGenerator.Util.GetHTMLTagContent;
 import websiteGenerator.Util.Theme;
@@ -76,7 +75,7 @@ public class Main implements GetHTMLTagContent {
         if (conclusion != null)
             content.append("        <p>" + conclusion + "</p>\n");
         if (form != null)
-            content.append(form.createLoginForm() + "\n");
+            content.append(form.createForm() + "\n");
         content.append("    </main>");
         return content;
     }
@@ -138,6 +137,11 @@ public class Main implements GetHTMLTagContent {
         // Main with form
         public Builder addMainBody(Form loginForm) {
             this.form = loginForm;
+            return this;
+        }
+
+        public Builder addForm(Form form) {
+            this.form = form;
             return this;
         }
 
