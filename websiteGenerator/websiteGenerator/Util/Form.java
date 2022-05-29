@@ -1,73 +1,32 @@
 package websiteGenerator.Util;
 
 public class Form {
-    private StringBuilder form = new StringBuilder("<form>" + "\n");
+    private final StringBuilder form;
 
-    private final String emailLabel;
     private final String emailField;
-    private final String nameField;
+    private final String textLabel;
+    private final String textField;
     private final String passwordField;
-    private final String numberField;
     private final String numberLabel;
-    private final String submitButton;
-    private final String passwordLabel;
+    private final String numberField;
     private final String buttonLabel;
+    private final String submitButton;
 
-    public String getEmailLabel() {
-        return emailLabel;
-    }
-
-    public String getPasswordLabel() {
-        return passwordLabel;
-    }
-
-    public String getButtonLabel() {
-        return buttonLabel;
-    }
 
     private Form(Builder builder) {
         this.form = builder.form;
-        this.emailLabel = builder.emailLabel;
         this.emailField = builder.emailField;
-        this.nameField = builder.nameField;
+        this.textLabel = builder.textLabel;
+        this.textField = builder.textField;
         this.passwordField = builder.passwordField;
-        this.numberField = builder.numberField;
         this.numberLabel = builder.numberLabel;
-        this.submitButton = builder.submitButton;
-        this.passwordLabel = builder.passwordLabel;
+        this.numberField = builder.numberField;
         this.buttonLabel = builder.buttonLabel;
-    }
-
-    public String createLoginForm() {
-        String loginForm = String.format("""
-                <form>
-
-                  <div class="form-group">
-                    <label for="emailInp">%s</label>
-                    <input type="email" class="form-control" id="emailInp" aria-describedby="emailHelp" placeholder="Enter email">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="passwordInp">%s</label>
-                    <input type="password" class="form-control" id="passwordInp" placeholder="Password">
-                  </div>
-
-                  <button type="submit" class="btn btn-primary">%s</button>
-
-                </form>
-                """, emailLabel, passwordLabel, buttonLabel);
-        return loginForm;
+        this.submitButton = builder.submitButton;
     }
 
     public StringBuilder createForm() {
-//        StringBuilder form = new StringBuilder();
-//        form.append("<form>" + "\n");
-//        form.append(emailField + "\n");
-//        form.append(nameField + "\n");
-//        form.append(passwordField + "\n");
-//        form.append(numberField + "\n");
-//        form.append(submitButton + "\n");
-        form.append("</form>");
+        form.append("</form>\n");
         return form;
     }
 
@@ -87,52 +46,45 @@ public class Form {
         int j = 0;
         int y = 0;
         // Default values used if nothing else is specified.
-        private String emailLabel = "Email";
         private String emailField = "";
-        private String nameField = "";
+        private String textLabel = "Text";
+        private String textField = "";
         private String passwordField = "";
         private String numberField = "";
         private String numberLabel = "Number";
         private String submitButton = "";
-        private String passwordLabel = "Password";
         private String buttonLabel = "Submit";
-
-        /**
-         * Adds label to email input
-         *
-         * @param emailLabel
-         * @return form input label
-         */
-        public Builder addEmailLabel(String emailLabel) {
-            this.emailLabel = emailLabel;
-            return this;
-        }
-
-        public Builder addNameField() {
-            this.nameField =
-                    "<div class=\"form-group\">\n" +
-                    "   <label for=\"nameInp"+i+"\">Name</label>\n" +
-                    "   <input type=\"text\" class=\"form-control\" id=\"nameInp"+i+"\" aria-describedby=\"nameHelp\" placeholder=\"Enter name\">\n" +
-                    "</div>\n";
-            i++;
-            form.append(nameField);
-            return this;
-        }
 
         public Builder addEmailField() {
             this.emailField =
                     "<div class=\"form-group\">\n" +
-                    "   <label for=\"emailInp"+y+"\">Email</label>\n" +
-                    "   <input type=\"email\" class=\"form-control\" id=\"emailInp"+y+"\" aria-describedby=\"emailHelp\" placeholder=\"Enter email\">\n" +
-                    "</div>\n";
+                            "   <label for=\"emailInp" + y + "\">Email</label>\n" +
+                            "   <input type=\"email\" class=\"form-control\" id=\"emailInp" + y + "\" aria-describedby=\"emailHelp\" placeholder=\"Enter Email\">\n" +
+                            "</div>\n";
             y++;
             form.append(emailField);
             return this;
         }
 
+        public Builder addTextLabel(String textLabel) {
+            this.textLabel = textLabel;
+            return this;
+        }
+
+        public Builder addTextField() {
+            this.textField =
+                    "<div class=\"form-group\">\n" +
+                            "   <label for=\"textInp" + i + "\">" + textLabel + "</label>\n" +
+                            "   <input type=\"text\" class=\"form-control\" id=\"textInp" + i + "\" aria-describedby=\"nameHelp\" placeholder=\"Enter " + textLabel + "\">\n" +
+                            "</div>\n";
+            i++;
+            form.append(textField);
+            return this;
+        }
+
         public Builder addSubmitButton() {
             this.submitButton =
-                "   <button type=\"submit\" class=\"btn btn-primary\">" + buttonLabel + "</button>\n";
+                    "   <button type=\"submit\" class=\"btn btn-primary\">" + buttonLabel + "</button>\n";
             form.append(submitButton);
             return this;
         }
@@ -140,9 +92,9 @@ public class Form {
         public Builder addPasswordField() {
             this.passwordField =
                     "<div class=\"form-group\">\n" +
-                    "   <label for=\"passwordInp"+j+"\">Password</label>\n" +
-                    "   <input type=\"password\" class=\"form-control\" id=\"passwordInp"+j+"\" placeholder=\"Password\">\n" +
-                    "</div>\n";
+                            "   <label for=\"passwordInp" + j + "\">Password</label>\n" +
+                            "   <input type=\"password\" class=\"form-control\" id=\"passwordInp" + j + "\" placeholder=\"Password\">\n" +
+                            "</div>\n";
             j++;
             form.append(passwordField);
             return this;
@@ -150,27 +102,16 @@ public class Form {
 
         public Builder addNumberField() {
             this.numberField =
-                "<div class=\"form-group mt-3 mb-3\">\n" +
-                "   <label for=\"number\">" + numberLabel + "</label>\n" +
-                "   <input type=\"number\" class=\"col-md-3\" id=\"number\" aria-describedby=\"number\" placeholder=\"...\">\n" +
-                "</div>\n";
+                    "<div class=\"form-group mt-3 mb-3\">\n" +
+                            "   <label for=\"number\">" + numberLabel + "</label>\n" +
+                            "   <input type=\"number\" class=\"col-md-3\" id=\"number\" aria-describedby=\"number\" placeholder=\"...\">\n" +
+                            "</div>\n";
             form.append(numberField);
             return this;
         }
 
         public Builder addNumberLabel(String numberLabel) {
             this.numberLabel = numberLabel;
-            return this;
-        }
-
-        /**
-         * Adds label to password input
-         *
-         * @param passwordLabel
-         * @return form input label
-         */
-        public Builder addPasswordLabel(String passwordLabel) {
-            this.passwordLabel = passwordLabel;
             return this;
         }
 

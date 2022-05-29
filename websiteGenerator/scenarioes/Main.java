@@ -45,10 +45,10 @@ public class Main {
 
         // Testing form
         Form articleForm = Form.createFormBuilder()
-                .addNameField()
-                .addEmailField()
-                .addEmailField()
-                .addEmailField()
+                .addTextLabel("Name")
+                .addTextField()
+                .addTextLabel("Address")
+                .addTextField()
                 .addEmailField()
                 .addNumberLabel("Age")
                 .addNumberField()
@@ -59,6 +59,7 @@ public class Main {
         // Article: 
         websiteGenerator.HTMLTags.Body.SemanticElements.Main articleMain = websiteGenerator.HTMLTags.Body.SemanticElements.Main.createElementBuilder()
                 .addMainHeading("Title in the article template")
+                .addMainHeading("Another heading")
                 .addIntroduction("This is the introduction")
                 .addMainBody("This is the content article template")
                 .addForm(articleForm)
@@ -78,6 +79,10 @@ public class Main {
 
         websiteGenerator.HTMLTags.Body.SemanticElements.Main homeMain = websiteGenerator.HTMLTags.Body.SemanticElements.Main.createElementBuilder()
                 .addMainHeading("Main Title")
+                .addIntroduction("The homepage is nice")
+                .addBody("A long sentence about something interesting.")
+                .addMainHeading("This is the second heading")
+                .addIntroduction("Even more introduction.")
                 .addMainBody("This is the content inside the frontpage.")
                 .build();
 
