@@ -1,9 +1,6 @@
 package websiteGenerator.HTMLTags.Body.SemanticElements;
-
 import websiteGenerator.Util.GetHTMLTagContent;
 import websiteGenerator.Util.Theme;
-
-import java.util.ArrayList;
 
 /**
  * A class for semantic header tag
@@ -11,7 +8,7 @@ import java.util.ArrayList;
  * @version 1.0.0
  */
 public class Header implements GetHTMLTagContent {
-
+    private StringBuilder header;
     private final String headerImageUrl;
     private final String headerHeading;
     private final String heroHeading;
@@ -39,6 +36,7 @@ public class Header implements GetHTMLTagContent {
      * @param builder
      */
     private Header(Builder builder) {
+        this.header = builder.header;
         this.headerImageUrl = builder.headerImageUrl;
         this.headerHeading = builder.headerHeading;
         this.heroHeading = builder.heroHeading;
@@ -61,18 +59,12 @@ public class Header implements GetHTMLTagContent {
      */
     @Override
     public StringBuilder getContentOfElement() {
-        StringBuilder content = new StringBuilder();
-        content.append("    <header>\n");
-        if (headerHeading != null)
-            content.append("    <h1>" + headerHeading + "</h1>\n");
-        if (headerImageUrl != null)
-            content.append("        <img src=\"" + headerImageUrl + "\" alt=\"\">\n");
-        if (heroImageUrl != null)
-            content.append("        <div class=\"bg-image text-center mb-1\" style=\"background-image: url('" + heroImageUrl + "'); padding: 7rem;\">\n")
-                    .append("          <h1 class=\"mb-3 h1\">" + heroHeading + "</h1>\n")
-                    .append("        </div>\n");
-        content.append("    </header>");
-        return content;
+        return null;
+    }
+
+    public StringBuilder createHeader() {
+        header.append("    </header>\n");
+        return header;
     }
 
     @Override
@@ -83,11 +75,12 @@ public class Header implements GetHTMLTagContent {
     /**
      * Builder class for building a header {@link Header}
      */
-    public static class Builder {
-        private String headerImageUrl;
-        private String headerHeading;
-        private String heroHeading;
-        private String heroImageUrl;
+    public static class Builder<Static> {
+        private StringBuilder header = new StringBuilder("    <header>\n");
+        private String headerImageUrl = "";
+        private String headerHeading = "Heading";
+        private String heroHeading = "Hero Heading";
+        private String heroImageUrl = "";
 
         /**
          * Adds a string of header image url
@@ -97,6 +90,7 @@ public class Header implements GetHTMLTagContent {
          */
         public Builder addHeaderImageUrl(final String addHeaderImageUrl) {
             this.headerImageUrl = addHeaderImageUrl;
+            header.append("        <img src=\"" + headerImageUrl + "\" alt=\"\">\n");
             return this;
         }
 
@@ -108,6 +102,7 @@ public class Header implements GetHTMLTagContent {
          */
         public Builder addHeaderHeading(final String addHeaderHeading) {
             this.headerHeading = addHeaderHeading;
+            header.append("    <h1>" + headerHeading + "</h1>\n");
             return this;
         }
 
@@ -134,6 +129,13 @@ public class Header implements GetHTMLTagContent {
             return this;
         }
 
+        public Builder createHeroHeader() {
+            header.append("        <div class=\"bg-image text-center mb-1\" style=\"background-image: url('" + heroImageUrl + "'); padding: 7rem;\">\n")
+                    .append("          <h1 class=\"mb-3 h1\">" + heroHeading + "</h1>\n")
+                    .append("        </div>\n");
+            return this;
+        }
+
         /**
          * Builds the object
          *
@@ -143,6 +145,12 @@ public class Header implements GetHTMLTagContent {
             return new Header(this);
         }
 
+
+//        public Builder createHeroHeader() {
+//            return         header.append("        <div class=\"bg-image text-center mb-1\" style=\"background-image: url('" + heroImageUrl + "'); padding: 7rem;\">\n")
+//                    .append("          <h1 class=\"mb-3 h1\">" + heroHeading + "</h1>\n")
+//                    .append("        </div>\n");;
+//        }
     }
 
 }

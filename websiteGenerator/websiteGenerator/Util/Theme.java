@@ -10,6 +10,7 @@ public enum Theme {
 
     Theme(String themeColor) {
         this.themeColor = themeColor;
+//        this.fontColor =  themeColor.equals("navbar-dark") ? "white" : "black";
         this.fontColor =  themeColor.equals("dark") ? "white" : "black";
     }
 

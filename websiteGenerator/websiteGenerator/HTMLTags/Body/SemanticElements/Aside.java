@@ -12,6 +12,7 @@ public class Aside implements GetHTMLTagContent {
     private final String asideTitle;
     private final String asideText;
 
+
     /**
      * Getter for title in aside
      *

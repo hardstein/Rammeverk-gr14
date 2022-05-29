@@ -1,8 +1,6 @@
 package websiteGenerator.HTMLTags.Body.SemanticElements;
 
-import websiteGenerator.Util.Form;
-import websiteGenerator.Util.GetHTMLTagContent;
-import websiteGenerator.Util.Theme;
+import websiteGenerator.Util.*;
 
 /**
  * A class for semantic main tag
@@ -10,7 +8,8 @@ import websiteGenerator.Util.Theme;
  * @version 1.0.0
  */
 public class Main implements GetHTMLTagContent {
-    private StringBuilder main;
+    private final StringBuilder main;
+    private final FontFamily fontFamily;
     private final String mainHeading;
     private final String introduction;
     private final String body;
@@ -34,6 +33,30 @@ public class Main implements GetHTMLTagContent {
         return body;
     }
 
+    public StringBuilder getMain() {
+        return main;
+    }
+
+    public String getIntroduction() {
+        return introduction;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public String getConclusion() {
+        return conclusion;
+    }
+
+    public Form getForm() {
+        return form;
+    }
+
+    public FontFamily getFontFamily() {
+        return fontFamily;
+    }
+
     /**
      * private constructor for Main
      *
@@ -41,6 +64,7 @@ public class Main implements GetHTMLTagContent {
      */
     private Main(Builder builder) {
         this.main = builder.main;
+        this.fontFamily = builder.fontFamily;
         this.mainHeading = builder.mainHeading;
         this.introduction = builder.introduction;
         this.body = builder.body;
@@ -83,13 +107,18 @@ public class Main implements GetHTMLTagContent {
      * Builder class for building a header {@link Main}
      */
     public static class Builder {
-        private final StringBuilder main = new StringBuilder("    <main>\n");
+        private StringBuilder main = new StringBuilder("    <main class=\"font-family:times\">\n");
+        private FontFamily fontFamily;
         private String mainHeading;
         private String introduction;
         private String body;
         private String conclusion;
         private Form form;
 
+        public Builder addFontFamily(FontFamily fontFamily) {
+            this.fontFamily = fontFamily;
+            return this;
+        }
         /**
          * Adds the main heading
          *
@@ -97,19 +126,37 @@ public class Main implements GetHTMLTagContent {
          * @return main heading string text
          */
         public Builder addMainHeading(String mainHeading) {
-            this.mainHeading = "        <h2>" + mainHeading + "</h2>\n";
+            this.mainHeading = "        <h2 class='fw-bold'>" + mainHeading + "</h2>\n";
             main.append(this.mainHeading);
             return this;
         }
 
         public Builder addIntroduction(String introduction) {
-            this.introduction = "        <p>" + introduction + "</p>\n";
+            this.introduction = "        <p class=\"fw-light\">" + introduction + "</p>\n";
             main.append(this.introduction);
             return this;
         }
 
-        public Builder addBody(String body) {
-            this.body = "        <p>" + body + "</p>\n";
+        public Builder addBody(String s) {
+            this.body = "        <p>" + s + "</p>\n";
+            main.append(this.body);
+            return this;
+        }
+
+        public Builder addBody(String body, FontSize fontSize) {
+            this.body = "        <p class=\"" + fontSize.getFontSize() + "\">" + body + "</p>\n";
+            main.append(this.body);
+            return this;
+        }
+
+        public Builder addBody(String body, FontWeight weight) {
+            this.body = "        <p class=\"" + weight.getFontWeight() + "\">" + body + "</p>\n";
+            main.append(this.body);
+            return this;
+        }
+
+        public Builder addBody(String body, FontSize fontSize, FontWeight weight) {
+            this.body = "        <p class=\"" + fontSize.getFontSize() + " " + weight.getFontWeight() + "\">" + body + "</p>\n";
             main.append(this.body);
             return this;
         }
@@ -132,11 +179,6 @@ public class Main implements GetHTMLTagContent {
         }
 
         // Main with form
-        public Builder addMainBody(Form loginForm) {
-            this.form = loginForm;
-            return this;
-        }
-
         public Builder addForm(Form form) {
             this.form = form;
             return this;

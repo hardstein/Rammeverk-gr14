@@ -26,7 +26,7 @@ public class Form {
     }
 
     public StringBuilder createForm() {
-        form.append("</form>\n");
+        form.append("   </form>\n");
         return form;
     }
 
@@ -40,7 +40,7 @@ public class Form {
     }
 
     public static class Builder {
-        private StringBuilder form = new StringBuilder("<form>" + "\n");
+        private StringBuilder form = new StringBuilder("   <form>" + "\n");
         // Used to make sure id for a label and input is unique.
         int i = 0;
         int j = 0;
@@ -57,10 +57,10 @@ public class Form {
 
         public Builder addEmailField() {
             this.emailField =
-                    "<div class=\"form-group\">\n" +
-                            "   <label for=\"emailInp" + y + "\">Email</label>\n" +
-                            "   <input type=\"email\" class=\"form-control\" id=\"emailInp" + y + "\" aria-describedby=\"emailHelp\" placeholder=\"Enter Email\">\n" +
-                            "</div>\n";
+                    "   <div class=\"form-group\">\n" +
+                            "      <label for=\"emailInp" + y + "\">Email</label>\n" +
+                            "      <input type=\"email\" class=\"form-control\" id=\"emailInp" + y + "\" aria-describedby=\"emailHelp\" placeholder=\"Enter Email\">\n" +
+                            "   </div>\n";
             y++;
             form.append(emailField);
             return this;
@@ -73,10 +73,10 @@ public class Form {
 
         public Builder addTextField() {
             this.textField =
-                    "<div class=\"form-group\">\n" +
-                            "   <label for=\"textInp" + i + "\">" + textLabel + "</label>\n" +
-                            "   <input type=\"text\" class=\"form-control\" id=\"textInp" + i + "\" aria-describedby=\"nameHelp\" placeholder=\"Enter " + textLabel + "\">\n" +
-                            "</div>\n";
+                    "   <div class=\"form-group\">\n" +
+                            "      <label for=\"textInp" + i + "\">" + textLabel + "</label>\n" +
+                            "      <input type=\"text\" class=\"form-control\" id=\"textInp" + i + "\" aria-describedby=\"nameHelp\" placeholder=\"Enter " + textLabel + "\">\n" +
+                            "   </div>\n";
             i++;
             form.append(textField);
             return this;
@@ -84,17 +84,17 @@ public class Form {
 
         public Builder addSubmitButton() {
             this.submitButton =
-                    "   <button type=\"submit\" class=\"btn btn-primary\">" + buttonLabel + "</button>\n";
+                    "      <button type=\"submit\" class=\"btn btn-primary\">" + buttonLabel + "</button>\n";
             form.append(submitButton);
             return this;
         }
 
         public Builder addPasswordField() {
             this.passwordField =
-                    "<div class=\"form-group\">\n" +
-                            "   <label for=\"passwordInp" + j + "\">Password</label>\n" +
-                            "   <input type=\"password\" class=\"form-control\" id=\"passwordInp" + j + "\" placeholder=\"Password\">\n" +
-                            "</div>\n";
+                    "   <div class=\"form-group\">\n" +
+                            "      <label for=\"passwordInp" + j + "\">Password</label>\n" +
+                            "      <input type=\"password\" class=\"form-control\" id=\"passwordInp" + j + "\" placeholder=\"Password\">\n" +
+                            "   </div>\n";
             j++;
             form.append(passwordField);
             return this;
@@ -102,10 +102,10 @@ public class Form {
 
         public Builder addNumberField() {
             this.numberField =
-                    "<div class=\"form-group mt-3 mb-3\">\n" +
-                            "   <label for=\"number\">" + numberLabel + "</label>\n" +
-                            "   <input type=\"number\" class=\"col-md-3\" id=\"number\" aria-describedby=\"number\" placeholder=\"...\">\n" +
-                            "</div>\n";
+                    "   <div class=\"form-group mt-3 mb-3\">\n" +
+                            "      <label for=\"number\">" + numberLabel + "</label>\n" +
+                            "      <input type=\"number\" class=\"col-md-3\" id=\"number\" aria-describedby=\"number\" placeholder=\"...\">\n" +
+                            "   </div>\n";
             form.append(numberField);
             return this;
         }
