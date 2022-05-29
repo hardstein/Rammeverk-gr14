@@ -215,7 +215,7 @@ public class Footer implements GetHTMLTagContent {
         public Builder addContactEmail(final String contactEmail) {
             this.contactEmail = contactEmail;
             int index = findIndexBeforeTag(footer, "</div>");
-            footer.insert(index, "        <p>Email: " + contactEmail + "</p>\n");
+            footer.insert(index, "        <p><a href=\"mailto:" + contactEmail + "\">" + contactEmail + "</a></p>\n");
             return this;
         }
 
