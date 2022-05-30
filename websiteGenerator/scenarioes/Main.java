@@ -8,6 +8,7 @@ import websiteGenerator.WebsiteBuilder;
 import websiteGenerator.HTMLTags.Body.SemanticElements.*;
 import websiteGenerator.Pages.*;
 
+import static websiteGenerator.Util.FontFamily.ARIAL;
 import static websiteGenerator.Util.FontFamily.TimesNewRoman;
 import static websiteGenerator.Util.FontSize.*;
 import static websiteGenerator.Util.FontWeight.*;
@@ -53,9 +54,9 @@ public class Main {
                 .build();
 
         Aside aside = Aside.createElementBuilder()
-                .addAsideTitle("Aside is usefully")
-                .addAsideText("Awesome aside paragraph.")
-                .addAsideText("Less awesome paragraph")
+                .addAsideTitle("Lorem ipsum")
+                .addAsideText("Aliquam elementum dolor porta ligula euismod venenatis. Curabitur sit amet malesuada elit. Proin ultrices id velit eu consectetur. Cras ex nunc, venenatis ut urna eu, maximus pulvinar ligula. Proin ut est metus. Curabitur et lorem sodales nunc lacinia blandit vitae efficitur leo. Nunc dapibus leo eget orci porta placerat. Phasellus efficitur, tortor ac rutrum fringilla, nisl ante fermentum est, eget congue massa augue at quam. Ut accumsan imperdiet felis dapibus sagittis. Morbi eget placerat leo, sed dapibus nisl. Maecenas at urna posuere, suscipit mauris in, aliquet diam. ")
+                .addAsideText("Fusce sed enim eu augue sagittis fringilla sit amet ac ante. Cras vitae vehicula nunc, at ullamcorper nibh. In nulla lectus, vehicula et eros id, pharetra porta libero. ")
                 .build();
 
         // Scenario 3:
@@ -64,7 +65,7 @@ public class Main {
                 .build();
 
         // Testing form
-        Form articleForm = Form.createFormBuilder()
+        Form loginForm = Form.createFormBuilder()
                 .addTextLabel("Name")
                 .addTextField()
                 .addTextLabel("Address")
@@ -81,12 +82,9 @@ public class Main {
         // Article: 
         websiteGenerator.HTMLTags.Body.SemanticElements.Main articleMain = websiteGenerator.HTMLTags.Body.SemanticElements.Main.createElementBuilder()
                 .addMainHeading("Title in the article template")
+                .addIntroduction("Praesent placerat mattis purus id consectetur. Sed condimentum tempor mattis. Vestibulum convallis quis leo eu tincidunt. Nam in eros ac tortor ultricies rhoncus.")
                 .addFontFamily(TimesNewRoman)
-                .addMainHeading("Another heading")
-                .addIntroduction("This is the introduction")
-                .addMainBody("This is the content article template")
-                .addForm(articleForm)
-                .addConclusion("The conclusion is...")
+                .addConclusion("Duis hendrerit at augue et efficitur. Phasellus ut magna varius, rhoncus eros id, molestie lectus. Cras ultricies vestibulum accumsan. Nulla hendrerit justo metus, ut suscipit velit aliquam ut. ")
                 .build();
 
         Header articleHeader = Header.createElementBuilder()
@@ -104,14 +102,11 @@ public class Main {
 
         websiteGenerator.HTMLTags.Body.SemanticElements.Main homeMain = websiteGenerator.HTMLTags.Body.SemanticElements.Main.createElementBuilder()
                 .addMainHeading("Main Title")
-                .addFontFamily(TimesNewRoman)
-                .addMainHeading("Main Title 2")
                 .addIntroduction("The homepage is nice")
                 .addBody("A sentence in font size 3, choose between FONTSIZE1 - FONTSIZE6.", FONTSIZE3)
                 .addBody("Another sentence now this one with font size 4 and bold.", FONTSIZE4, BOLD)
                 .addBody("Just as sentence that has light font weight", LIGHT)
-                .addBody("Just as normal sentence.")
-                .addIntroduction("Even a introduction after the body.")
+                .addFontFamily(ARIAL)
                 .build();
 
         // Creating pages
@@ -137,19 +132,11 @@ public class Main {
                 .addFooter(footer)
                 .build();
 
-
-        // Testing login form
-        Form loginForm = Form.createFormBuilder()
-                .addButtonLabel("Log in")
-                .addEmailField()
-                .addPasswordField()
-                .addSubmitButton()
-                .build();
-
         websiteGenerator.HTMLTags.Body.SemanticElements.Main loginMain = websiteGenerator.HTMLTags.Body.SemanticElements.Main.createElementBuilder()
+                .addFontFamily(ARIAL)
                 .addMainHeading("Log in")
-                .addFontFamily(TimesNewRoman)
                 .addForm(loginForm)
+                .addBody("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan tortor et facilisis pretium. Duis luctus pharetra gravida. Aliquam varius eget massa ac pellentesque. Nam interdum urna nec purus interdum pharetra. Etiam sit amet metus eros. In sit amet justo dictum, suscipit lectus ac, gravida nunc. Morbi elementum nunc orci, et blandit nisl lacinia quis. ")
                 .build();
 
         Login loginPage = Login.createPageBuilder()

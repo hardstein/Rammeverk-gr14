@@ -2,12 +2,16 @@ package websiteGenerator.HTMLTags.Body.SemanticElements;
 
 import websiteGenerator.Util.*;
 
+import static websiteGenerator.Util.FindIndexBeforeTag.findIndexBeforeTag;
+import static websiteGenerator.Util.ReplaceWord.replaceAllWords;
+
 /**
  * A class for semantic main tag
  *
  * @version 1.0.0
  */
 public class Main implements GetHTMLTagContent {
+    private static String font = "inherit";
     private final StringBuilder main;
     private final FontFamily fontFamily;
     private final String mainHeading;
@@ -73,9 +77,9 @@ public class Main implements GetHTMLTagContent {
     }
 
     public StringBuilder createMain() {
-        if (form != null)
-            main.append(form.createForm());
-        main.append("    </main>\n");
+//        if (form != null)
+//            main.append(form.createForm());
+//        main.append("    </main>\n");
         return main;
     }
 
@@ -107,7 +111,7 @@ public class Main implements GetHTMLTagContent {
      * Builder class for building a header {@link Main}
      */
     public static class Builder {
-        private StringBuilder main = new StringBuilder("    <main class=\"font-family:times\">\n");
+        private StringBuilder main = new StringBuilder("    <main style=\"font-family:"+font+"\">\n" + "    </main>\n");
         private FontFamily fontFamily;
         private String mainHeading;
         private String introduction;
@@ -117,6 +121,9 @@ public class Main implements GetHTMLTagContent {
 
         public Builder addFontFamily(FontFamily fontFamily) {
             this.fontFamily = fontFamily;
+            StringBuilder mainWithFF = replaceAllWords(main, font, fontFamily.getFontFamily());
+            main.setLength(0);
+            main.insert(0, mainWithFF);
             return this;
         }
         /**
@@ -127,13 +134,15 @@ public class Main implements GetHTMLTagContent {
          */
         public Builder addMainHeading(String mainHeading) {
             this.mainHeading = "        <h2 class='fw-bold'>" + mainHeading + "</h2>\n";
-            main.append(this.mainHeading);
+            int index = findIndexBeforeTag(main, "</main>");
+            main.insert(index, this.mainHeading);
             return this;
         }
 
         public Builder addIntroduction(String introduction) {
             this.introduction = "        <p class=\"fw-light\">" + introduction + "</p>\n";
-            main.append(this.introduction);
+            int index = findIndexBeforeTag(main, "</main>");
+            main.insert(index, this.introduction);
             return this;
         }
 
@@ -145,42 +154,39 @@ public class Main implements GetHTMLTagContent {
 
         public Builder addBody(String body, FontSize fontSize) {
             this.body = "        <p class=\"" + fontSize.getFontSize() + "\">" + body + "</p>\n";
-            main.append(this.body);
+            int index = findIndexBeforeTag(main, "</main>");
+            main.insert(index, this.body);
             return this;
         }
 
         public Builder addBody(String body, FontWeight weight) {
             this.body = "        <p class=\"" + weight.getFontWeight() + "\">" + body + "</p>\n";
-            main.append(this.body);
+            int index = findIndexBeforeTag(main, "</main>");
+            main.insert(index, this.body);
             return this;
         }
 
         public Builder addBody(String body, FontSize fontSize, FontWeight weight) {
             this.body = "        <p class=\"" + fontSize.getFontSize() + " " + weight.getFontWeight() + "\">" + body + "</p>\n";
-            main.append(this.body);
+            int index = findIndexBeforeTag(main, "</main>");
+            main.insert(index, this.body);
             return this;
         }
 
         public Builder addConclusion(String conclusion) {
             this.conclusion = "        <p>" + conclusion + "</p>\n";
-            main.append(this.conclusion);
-            return this;
-        }
-
-        /**
-         * Adds the main body
-         *
-         * @param body
-         * @return main content string text
-         */
-        public Builder addMainBody(String body) {
-            this.body = body;
+            int index = findIndexBeforeTag(main, "</main>");
+            main.insert(index, this.conclusion);
             return this;
         }
 
         // Main with form
         public Builder addForm(Form form) {
             this.form = form;
+            int index = findIndexBeforeTag(main, "</main>");
+            main.insert(index, form.createForm());
+//            if (form != null)
+//                main.append(form.createForm());
             return this;
         }
 
