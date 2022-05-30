@@ -75,7 +75,7 @@ public class Header implements GetHTMLTagContent {
     /**
      * Builder class for building a header {@link Header}
      */
-    public static class Builder<Static> {
+    public static class Builder {
         private StringBuilder header = new StringBuilder("    <header>\n");
         private String headerImageUrl = "";
         private String headerHeading = "Heading";
@@ -88,7 +88,7 @@ public class Header implements GetHTMLTagContent {
          * @param addHeaderImageUrl
          * @return image url
          */
-        public Builder addHeaderImageUrl(final String addHeaderImageUrl) {
+        public Builder addHeaderImageUrl(String addHeaderImageUrl) {
             this.headerImageUrl = addHeaderImageUrl;
             header.append("        <img src=\"" + headerImageUrl + "\" alt=\"\">\n");
             return this;
@@ -100,7 +100,7 @@ public class Header implements GetHTMLTagContent {
          * @param addHeaderHeading
          * @return header heading
          */
-        public Builder addHeaderHeading(final String addHeaderHeading) {
+        public Builder addHeaderHeading(String addHeaderHeading) {
             this.headerHeading = addHeaderHeading;
             header.append("    <h1>" + headerHeading + "</h1>\n");
             return this;
@@ -113,7 +113,7 @@ public class Header implements GetHTMLTagContent {
          * @return hero heading text
          */
 
-        public Builder addHeroHeading(final String addHeroHeading) {
+        public Builder addHeroHeading(String addHeroHeading) {
             this.heroHeading = addHeroHeading;
             return this;
         }
@@ -124,7 +124,7 @@ public class Header implements GetHTMLTagContent {
          * @param addHeroImageUrl
          * @return image url
          */
-        public Builder addHeroImageUrl(final String addHeroImageUrl) {
+        public Builder addHeroImageUrl(String addHeroImageUrl) {
             this.heroImageUrl = addHeroImageUrl;
             return this;
         }

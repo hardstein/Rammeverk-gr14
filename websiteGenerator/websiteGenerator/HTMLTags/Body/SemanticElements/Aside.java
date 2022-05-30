@@ -3,15 +3,17 @@ package websiteGenerator.HTMLTags.Body.SemanticElements;
 import websiteGenerator.Util.GetHTMLTagContent;
 import websiteGenerator.Util.Theme;
 
+import static websiteGenerator.Util.FindIndexBeforeTag.findIndexBeforeTag;
+
 /**
  * class for defining and building an aside element for a Page {@link websiteGenerator.Pages.Page}
  *
  * @version 1.0.0
  */
 public class Aside implements GetHTMLTagContent {
+    private StringBuilder aside;
     private final String asideTitle;
     private final String asideText;
-
 
     /**
      * Getter for title in aside
@@ -31,15 +33,19 @@ public class Aside implements GetHTMLTagContent {
         return asideText;
     }
 
+    public StringBuilder getAside() {
+        return aside;
+    }
+
     /**
      * A constructor for adding properties from inner builder class to the Aside class properties
      *
      * @param builder the builder for aside
      */
     private Aside(Builder builder) {
+        this.aside = builder.aside;
         this.asideTitle = builder.asideTitle;
         this.asideText = builder.asideText;
-
     }
 
     /**
@@ -58,15 +64,7 @@ public class Aside implements GetHTMLTagContent {
      */
     @Override
     public StringBuilder getContentOfElement() {
-        StringBuilder content = new StringBuilder();
-        content.append("    <aside>\n" + "        <h3>")
-                .append(asideTitle)
-                .append("</h3>\n")
-                .append("        <p>")
-                .append(asideText)
-                .append("</p>\n")
-                .append("    </aside>");
-        return content;
+        return null;
     }
 
     @Override
@@ -74,10 +72,14 @@ public class Aside implements GetHTMLTagContent {
         return null;
     }
 
+    public StringBuilder createAside() {
+        return aside;
+    }
     /**
      * A builder for {@link Aside}
      */
     public static class Builder {
+        private StringBuilder aside = new StringBuilder("    <aside>\n" + "    </aside>\n");
         private String asideTitle;
         private String asideText;
 
@@ -89,6 +91,8 @@ public class Aside implements GetHTMLTagContent {
          */
         public Builder addAsideTitle(final String asideTitle) {
             this.asideTitle = asideTitle;
+            int index = findIndexBeforeTag(aside, "</aside>");
+            aside.insert(index, "        <h3>" + asideTitle + "</h3>\n");
             return this;
         }
 
@@ -100,11 +104,12 @@ public class Aside implements GetHTMLTagContent {
          */
         public Builder addAsideText(final String asideText) {
             this.asideText = asideText;
+            int index = findIndexBeforeTag(aside, "</aside>");
+            aside.insert(index, "        <p>" + asideText + "</p>\n");
             return this;
         }
 
         /**
-         *
          * @return a new Aside object
          */
         public Aside build() {

@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @version 1.0.0
  */
 public class Nav implements GetHTMLTagContent {
-    private final StringBuilder nav;
+    private StringBuilder nav;
     private final String logoImage;
 
     int i = 0;
@@ -54,7 +54,6 @@ public class Nav implements GetHTMLTagContent {
 
     public StringBuilder createNav(Theme theme, Page[] pages) {
         // Jalla if check so that nav doesn't get appended each time. Which can result in multiple navs for a page...
-        // Could move nav inside of method.
         if (i < 1) {
         ArrayList<String> navlinks = new ArrayList<>();
         for (Page page: pages) {
@@ -127,7 +126,7 @@ public class Nav implements GetHTMLTagContent {
      * Builder class for building a header {@link Nav}
      */
     public static class Builder {
-        private final StringBuilder nav = new StringBuilder();
+        private StringBuilder nav = new StringBuilder();
         private String addLogoImage;
 
         /**
