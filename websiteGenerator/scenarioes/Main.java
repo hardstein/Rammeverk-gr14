@@ -27,8 +27,8 @@ public class Main {
         // These will be the same for all pages:
         // Scenario 7:
         Footer footer = Footer.createElementBuilder()
-                .addContactInformationContainer()
-                .addSocialMediaLinksContainer()
+//                .addContactInformationContainer()
+//                .addSocialMediaLinksContainer()
                 .addContactName("Group 14")
                 .addContactEmail("gr14@email.com")
                 .addContactPhoneNumber(14326969)
@@ -38,8 +38,8 @@ public class Main {
                 .build();
 
         Footer articleFooter = Footer.createElementBuilder()
-                .addSocialMediaLinksContainer()
-                .addContactInformationContainer()
+//                .addSocialMediaLinksContainer()
+//                .addContactInformationContainer()
                 .addContactName("Per")
                 .addTwitterSocialMediaLink("Twitter link")
                 .addContactName("Pål")
@@ -53,8 +53,9 @@ public class Main {
                 .build();
 
         Aside aside = Aside.createElementBuilder()
-                .addAsideTitle("Aside is usefull")
-                .addAsideText("Awesome aside")
+                .addAsideTitle("Aside is usefully")
+                .addAsideText("Awesome aside paragraph.")
+                .addAsideText("Less awesome paragraph")
                 .build();
 
         // Scenario 3:
@@ -165,7 +166,7 @@ public class Main {
         Page[] HTMLpages = new Page[]{homePage, article, loginPage};
         WebsiteBuilder project = WebsiteBuilder.createWebsiteBuilder()
                 .addRobots()
-                .addTheme(Theme.DARK)
+                .addTheme(Theme.LIGHT)
                 .addProjectFolder("testFolder")
                 .addHTMLPages(HTMLpages)
                 .build();
