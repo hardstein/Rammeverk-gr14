@@ -101,7 +101,6 @@ public class Form {
         }
 
         public Builder addNumberField() {
-            // TODO class value have to be a variable as well with enum value, and form tag missing
             this.numberField =
                     "   <div class=\"form-group mt-3 mb-3\">\n" +
                             "      <label for=\"number\">" + numberLabel + "</label>\n" +
