@@ -1,6 +1,5 @@
 package websiteGenerator.pages;
 import websiteGenerator.htmlTags.body.*;
-import websiteGenerator.htmlTags.body.semanticElements.*;
 import websiteGenerator.htmlTags.head.Head;
 import websiteGenerator.htmlTags.Html;
 import websiteGenerator.util.HTMLLanguageOptions;
