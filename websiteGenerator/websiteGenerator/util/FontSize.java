@@ -1,4 +1,4 @@
-package websiteGenerator.Util;
+package websiteGenerator.util;
 
 public enum FontSize {
     FONTSIZE1("fs-1"),

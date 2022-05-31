@@ -1,4 +1,4 @@
-package websiteGenerator.Util;
+package websiteGenerator.util;
 
 public enum FontFamily {
     TimesNewRoman("times"),

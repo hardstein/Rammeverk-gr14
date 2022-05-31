@@ -1,10 +1,11 @@
-package websiteGenerator.Pages;
+package websiteGenerator.pages;
 
-import websiteGenerator.HTMLTags.HeadTag.Head;
-import websiteGenerator.HTMLTags.Html;
-import websiteGenerator.HTMLTags.Body.SemanticElements.*;
-import websiteGenerator.Util.HTMLLanguageOptions;
-import websiteGenerator.Util.Theme;
+import websiteGenerator.htmlTags.body.*;
+import websiteGenerator.htmlTags.head.Head;
+import websiteGenerator.htmlTags.Html;
+import websiteGenerator.htmlTags.body.semanticElements.*;
+import websiteGenerator.util.HTMLLanguageOptions;
+import websiteGenerator.util.Theme;
 
 /**
  * Class for a Home page.

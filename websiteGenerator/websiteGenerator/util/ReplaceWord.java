@@ -1,4 +1,4 @@
-package websiteGenerator.Util;
+package websiteGenerator.util;
 
 import java.util.regex.Pattern;
 

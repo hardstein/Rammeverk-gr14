@@ -1,6 +1,6 @@
-package websiteGenerator.HTMLTags.Body.SemanticElements;
-import websiteGenerator.Util.GetHTMLTagContent;
-import websiteGenerator.Util.Theme;
+package websiteGenerator.htmlTags.body;
+import websiteGenerator.util.GetHTMLTagContent;
+import websiteGenerator.util.Theme;
 
 /**
  * A class for semantic header tag

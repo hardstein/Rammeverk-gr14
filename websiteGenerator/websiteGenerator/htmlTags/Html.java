@@ -1,6 +1,6 @@
-package websiteGenerator.HTMLTags;
+package websiteGenerator.htmlTags;
 
-import websiteGenerator.Util.HTMLLanguageOptions;
+import websiteGenerator.util.HTMLLanguageOptions;
 
 /**
  * Class for html tag

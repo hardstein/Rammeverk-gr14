@@ -1,26 +1,32 @@
-package websiteGenerator.Pages;
-import websiteGenerator.HTMLTags.Body.SemanticElements.*;
-import websiteGenerator.HTMLTags.HeadTag.Head;
-import websiteGenerator.HTMLTags.Html;
-import websiteGenerator.Util.Form;
-import websiteGenerator.Util.HTMLLanguageOptions;
-import websiteGenerator.Util.Theme;
+package websiteGenerator.pages;
 
-public class Login extends Page {
-//    private final String emailLabel;
-//    private final String passwordLabel;
-//    private final String buttonLabel;
+import websiteGenerator.htmlTags.body.*;
+import websiteGenerator.htmlTags.head.Head;
+import websiteGenerator.htmlTags.Html;
+import websiteGenerator.htmlTags.body.semanticElements.*;
+import websiteGenerator.util.HTMLLanguageOptions;
+import websiteGenerator.util.Theme;
 
-    private Login(Builder builder) {
-//        this.emailLabel = builder.emailLabel;
-//        this.passwordLabel = builder.passwordLabel;
-//        this.buttonLabel = builder.buttonLabel;
+/**
+ * Class for an article page.
+ */
+public class Article extends Page {
 
+    /**
+     * This is a factory for Builder.
+     *
+     * @return a new Builder.
+     */
+    public static Builder createArticlePageBuilder() {
+        return new Builder();
+    }
+
+    private Article(Builder builder) {
         super.theme = builder.theme;
         super.fileName = builder.fileName;
         super.header = builder.header;
-        super.nav = builder.nav;
         super.main = builder.main;
+        super.nav = builder.nav;
         super.aside = builder.aside;
         super.footer = builder.footer;
         super.html = builder.html;
@@ -28,25 +34,13 @@ public class Login extends Page {
     }
 
     /**
-     * this is a factory for builder.
-     *
-     * @return a new Builder
-     */
-    public static Builder createPageBuilder() {
-        return new Builder();
-    }
-
-    /**
-     * Class Builder used to create a home page object.
+     * Class Builder used to create an Article page object.
      */
     public static class Builder {
-//        private String emailLabel;
-//        private String passwordLabel;
-//        private String buttonLabel;
         /**
-         * The name of the file. Default is "login.html".
+         * The name of the file. Default is "article.html".
          */
-        private String fileName = "login.html";
+        private String fileName = "article.html";
         /**
          * The html-tag in the html file, used to set language the file.
          * Default is english (EN).
@@ -183,12 +177,11 @@ public class Login extends Page {
         /**
          * Builds the page.
          *
-         * @return Home with values set by the user, or default.
+         * @return Article with values set by the user, or default.
          */
-        public Login build() {
-            return new Login(this);
+        public Article build() {
+            return new Article(this);
         }
-
     }
 
 }

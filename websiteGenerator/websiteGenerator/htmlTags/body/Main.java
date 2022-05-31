@@ -1,6 +1,6 @@
-package websiteGenerator.HTMLTags.Body.SemanticElements;
+package websiteGenerator.htmlTags.body;
 
-import websiteGenerator.Util.*;
+import websiteGenerator.util.*;
 
 /**
  * A class for semantic main tag

@@ -1,8 +1,8 @@
-package websiteGenerator.HTMLTags.Body.SemanticElements;
+package websiteGenerator.htmlTags.body;
 
-import websiteGenerator.Pages.Page;
-import websiteGenerator.Util.GetHTMLTagContent;
-import websiteGenerator.Util.Theme;
+import websiteGenerator.pages.Page;
+import websiteGenerator.util.GetHTMLTagContent;
+import websiteGenerator.util.Theme;
 
 import java.util.ArrayList;
 

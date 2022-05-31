@@ -2,15 +2,18 @@ package scenarioes;
 
 import java.io.IOException;
 
-import websiteGenerator.HTMLTags.HeadTag.Head;
-import websiteGenerator.Util.*;
+import websiteGenerator.htmlTags.body.Aside;
+import websiteGenerator.htmlTags.body.Footer;
+import websiteGenerator.htmlTags.body.Header;
+import websiteGenerator.htmlTags.body.Nav;
+import websiteGenerator.htmlTags.head.Head;
+import websiteGenerator.util.*;
 import websiteGenerator.WebsiteBuilder;
-import websiteGenerator.HTMLTags.Body.SemanticElements.*;
-import websiteGenerator.Pages.*;
+import websiteGenerator.pages.*;
 
-import static websiteGenerator.Util.FontFamily.TimesNewRoman;
-import static websiteGenerator.Util.FontSize.*;
-import static websiteGenerator.Util.FontWeight.*;
+import static websiteGenerator.util.FontFamily.TimesNewRoman;
+import static websiteGenerator.util.FontSize.*;
+import static websiteGenerator.util.FontWeight.*;
 
 /**
  * @hidden demonstration of framework, not a part of the library
@@ -79,7 +82,7 @@ public class Main {
                 .build();
         // Different main content on pages:
         // Article: 
-        websiteGenerator.HTMLTags.Body.SemanticElements.Main articleMain = websiteGenerator.HTMLTags.Body.SemanticElements.Main.createElementBuilder()
+        websiteGenerator.htmlTags.body.Main articleMain = websiteGenerator.htmlTags.body.Main.createElementBuilder()
                 .addMainHeading("Title in the article template")
                 .addFontFamily(TimesNewRoman)
                 .addMainHeading("Another heading")
@@ -102,7 +105,7 @@ public class Main {
                 .createHeroHeader()
                 .build();
 
-        websiteGenerator.HTMLTags.Body.SemanticElements.Main homeMain = websiteGenerator.HTMLTags.Body.SemanticElements.Main.createElementBuilder()
+        websiteGenerator.htmlTags.body.Main homeMain = websiteGenerator.htmlTags.body.Main.createElementBuilder()
                 .addMainHeading("Main Title")
                 .addFontFamily(TimesNewRoman)
                 .addMainHeading("Main Title 2")
@@ -146,7 +149,7 @@ public class Main {
                 .addSubmitButton()
                 .build();
 
-        websiteGenerator.HTMLTags.Body.SemanticElements.Main loginMain = websiteGenerator.HTMLTags.Body.SemanticElements.Main.createElementBuilder()
+        websiteGenerator.htmlTags.body.Main loginMain = websiteGenerator.htmlTags.body.Main.createElementBuilder()
                 .addMainHeading("Log in")
                 .addFontFamily(TimesNewRoman)
                 .addForm(loginForm)

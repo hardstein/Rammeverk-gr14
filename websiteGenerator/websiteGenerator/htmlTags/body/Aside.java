@@ -1,12 +1,12 @@
-package websiteGenerator.HTMLTags.Body.SemanticElements;
+package websiteGenerator.htmlTags.body;
 
-import websiteGenerator.Util.GetHTMLTagContent;
-import websiteGenerator.Util.Theme;
+import websiteGenerator.util.GetHTMLTagContent;
+import websiteGenerator.util.Theme;
 
-import static websiteGenerator.Util.FindIndexBeforeTag.findIndexBeforeTag;
+import static websiteGenerator.util.FindIndexBeforeTag.findIndexBeforeTag;
 
 /**
- * class for defining and building an aside element for a Page {@link websiteGenerator.Pages.Page}
+ * class for defining and building an aside element for a Page {@link websiteGenerator.pages.Page}
  *
  * @version 1.0.0
  */

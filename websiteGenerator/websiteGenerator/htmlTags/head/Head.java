@@ -1,7 +1,7 @@
-package websiteGenerator.HTMLTags.HeadTag;
+package websiteGenerator.htmlTags.head;
 
-import websiteGenerator.Util.GetHTMLTagContent;
-import websiteGenerator.Util.Theme;
+import websiteGenerator.util.GetHTMLTagContent;
+import websiteGenerator.util.Theme;
 
 /**
  * Class for body tag
