@@ -2,16 +2,17 @@ package scenarioes;
 
 import java.io.IOException;
 
-import websiteGenerator.HTMLTags.HeadTag.Head;
-import websiteGenerator.Util.*;
+import websiteGenerator.htmlTags.body.*;
+import websiteGenerator.htmlTags.head.Head;
+import websiteGenerator.util.*;
 import websiteGenerator.WebsiteBuilder;
-import websiteGenerator.HTMLTags.Body.SemanticElements.*;
-import websiteGenerator.Pages.*;
+import websiteGenerator.pages.*;
 
 import static websiteGenerator.Util.FontFamily.ARIAL;
 import static websiteGenerator.Util.FontFamily.TimesNewRoman;
 import static websiteGenerator.Util.FontSize.*;
 import static websiteGenerator.Util.FontWeight.*;
+
 
 /**
  * @hidden demonstration of framework, not a part of the library
@@ -80,7 +81,7 @@ public class Main {
                 .build();
         // Different main content on pages:
         // Article: 
-        websiteGenerator.HTMLTags.Body.SemanticElements.Main articleMain = websiteGenerator.HTMLTags.Body.SemanticElements.Main.createElementBuilder()
+        websiteGenerator.htmlTags.body.Main articleMain = websiteGenerator.htmlTags.body.Main.createElementBuilder()
                 .addMainHeading("Title in the article template")
                 .addIntroduction("Praesent placerat mattis purus id consectetur. Sed condimentum tempor mattis. Vestibulum convallis quis leo eu tincidunt. Nam in eros ac tortor ultricies rhoncus.")
                 .addFontFamily(TimesNewRoman)
@@ -100,7 +101,7 @@ public class Main {
                 .createHeroHeader()
                 .build();
 
-        websiteGenerator.HTMLTags.Body.SemanticElements.Main homeMain = websiteGenerator.HTMLTags.Body.SemanticElements.Main.createElementBuilder()
+        websiteGenerator.htmlTags.body.Main homeMain = websiteGenerator.htmlTags.body.Main.createElementBuilder()
                 .addMainHeading("Main Title")
                 .addIntroduction("The homepage is nice")
                 .addBody("A sentence in font size 3, choose between FONTSIZE1 - FONTSIZE6.", FONTSIZE3)
@@ -132,12 +133,21 @@ public class Main {
                 .addFooter(footer)
                 .build();
 
-        websiteGenerator.HTMLTags.Body.SemanticElements.Main loginMain = websiteGenerator.HTMLTags.Body.SemanticElements.Main.createElementBuilder()
-                .addFontFamily(ARIAL)
-                .addMainHeading("Log in")
-                .addForm(loginForm)
-                .addBody("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan tortor et facilisis pretium. Duis luctus pharetra gravida. Aliquam varius eget massa ac pellentesque. Nam interdum urna nec purus interdum pharetra. Etiam sit amet metus eros. In sit amet justo dictum, suscipit lectus ac, gravida nunc. Morbi elementum nunc orci, et blandit nisl lacinia quis. ")
-                .build();
+
+        // Testing login form
+        // Form loginForm = Form.createFormBuilder()
+        //         .addButtonLabel("Log in")
+        //         .addEmailField()
+        //         .addPasswordField()
+        //         .addSubmitButton()
+        //         .build();
+
+//         websiteGenerator.htmlTags.body.Main loginMain = websiteGenerator.htmlTags.body.Main.createElementBuilder()
+// >>>>>>> 8f6fbe6c809b434794ba080e988b6a1673ef7b50
+//                 .addMainHeading("Log in")
+//                 .addForm(loginForm)
+//                 .addBody("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan tortor et facilisis pretium. Duis luctus pharetra gravida. Aliquam varius eget massa ac pellentesque. Nam interdum urna nec purus interdum pharetra. Etiam sit amet metus eros. In sit amet justo dictum, suscipit lectus ac, gravida nunc. Morbi elementum nunc orci, et blandit nisl lacinia quis. ")
+//                 .build();
 
         Login loginPage = Login.createPageBuilder()
                 .addHead(head)

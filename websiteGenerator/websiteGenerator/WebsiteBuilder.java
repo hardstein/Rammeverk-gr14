@@ -1,7 +1,7 @@
 package websiteGenerator;
 
-import websiteGenerator.Pages.*;
-import websiteGenerator.Util.Theme;
+import websiteGenerator.pages.*;
+import websiteGenerator.util.Theme;
 
 import java.io.File;
 import java.io.FileWriter;
