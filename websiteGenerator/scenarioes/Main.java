@@ -31,7 +31,7 @@ public class Main {
         // For now you can find scenario: 1, 3, 7, 9, 14
 
         //Creating page content
-        Head head = Head.createHead("styles.css", "Title of the page");
+        Head mainHead = Head.createHead("styles.css", "Frontpage");
         // These will be the same for all pages:
         // Scenario 7:
         Footer footer = Footer.createElementBuilder()
@@ -125,7 +125,7 @@ public class Main {
 
         Home homePage = Home.createPageBuilder()
                 .addFileName("homepage.html")
-                .addHead(head)
+                .addHead(mainHead)
                 .addHeader(homeHeader)
                 .addNav(nav)
                 .addMain(homeMain)
@@ -134,15 +134,14 @@ public class Main {
                 .build();
 
         websiteGenerator.htmlTags.body.Main loginMain = websiteGenerator.htmlTags.body.Main.createElementBuilder()
+                .addMainHeading("Login")
                 .addForm(loginForm)
                 .build();
 
         Login loginPage = Login.createPageBuilder()
-                .addHead(head)
                 .addMain(loginMain)
                 .addNav(nav)
                 .addHeader(loginHeader)
-                .addAside(aside)
                 .addFooter(footer)
                 .build();
 
