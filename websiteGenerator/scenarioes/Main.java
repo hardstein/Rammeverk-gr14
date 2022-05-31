@@ -2,10 +2,7 @@ package scenarioes;
 
 import java.io.IOException;
 
-import websiteGenerator.htmlTags.body.Aside;
-import websiteGenerator.htmlTags.body.Footer;
-import websiteGenerator.htmlTags.body.Header;
-import websiteGenerator.htmlTags.body.Nav;
+import websiteGenerator.htmlTags.body.*;
 import websiteGenerator.htmlTags.head.Head;
 import websiteGenerator.util.*;
 import websiteGenerator.WebsiteBuilder;
