@@ -1,17 +1,23 @@
 package scenarioes;
 
-import java.io.IOException;
-
+import websiteGenerator.WebsiteBuilder;
 import websiteGenerator.htmlTags.body.*;
 import websiteGenerator.htmlTags.head.Head;
-import websiteGenerator.util.*;
-import websiteGenerator.WebsiteBuilder;
-import websiteGenerator.pages.*;
+import websiteGenerator.pages.Article;
+import websiteGenerator.pages.Home;
+import websiteGenerator.pages.Login;
+import websiteGenerator.pages.Page;
+import websiteGenerator.util.HTMLLanguageOptions;
+import websiteGenerator.util.Theme;
 
-import static websiteGenerator.Util.FontFamily.ARIAL;
-import static websiteGenerator.Util.FontFamily.TimesNewRoman;
-import static websiteGenerator.Util.FontSize.*;
-import static websiteGenerator.Util.FontWeight.*;
+import java.io.IOException;
+
+import static websiteGenerator.util.FontFamily.ARIAL;
+import static websiteGenerator.util.FontFamily.TimesNewRoman;
+import static websiteGenerator.util.FontSize.FONTSIZE3;
+import static websiteGenerator.util.FontSize.FONTSIZE4;
+import static websiteGenerator.util.FontWeight.BOLD;
+import static websiteGenerator.util.FontWeight.LIGHT;
 
 
 /**
@@ -133,21 +139,9 @@ public class Main {
                 .addFooter(footer)
                 .build();
 
-
-        // Testing login form
-        // Form loginForm = Form.createFormBuilder()
-        //         .addButtonLabel("Log in")
-        //         .addEmailField()
-        //         .addPasswordField()
-        //         .addSubmitButton()
-        //         .build();
-
-//         websiteGenerator.htmlTags.body.Main loginMain = websiteGenerator.htmlTags.body.Main.createElementBuilder()
-// >>>>>>> 8f6fbe6c809b434794ba080e988b6a1673ef7b50
-//                 .addMainHeading("Log in")
-//                 .addForm(loginForm)
-//                 .addBody("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan tortor et facilisis pretium. Duis luctus pharetra gravida. Aliquam varius eget massa ac pellentesque. Nam interdum urna nec purus interdum pharetra. Etiam sit amet metus eros. In sit amet justo dictum, suscipit lectus ac, gravida nunc. Morbi elementum nunc orci, et blandit nisl lacinia quis. ")
-//                 .build();
+        websiteGenerator.htmlTags.body.Main loginMain = websiteGenerator.htmlTags.body.Main.createElementBuilder()
+                .addForm(loginForm)
+                .build();
 
         Login loginPage = Login.createPageBuilder()
                 .addHead(head)

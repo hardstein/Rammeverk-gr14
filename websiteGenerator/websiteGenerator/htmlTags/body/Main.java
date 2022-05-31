@@ -2,8 +2,9 @@ package websiteGenerator.htmlTags.body;
 
 import websiteGenerator.util.*;
 
-import static websiteGenerator.Util.FindIndexBeforeTag.findIndexBeforeTag;
-import static websiteGenerator.Util.ReplaceWord.replaceAllWords;
+import static websiteGenerator.util.FindIndexBeforeTag.findIndexBeforeTag;
+import static websiteGenerator.util.ReplaceWord.replaceAllWords;
+
 
 /**
  * A class for semantic main tag
