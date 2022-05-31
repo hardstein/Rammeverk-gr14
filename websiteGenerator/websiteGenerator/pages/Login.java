@@ -6,6 +6,10 @@ import websiteGenerator.util.HTMLLanguageOptions;
 import websiteGenerator.util.Theme;
 
 public class Login extends Page {
+    /**
+     * The name of the file. Default is "login.html".
+     */
+    public static final String DEFAULT_LOGIN_FILENAME = "login.html";
 
     private Login(Builder builder) {
         super.theme = builder.theme;
@@ -32,19 +36,19 @@ public class Login extends Page {
      * Class Builder used to create a home page object.
      */
     public static class Builder {
-        /**
-         * The name of the file. Default is "login.html".
+         /**
+         * The name of the file. Default is "article.html".
          */
-        private String fileName = "login.html";
+        private String fileName = DEFAULT_LOGIN_FILENAME;
         /**
          * The html-tag in the html file, used to set language the file.
          * Default is english (EN).
          */
-        private Html html = Html.createHTMLTag(HTMLLanguageOptions.EN);
+        private Html html = Html.createHTMLTag(DEFAULT_LANGUAGE);
         /**
          * The header-tag used by the html file.
          */
-        private Header header = Header.createElementBuilder().build();
+        private Header header = DEFAULT_HEADER;
         /**
          * The color theme used by the html file.
          */
@@ -52,23 +56,23 @@ public class Login extends Page {
         /**
          * The head-tag used by the html file.
          */
-        private Head head = Head.createHead("styles.css" , "Login");
+        private Head head = DEFAULT_HEAD;
         /**
          * The main-tag used by the html file.
          */
-        private Main main = Main.createElementBuilder().build();
+        private Main main = DEFAULT_MAIN;
         /**
          * The nav-tag used by the html file.
          */
-        private Nav nav = Nav.createElementBuilder().build();
+        private Nav nav = DEFAULT_NAV;
         /**
          * The aside-tag used by the html file.
          */
-        private Aside aside = Aside.createElementBuilder().build();
+        private Aside aside = DEFAULT_ASIDE;
         /**
          * The footer-tag used by the html file.
          */
-        private Footer footer = Footer.createElementBuilder().build();
+        private Footer footer = DEFAULT_FOOTER;
 
         /**
          * Add file name to a page.

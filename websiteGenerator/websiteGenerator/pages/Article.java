@@ -10,18 +10,10 @@ import websiteGenerator.util.Theme;
  * Class for an article page.
  */
 public class Article extends Page {
-
-    protected final static String DEFAULT_TITLE = "WebsiteBuilder Page";
-    protected final static String DEFAULT_STYLES = "styles.css";
-
     /**
-     * This is a factory for Builder.
-     *
-     * @return a new Builder.
+     * The name of the file. Default is "article.html".
      */
-    public static Builder createArticlePageBuilder() {
-        return new Builder();
-    }
+    public static final String DEFAULT_ARTICLE_FILENAME = "article.html";
 
     private Article(Builder builder) {
         super.theme = builder.theme;
@@ -36,22 +28,31 @@ public class Article extends Page {
     }
 
     /**
+     * This is a factory for Builder.
+     *
+     * @return a new Builder.
+     */
+    public static Builder createArticlePageBuilder() {
+        return new Builder();
+    }
+
+    /**
      * Class Builder used to create an Article page object.
      */
     public static class Builder {
         /**
          * The name of the file. Default is "article.html".
          */
-        private String fileName = "article.html";
+        private String fileName = DEFAULT_ARTICLE_FILENAME;
         /**
          * The html-tag in the html file, used to set language the file.
          * Default is english (EN).
          */
-        private Html html = Html.createHTMLTag(HTMLLanguageOptions.EN);
+        private Html html = Html.createHTMLTag(DEFAULT_LANGUAGE);
         /**
          * The header-tag used by the html file.
          */
-        private Header header = Header.createElementBuilder().build();
+        private Header header = DEFAULT_HEADER;
         /**
          * The color theme used by the html file.
          */
@@ -59,23 +60,23 @@ public class Article extends Page {
         /**
          * The head-tag used by the html file.
          */
-        private Head head;
+        private Head head = DEFAULT_HEAD;
         /**
          * The main-tag used by the html file.
          */
-        private Main main = Main.createElementBuilder().build();
+        private Main main = DEFAULT_MAIN;
         /**
          * The nav-tag used by the html file.
          */
-        private Nav nav = Nav.createElementBuilder().build();
+        private Nav nav = DEFAULT_NAV;
         /**
          * The aside-tag used by the html file.
          */
-        private Aside aside = Aside.createElementBuilder().build();
+        private Aside aside = DEFAULT_ASIDE;
         /**
          * The footer-tag used by the html file.
          */
-        private Footer footer = Footer.createElementBuilder().build();
+        private Footer footer = DEFAULT_FOOTER;
 
         /**
          * Add file name to a page.
