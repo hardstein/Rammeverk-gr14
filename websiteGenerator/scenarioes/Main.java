@@ -122,11 +122,6 @@ public class Main {
         Article article = Article.createArticlePageBuilder()
                 .addHead(head)
                 .setLanguage(HTMLLanguageOptions.NB)
-                .addHeader(articleHeader)
-                .addNav(nav)
-                .addMain(articleMain)
-                .addAside(aside)
-                .addFooter(articleFooter)
                 .build();
 
         Home homePage = Home.createPageBuilder()

@@ -48,7 +48,7 @@ public class Article extends Page {
         /**
          * The header-tag used by the html file.
          */
-        private Header header;
+        private Header header = Header.createElementBuilder().build();
         /**
          * The color theme used by the html file.
          */
@@ -56,23 +56,23 @@ public class Article extends Page {
         /**
          * The head-tag used by the html file.
          */
-        private Head head;
+        private Head head = Head.createHead("style.css", "Article");
         /**
          * The main-tag used by the html file.
          */
-        private Main main;
+        private Main main = Main.createElementBuilder().build();
         /**
          * The nav-tag used by the html file.
          */
-        private Nav nav;
+        private Nav nav = Nav.createElementBuilder().build();
         /**
          * The aside-tag used by the html file.
          */
-        private Aside aside;
+        private Aside aside = Aside.createElementBuilder().build();
         /**
          * The footer-tag used by the html file.
          */
-        private Footer footer;
+        private Footer footer = Footer.createElementBuilder().build();
 
         /**
          * Add file name to a page.
