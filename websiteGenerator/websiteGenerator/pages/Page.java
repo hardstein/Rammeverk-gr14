@@ -9,6 +9,11 @@ import websiteGenerator.util.*;
  * Abstract class for pages.
  */
 public abstract class Page {
+
+   protected final static String DEFAULT_TITLE = "WebsiteBuilder Page";
+   protected final static String DEFAULT_STYLES = "styles.css";
+   protected final static HTMLLanguageOptions DEFAULT_LANGUAGE = HTMLLanguageOptions.EN;
+
    /**
     * The file name of a page.
     */
@@ -45,7 +50,6 @@ public abstract class Page {
     * The footer element of the page.
     */
    protected Footer footer;
-
    /**
     * Sets the html element for the page.
     * @param html The page html element.
@@ -61,7 +65,6 @@ public abstract class Page {
    public Head getHead() {
       return head;
    }
-
    /**
     * Sets the head element for the page.
     * @param head The page head element.

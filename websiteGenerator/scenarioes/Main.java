@@ -119,9 +119,8 @@ public class Main {
         // Creating pages
         Header loginHeader = Header.createElementBuilder().build();
 
+        // Only using default values
         Article article = Article.createArticlePageBuilder()
-                .addHead(head)
-                .setLanguage(HTMLLanguageOptions.NB)
                 .build();
 
         Home homePage = Home.createPageBuilder()

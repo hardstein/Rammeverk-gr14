@@ -43,11 +43,11 @@ public class Home extends Page {
          * The html-tag in the html file, used to set language the file.
          * Default is english (EN).
          */
-        private Html html = Html.createHTMLTag(HTMLLanguageOptions.EN);
+        private Html html = Html.createHTMLTag(DEFAULT_LANGUAGE);
         /**
          * The header-tag used by the html file.
          */
-        private Header header;
+        private Header header = Header.createElementBuilder().build();
         /**
          * The color theme used by the html file.
          */
@@ -55,25 +55,23 @@ public class Home extends Page {
         /**
          * The head-tag used by the html file.
          */
-        private Head head;
+        private Head head = Head.createHead(DEFAULT_STYLES, DEFAULT_TITLE);
         /**
          * The main-tag used by the html file.
          */
-        private Main main;
+        private Main main = Main.createElementBuilder().build();
         /**
          * The nav-tag used by the html file.
          */
-        private Nav nav;
+        private Nav nav = Nav.createElementBuilder().build();
         /**
          * The aside-tag used by the html file.
          */
-        private Aside aside;
+        private Aside aside = Aside.createElementBuilder().build();
         /**
          * The footer-tag used by the html file.
          */
-        private Footer footer;
-
-
+        private Footer footer = Footer.createElementBuilder().build();
 
         /**
          * Add file name to a page.

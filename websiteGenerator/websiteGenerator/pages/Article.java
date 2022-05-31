@@ -11,6 +11,9 @@ import websiteGenerator.util.Theme;
  */
 public class Article extends Page {
 
+    protected final static String DEFAULT_TITLE = "WebsiteBuilder Page";
+    protected final static String DEFAULT_STYLES = "styles.css";
+
     /**
      * This is a factory for Builder.
      *
@@ -56,7 +59,7 @@ public class Article extends Page {
         /**
          * The head-tag used by the html file.
          */
-        private Head head = Head.createHead("style.css", "Article");
+        private Head head;
         /**
          * The main-tag used by the html file.
          */

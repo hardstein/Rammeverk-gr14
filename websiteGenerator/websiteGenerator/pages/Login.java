@@ -6,15 +6,8 @@ import websiteGenerator.util.HTMLLanguageOptions;
 import websiteGenerator.util.Theme;
 
 public class Login extends Page {
-//    private final String emailLabel;
-//    private final String passwordLabel;
-//    private final String buttonLabel;
 
     private Login(Builder builder) {
-//        this.emailLabel = builder.emailLabel;
-//        this.passwordLabel = builder.passwordLabel;
-//        this.buttonLabel = builder.buttonLabel;
-
         super.theme = builder.theme;
         super.fileName = builder.fileName;
         super.header = builder.header;
@@ -39,9 +32,6 @@ public class Login extends Page {
      * Class Builder used to create a home page object.
      */
     public static class Builder {
-//        private String emailLabel;
-//        private String passwordLabel;
-//        private String buttonLabel;
         /**
          * The name of the file. Default is "login.html".
          */
@@ -54,7 +44,7 @@ public class Login extends Page {
         /**
          * The header-tag used by the html file.
          */
-        private Header header;
+        private Header header = Header.createElementBuilder().build();
         /**
          * The color theme used by the html file.
          */
@@ -62,23 +52,23 @@ public class Login extends Page {
         /**
          * The head-tag used by the html file.
          */
-        private Head head;
+        private Head head = Head.createHead("styles.css" , "Login");
         /**
          * The main-tag used by the html file.
          */
-        private Main main;
+        private Main main = Main.createElementBuilder().build();
         /**
          * The nav-tag used by the html file.
          */
-        private Nav nav;
+        private Nav nav = Nav.createElementBuilder().build();
         /**
          * The aside-tag used by the html file.
          */
-        private Aside aside;
+        private Aside aside = Aside.createElementBuilder().build();
         /**
          * The footer-tag used by the html file.
          */
-        private Footer footer;
+        private Footer footer = Footer.createElementBuilder().build();
 
         /**
          * Add file name to a page.

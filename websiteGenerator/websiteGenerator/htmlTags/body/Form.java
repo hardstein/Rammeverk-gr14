@@ -1,8 +1,9 @@
 package websiteGenerator.htmlTags.body;
 
+import static websiteGenerator.util.FindIndexBeforeTag.findIndexBeforeTag;
+
 public class Form {
     private final StringBuilder form;
-
     private final String emailField;
     private final String textLabel;
     private final String textField;
@@ -25,8 +26,11 @@ public class Form {
         this.submitButton = builder.submitButton;
     }
 
+    /**
+     * Used the get the content from the form build.
+     * @return StringBuilder form
+     */
     public StringBuilder createForm() {
-        form.append("   </form>\n");
         return form;
     }
 
@@ -40,7 +44,7 @@ public class Form {
     }
 
     public static class Builder {
-        private StringBuilder form = new StringBuilder("   <form>" + "\n");
+        private StringBuilder form = new StringBuilder("   <form>" + "\n" + "   </form>\n");
         // Used to make sure id for a label and input is unique.
         int i = 0;
         int j = 0;
@@ -55,6 +59,10 @@ public class Form {
         private String submitButton = "";
         private String buttonLabel = "Submit";
 
+        /**
+         *
+         * @return
+         */
         public Builder addEmailField() {
             this.emailField =
                     "   <div class=\"form-group\">\n" +
@@ -62,7 +70,8 @@ public class Form {
                             "      <input type=\"email\" class=\"form-control\" id=\"emailInp" + y + "\" aria-describedby=\"emailHelp\" placeholder=\"Enter Email\">\n" +
                             "   </div>\n";
             y++;
-            form.append(emailField);
+            int index = findIndexBeforeTag(form, "</form>");
+            form.insert(index, emailField);
             return this;
         }
 
@@ -78,14 +87,16 @@ public class Form {
                             "      <input type=\"text\" class=\"form-control\" id=\"textInp" + i + "\" aria-describedby=\"nameHelp\" placeholder=\"Enter " + textLabel + "\">\n" +
                             "   </div>\n";
             i++;
-            form.append(textField);
+            int index = findIndexBeforeTag(form, "</form>");
+            form.insert(index, textField);
             return this;
         }
 
         public Builder addSubmitButton() {
             this.submitButton =
                     "      <button type=\"submit\" class=\"btn btn-primary\">" + buttonLabel + "</button>\n";
-            form.append(submitButton);
+            int index = findIndexBeforeTag(form, "</form>");
+            form.insert(index, submitButton);
             return this;
         }
 
@@ -96,7 +107,8 @@ public class Form {
                             "      <input type=\"password\" class=\"form-control\" id=\"passwordInp" + j + "\" placeholder=\"Password\">\n" +
                             "   </div>\n";
             j++;
-            form.append(passwordField);
+            int index = findIndexBeforeTag(form, "</form>");
+            form.insert(index, passwordField);
             return this;
         }
 
@@ -106,7 +118,8 @@ public class Form {
                             "      <label for=\"number\">" + numberLabel + "</label>\n" +
                             "      <input type=\"number\" class=\"col-md-3\" id=\"number\" aria-describedby=\"number\" placeholder=\"...\">\n" +
                             "   </div>\n";
-            form.append(numberField);
+            int index = findIndexBeforeTag(form, "</form>");
+            form.insert(index, numberField);
             return this;
         }
 
