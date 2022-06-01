@@ -1,7 +1,6 @@
 package websiteGenerator.htmlTags.body;
 
 import websiteGenerator.pages.Page;
-import websiteGenerator.util.GetHTMLTagContent;
 import websiteGenerator.util.Theme;
 
 import java.util.ArrayList;
@@ -11,7 +10,7 @@ import java.util.ArrayList;
  *
  * @version 1.0.0
  */
-public class Nav implements GetHTMLTagContent {
+public class Nav {
     private StringBuilder nav;
     private final String logoImage;
 
@@ -41,17 +40,11 @@ public class Nav implements GetHTMLTagContent {
         return new Builder();
     }
 
-    @Override
-    public StringBuilder getContentOfElement() {
-        return null;
-    }
-
     /**
      * This will give you the entire nav tag structure for your page
      *
      * @return the final nav tag content
      */
-
     public StringBuilder createNav(Theme theme, Page[] pages) {
         // Jalla if check so that nav doesn't get appended each time. Which can result in multiple navs for a page...
         if (i < 1) {
@@ -86,41 +79,6 @@ public class Nav implements GetHTMLTagContent {
         }
         return nav;
     }
-
-    @Override
-    public StringBuilder getContentOfElement(Theme theme) {
-        return null;
-    }
-
-//    public StringBuilder getContentOfElementWithLinks(Theme theme, Page[] pages) {
-//        ArrayList<String> navlinks = new ArrayList<>();
-//        for (Page page: pages) {
-//            navlinks.add(page.getFileName());
-//        }
-//
-//        StringBuilder content = new StringBuilder();
-//        StringBuilder links = new StringBuilder();
-//        for (String link : navlinks) {
-//            links.append("            <a class=\"nav-link\" href=\"")
-//                    .append(link)
-//                    .append("\">")
-//                    .append(link.substring(0, link.length() - 5)) // Removes the 5 last character from the string,
-//                    // which is ".html".
-//                    .append("</a>\n");
-//        }
-//        content.append("    <nav class=\"navbar navbar-" + theme.getThemeColor() + " navbar-expand-md\"> \n")
-//                .append("        <a href=\"#\" class=\"navbar-brand\">Logo</a>\n" +
-//                        "        <button class=\"navbar-toggler\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbar\">\n" +
-//                        "            <span class=\"navbar-toggler-icon \"></span>\n" +
-//                        "        </button>\n")
-//                .append("        <div class=\"navbar-collapse collapse \" id=\"navbar\">\n")
-//                .append("        <ul class=\"navbar-nav\">\n")
-//                .append(links)
-//                .append("        </ul>\n")
-//                .append("        </div>\n")
-//                .append("    </nav>");
-//        return content;
-//    }
 
     /**
      * Builder class for building a header {@link Nav}
