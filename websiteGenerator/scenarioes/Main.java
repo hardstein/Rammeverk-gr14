@@ -31,7 +31,7 @@ public class Main {
         // For now you can find scenario: 1, 3, 7, 9, 14
 
         //Creating page content
-        Head mainHead = Head.createHead("styles.css", "Frontpage");
+        //Head mainHead = Head.createHead("styles.css", "Frontpage");
         // These will be the same for all pages:
         // Scenario 7:
         Footer footer = Footer.createElementBuilder()
@@ -123,9 +123,9 @@ public class Main {
         Article article = Article.createArticlePageBuilder()
                 .build();
 
+        // remember to add head aswell, removed it because of temporary faults
         Home homePage = Home.createPageBuilder()
                 .addFileName("homepage.html")
-                .addHead(mainHead)
                 .addHeader(homeHeader)
                 .addNav(nav)
                 .addMain(homeMain)
