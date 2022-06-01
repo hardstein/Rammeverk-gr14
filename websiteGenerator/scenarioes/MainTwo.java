@@ -11,7 +11,7 @@ public class MainTwo {
 
         Table table = Table.createTableBuilder().addCSVToHTMLTable("planets_100.csv", ";").build();
 
-        table.getTable();
+        System.out.println(table.getTable());
 
         //System.out.println(Parse.CSVtoHTMLTable("planets_100.csv", ";"));
 

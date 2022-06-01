@@ -10,8 +10,8 @@ public class Table {
          * Getter for the html table string
          * @return string
          */
-    public void getTable() {
-        System.out.println(table);
+    public String getTable() {
+        return table;
     }
 
 
@@ -34,7 +34,6 @@ public class Table {
 
         public Builder addCSVToHTMLTable(String filepath, String parsingCharacter) {
             this.table = Parse.CSVtoHTMLTable(filepath, parsingCharacter);
-            System.out.println(table);
             return this;
         }
 
