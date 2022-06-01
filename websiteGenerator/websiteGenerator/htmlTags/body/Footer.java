@@ -1,6 +1,5 @@
 package websiteGenerator.htmlTags.body;
 
-import websiteGenerator.util.GetHTMLTagContent;
 import websiteGenerator.util.Theme;
 
 import static websiteGenerator.util.FindIndexBeforeTag.findIndexBeforeTag;
@@ -11,7 +10,7 @@ import static websiteGenerator.util.ReplaceWord.replaceAllWords;
  *
  * @version 1.0.0
  */
-public class Footer implements GetHTMLTagContent {
+public class Footer {
     static String colorWordToReplace = "zcolorx";
     private StringBuilder footer;
     private final String contactName;
@@ -97,21 +96,6 @@ public class Footer implements GetHTMLTagContent {
      */
     public static Builder createElementBuilder() {
         return new Builder();
-    }
-
-    /**
-     * Builds the complete footer tag information
-     *
-     * @return StringBuilder with the complete build for footer tag
-     */
-    @Override
-    public StringBuilder getContentOfElement() {
-        return null;
-    }
-
-    @Override
-    public StringBuilder getContentOfElement(Theme theme) {
-        return null;
     }
 
     /**

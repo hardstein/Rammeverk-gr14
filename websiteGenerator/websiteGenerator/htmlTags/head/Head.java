@@ -8,94 +8,73 @@ import websiteGenerator.util.Theme;
  *
  * @version 1.0.0
  */
-public class Head implements GetHTMLTagContent {
+public class Head {
+    /**
+     * The default value for title in head tag.
+     */
+    protected final static String DEFAULT_TITLE = "WebsiteBuilder Page";
+    /**
+     * The default value for style in head tag.
+     */
+    protected final static String DEFAULT_STYLES = "styles.css";
 
+
+    private StringBuilder head;
     private String style;
     private String title;
 
-    /**
-     * Factory for creating Head tag
-     *
-     * @param style style sheet
-     * @param title tile for the page
-     * @return
-     */
-    public static Head createHead(String style, String title) {
-
-        return new Head(style, title); 
-        
+    public StringBuilder getHead() {
+        return head;
     }
 
-    /**
-     * Private constructor for Head class
-     *
-     * @param style style sheet for page
-     * @param title title for page
-     */
-    private Head(String style, String title) {
-        this.style = style;
-        this.title = title;
-    }
-
-    /**
-     * Getter for style sheet
-     *
-     * @return style sheet name
-     */
     public String getStyle() {
         return style;
     }
 
-    /**
-     * Setter for stylesheet
-     *
-     * @param style A string value for stylesheet name
-     */
-    public void setStyle(String style) {
-        this.style = style;
-    }
-
-    /**
-     * Getter for title
-     *
-     * @return title for page
-     */
     public String getTitle() {
         return title;
     }
 
-    /**
-     * Setter for title
-     *
-     * @param title A string value for title for page
-     */
-
-    public void setTitle(String title) {
-        this.title = title;
+    private Head(Builder builder) {
+        this.head = builder.head;
+        this.style = builder.style;
+        this.title = builder.title;
     }
 
-    /**
-     * This will give you the entire head tag structure for your page
-     *
-     * @return the final head tag content
-     */
-    @Override
-    public StringBuilder getContentOfElement() {
-        StringBuilder content = new StringBuilder();
-        content.append("<head>\n" +
+    public static Builder createHeadBuilder() {
+        return new Builder();
+    }
+
+    public StringBuilder createHead() {
+        head.append("<head>\n" +
                 "    <meta charset=\"UTF-8\">\n" +
                 "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n" +
                 "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
                 "    <link rel=\"stylesheet\" href=\""+style+"\">\n" +
                 "    <title>"+ title +"</title>\n" +
                 "    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor\" crossorigin=\"anonymous\">\n" +
-                "</head>");
-
-        return content;
+                "</head>\n");
+        return head;
     }
 
-    @Override
-    public StringBuilder getContentOfElement(Theme theme) {
-        return null;
+    public static class Builder {
+        private StringBuilder head = new StringBuilder();
+        private String style = DEFAULT_STYLES;
+        private String title = DEFAULT_TITLE;
+
+        public Builder addStyle(String style) {
+            this.style = style;
+            return this;
+        }
+
+        public Builder addTitle(String title) {
+            this.title = title;
+            return this;
+        }
+
+        public Head build() {
+            return new Head(this);
+        }
     }
+
 }

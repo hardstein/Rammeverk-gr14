@@ -1,17 +1,14 @@
 package websiteGenerator.htmlTags.body;
-
 import websiteGenerator.util.*;
-
 import static websiteGenerator.util.FindIndexBeforeTag.findIndexBeforeTag;
 import static websiteGenerator.util.ReplaceWord.replaceAllWords;
-
 
 /**
  * A class for semantic main tag
  *
  * @version 1.0.0
  */
-public class Main implements GetHTMLTagContent {
+public class Main {
     private static String font = "inherit";
     private final StringBuilder main;
     private final FontFamily fontFamily;
@@ -91,21 +88,6 @@ public class Main implements GetHTMLTagContent {
      */
     public static Builder createElementBuilder() {
         return new Builder();
-    }
-
-    /**
-     * This will give you the entire main tag structure for your page
-     *
-     * @return the final main tag content
-     */
-    @Override
-    public StringBuilder getContentOfElement() {
-        return null;
-    }
-
-    @Override
-    public StringBuilder getContentOfElement(Theme theme) {
-        return null;
     }
 
     /**

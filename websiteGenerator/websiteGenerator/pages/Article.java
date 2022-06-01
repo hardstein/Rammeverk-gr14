@@ -79,7 +79,7 @@ public class Article extends Page {
         private Footer footer = DEFAULT_FOOTER;
 
         /**
-         * Add file name to a page.
+         * Add a file name to the Article page.
          *
          * @param fileName a string used as the name for the file.
          * @return Builder object when done.

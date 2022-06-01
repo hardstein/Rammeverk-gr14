@@ -1,13 +1,11 @@
 package websiteGenerator.htmlTags.body;
-import websiteGenerator.util.GetHTMLTagContent;
-import websiteGenerator.util.Theme;
 
 /**
  * A class for semantic header tag
  *
  * @version 1.0.0
  */
-public class Header implements GetHTMLTagContent {
+public class Header {
     private StringBuilder header;
     private final String headerImageUrl;
     private final String headerHeading;
@@ -52,24 +50,9 @@ public class Header implements GetHTMLTagContent {
         return new Builder();
     }
 
-    /**
-     * This will give you the entire header tag structure for your page
-     *
-     * @return the final header tag content
-     */
-    @Override
-    public StringBuilder getContentOfElement() {
-        return null;
-    }
-
     public StringBuilder createHeader() {
         header.append("    </header>\n");
         return header;
-    }
-
-    @Override
-    public StringBuilder getContentOfElement(Theme theme) {
-        return null;
     }
 
     /**
@@ -145,12 +128,6 @@ public class Header implements GetHTMLTagContent {
             return new Header(this);
         }
 
-
-//        public Builder createHeroHeader() {
-//            return         header.append("        <div class=\"bg-image text-center mb-1\" style=\"background-image: url('" + heroImageUrl + "'); padding: 7rem;\">\n")
-//                    .append("          <h1 class=\"mb-3 h1\">" + heroHeading + "</h1>\n")
-//                    .append("        </div>\n");;
-//        }
     }
 
 }

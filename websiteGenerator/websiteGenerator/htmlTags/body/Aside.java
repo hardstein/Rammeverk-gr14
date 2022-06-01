@@ -1,8 +1,4 @@
 package websiteGenerator.htmlTags.body;
-
-import websiteGenerator.util.GetHTMLTagContent;
-import websiteGenerator.util.Theme;
-
 import static websiteGenerator.util.FindIndexBeforeTag.findIndexBeforeTag;
 
 /**
@@ -10,7 +6,7 @@ import static websiteGenerator.util.FindIndexBeforeTag.findIndexBeforeTag;
  *
  * @version 1.0.0
  */
-public class Aside implements GetHTMLTagContent {
+public class Aside {
     private StringBuilder aside;
     private final String asideTitle;
     private final String asideText;
@@ -55,21 +51,6 @@ public class Aside implements GetHTMLTagContent {
      */
     public static Builder createElementBuilder() {
         return new Builder();
-    }
-
-    /**
-     * Builds the complete aside tag information
-     *
-     * @return StringBuilder with the complete build for aside tag
-     */
-    @Override
-    public StringBuilder getContentOfElement() {
-        return null;
-    }
-
-    @Override
-    public StringBuilder getContentOfElement(Theme theme) {
-        return null;
     }
 
     public StringBuilder createAside() {

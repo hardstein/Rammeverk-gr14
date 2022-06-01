@@ -12,14 +12,7 @@ import websiteGenerator.util.Theme;
  */
 public abstract class Page {
 
-   /**
-    * The default value for title in head tag.
-    */
-    protected final static String DEFAULT_TITLE = "WebsiteBuilder Page";
-   /**
-    * The default value for style in head tag.
-    */
-    protected final static String DEFAULT_STYLES = "styles.css";
+
    /**
     * The default value for language in HTML tag to "en" english.
     */
@@ -27,7 +20,7 @@ public abstract class Page {
    /**
     * The default value the page head tag.
     */
-    protected final static Head DEFAULT_HEAD = Head.createHead(DEFAULT_STYLES, DEFAULT_TITLE);
+    protected final static Head DEFAULT_HEAD = Head.createHeadBuilder().build();
    /**
     * The default value the page header tag.
     */

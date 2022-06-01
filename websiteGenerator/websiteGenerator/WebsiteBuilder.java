@@ -81,7 +81,7 @@ public class WebsiteBuilder {
                 fileWriter.write(
                         htmlHeadElement +
                                 page.getHtml().getStartTag() + "\n" +
-                                page.getHead().getContentOfElement() + "\n" +
+                                page.getHead().createHead() +
                                 // Add Theme
                                 "<body class=\"container h-100 bg-" + theme.getThemeColor() +" text-" + theme.getFontColor() + "\">\n" +
                                 page.getNav().createNav(theme, pages) +
