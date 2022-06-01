@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 public abstract class Parse implements Parsers {
 
-    public static String CSVtoHTMLTable(String filename, String parsingSign) {
+    public static String CSVtoHTMLTable(String filename, String parsingCharacter) {
 
         StringBuilder htmlTable = new StringBuilder();
 
@@ -18,7 +18,7 @@ public abstract class Parse implements Parsers {
 
             line = bufferedReader.readLine();
 
-            String[] tableHeader = line.split(parsingSign);
+            String[] tableHeader = line.split(parsingCharacter);
 
             htmlTable.append("<tr>");
 
@@ -34,7 +34,7 @@ public abstract class Parse implements Parsers {
             System.out.println(tableHeader[0]);
 
             while ((line = bufferedReader.readLine()) != null) {
-                String[] tableData = line.split(parsingSign);
+                String[] tableData = line.split(parsingCharacter);
 
                 htmlTable.append("<tr>");
 
@@ -52,10 +52,8 @@ public abstract class Parse implements Parsers {
             htmlTable.append("</table>");
 
 
-        } catch (FileNotFoundException fileNotFoundException) {
+        } catch (IOException fileNotFoundException) {
             fileNotFoundException.printStackTrace();
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
         }
 
         return htmlTable.toString();
