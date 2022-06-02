@@ -9,7 +9,7 @@ import static websiteGenerator.util.ReplaceWord.replaceAllWords;
  * @version 1.0.0
  */
 public class Main {
-    private static String font = "inherit";
+    private static final String FONT = "inherit";
     private final StringBuilder main;
     private final FontFamily fontFamily;
     private final String mainHeading;
@@ -94,7 +94,7 @@ public class Main {
      * Builder class for building a header {@link Main}
      */
     public static class Builder {
-        private StringBuilder main = new StringBuilder("    <main style=\"font-family:"+font+"\">\n" + "    </main>\n");
+        private StringBuilder main = new StringBuilder("    <main style=\"font-family:"+ FONT +"\">\n" + "    </main>\n");
         private FontFamily fontFamily;
         private String mainHeading;
         private String introduction;
@@ -104,7 +104,7 @@ public class Main {
 
         public Builder addFontFamily(FontFamily fontFamily) {
             this.fontFamily = fontFamily;
-            StringBuilder mainWithFF = replaceAllWords(main, font, fontFamily.getFontFamily());
+            StringBuilder mainWithFF = replaceAllWords(main, FONT, fontFamily.getFontFamily());
             main.setLength(0);
             main.insert(0, mainWithFF);
             return this;
@@ -170,6 +170,11 @@ public class Main {
             main.insert(index, form.createForm());
 //            if (form != null)
 //                main.append(form.createForm());
+            return this;
+        }
+
+        public Main.Builder addTxtToHtml(String filepath) {
+            this.main.append(Parse.txtToHtml(filepath));
             return this;
         }
 
