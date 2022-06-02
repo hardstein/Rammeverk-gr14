@@ -29,6 +29,11 @@ public class Aside {
         return asideText;
     }
 
+    /**
+     * Getter for getting the content of aside
+     *
+     * @return StringBuilder with the aside vontent
+     */
     public StringBuilder getAside() {
         return aside;
     }
@@ -53,9 +58,14 @@ public class Aside {
         return new Builder();
     }
 
+    /**
+     *
+     * @return StringBuilder with the content of aside
+     */
     public StringBuilder createAside() {
         return aside;
     }
+
     /**
      * A builder for {@link Aside}
      */

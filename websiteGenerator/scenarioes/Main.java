@@ -137,11 +137,12 @@ public class Main {
                 .addMainHeading("Login")
                 .addForm(loginForm)
                 .build();
-
+                
         Login loginPage = Login.createPageBuilder()
                 .addMain(loginMain)
                 .addHead(Head.createHeadBuilder()
                         .addTitle("Login")
+                        .addStyle("styles")
                         .build())
                 .addNav(nav)
                 .addHeader(loginHeader)
