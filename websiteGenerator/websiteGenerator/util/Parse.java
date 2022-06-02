@@ -93,7 +93,7 @@ public abstract class Parse implements Parsers {
             }
 
             htmlTxt.append("</p>").append("\n");
-            htmlTxt.append("</section>");
+            htmlTxt.append("</section>").append("\n");
 
         }
         catch (IOException e) {
