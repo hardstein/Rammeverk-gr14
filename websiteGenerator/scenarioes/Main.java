@@ -103,7 +103,7 @@ public class Main {
                 .build();
 
         // Home:
-        // Scenario 1 (Adding hero)
+        // Scenario 1 part 1 (Adding hero)
         Header homeHeader = Header.createElementBuilder()
                 .addHeroHeading("Hero-Title")
                 .addHeroImageUrl(heroImageUrl)
@@ -134,6 +134,7 @@ public class Main {
                 .build();
 
         // remember to add head as well, removed it because of temporary faults (hva er dette?)
+        // Scenario 1 (add the hero header to the home page)
         // Scenario 8 (Create a HTML page that adapts to the screen size)
         Home homePage = Home.createPageBuilder()
                 .addFileName("homepage.html")
