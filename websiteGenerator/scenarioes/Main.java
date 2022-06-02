@@ -3,10 +3,7 @@ package scenarioes;
 import websiteGenerator.WebsiteBuilder;
 import websiteGenerator.htmlTags.body.*;
 import websiteGenerator.htmlTags.head.Head;
-import websiteGenerator.pages.Article;
-import websiteGenerator.pages.Home;
-import websiteGenerator.pages.Login;
-import websiteGenerator.pages.Page;
+import websiteGenerator.pages.*;
 import websiteGenerator.util.HTMLLanguageOptions;
 import websiteGenerator.util.Theme;
 
@@ -126,6 +123,9 @@ public class Main {
         // remember to add head aswell, removed it because of temporary faults
         Home homePage = Home.createPageBuilder()
                 .addFileName("homepage.html")
+                .addHead(Head.createHeadBuilder()
+                        .addTitle("Homepage")
+                        .build())
                 .addHeader(homeHeader)
                 .addNav(nav)
                 .addMain(homeMain)
@@ -140,22 +140,29 @@ public class Main {
 
         Login loginPage = Login.createPageBuilder()
                 .addMain(loginMain)
+                .addHead(Head.createHeadBuilder()
+                        .addTitle("Login")
+                        .build())
                 .addNav(nav)
                 .addHeader(loginHeader)
                 .addFooter(footer)
                 .build();
 
+        Styles styles = Styles.createStylesBuilder()
+                .addFilename("styles.css")
+                .build();
         // Making project:
         // Scenario 1, 9 and 14:
         Page[] HTMLpages = new Page[]{homePage, article, loginPage};
         WebsiteBuilder project = WebsiteBuilder.createWebsiteBuilder()
-                .addRobots()
-                .addTheme(Theme.LIGHT)
                 .addProjectFolder("testFolder")
+                .addTheme(Theme.LIGHT)
                 .addHTMLPages(HTMLpages)
+                .addRobots()
+                .addStylesheetFile(styles)
                 .build();
 
-        project.generate();
+//        project.generate();
 
         System.out.println();
     }
