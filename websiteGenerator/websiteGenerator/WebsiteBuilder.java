@@ -16,6 +16,7 @@ public class WebsiteBuilder {
     private Page[] pages;
     private Theme theme;
     private String robots;
+    private Styles styles;
 
     /**
      * Getter for pages attribute
@@ -45,27 +46,19 @@ public class WebsiteBuilder {
     }
 
     /**
-     * Constructor for flass
+     * Constructor for the builder.
      *
      * @param builder
      */
     private WebsiteBuilder(Builder builder) {
-        this.pages = builder.page;
+        this.pages = builder.pages;
         this.projectFolder = builder.projectFolder;
         this.theme = builder.theme;
         this.robots = builder.robots;
+        this.styles = builder.styles;
     }
 
-    /**
-     * This method will generate the end product of your entire project build.
-     * It will make a folder structur for you, and build your page as you have requested.
-     * It will make the HTML pages you have specified, and also a robots.txt file if you have added that aswell
-     */
-    public void generate() {
-        String htmlHeadElement = "<!DOCTYPE html>\n";
-        if (projectFolder == null) {
-            projectFolder = ("starterproject");
-        }
+    public void createProjectFolder() {
         File file = new File(projectFolder);
 
         boolean bool = file.mkdir();
@@ -74,49 +67,18 @@ public class WebsiteBuilder {
         } else {
             System.out.println("Error, folder was not created. It might already exist");
         }
-
-        for (Page page : pages) {
-            try {
-                FileWriter fileWriter = new FileWriter("./" + projectFolder + "/" + page.getFileName());
-                fileWriter.write(
-                        htmlHeadElement +
-                                page.getHtml().getStartTag() + "\n" +
-                                page.getHead().createHead() +
-                                // Add Theme
-                                "<body class=\"container h-100 bg-" + theme.getThemeColor() +" text-" + theme.getFontColor() + "\">\n" +
-                                page.getNav().createNav(theme, pages) +
-                                page.getHeader().createHeader() +
-                                page.getMain().createMain() +
-                                page.getAside().createAside() +
-                                page.getFooter().createFooter(theme) +
-                                "    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2\" crossorigin=\"anonymous\"></script>\n" +
-                                "</body>\n" +
-                                page.getHtml().getEndTag());
-                fileWriter.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-        if(robots != null) {
-            try {
-                FileWriter fileWriter = new FileWriter("./" + projectFolder + "/" + robots);
-                fileWriter.write("User-agent: * \n Allow: /");
-                fileWriter.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
     }
 
     /**
      * A builder for WebsiteBuilder {@link WebsiteBuilder}
      */
     public static class Builder {
-        private String projectFolder = "WebsiteProject";
-        private Page[] page;
+        private String projectFolder = "WebsiteBuilderProject";
+        private Page[] pages;
+//        private Page[] page;
         private Theme theme;
         private String robots;
+        private Styles styles;
 
         /**
          * Adds a projectFolder
@@ -125,22 +87,52 @@ public class WebsiteBuilder {
          */
         public Builder addProjectFolder(String projectFolderName) {
             this.projectFolder = projectFolderName;
+            File file = new File(projectFolder);
+
+            boolean bool = file.mkdir();
+            if (bool) {
+                System.out.println(projectFolder + " folder was created successfully");
+            } else {
+                System.out.println("Error, folder was not created. It might already exist");
+            }
             return this;
         }
 
         /**
-         * adds html pages to your project
+         * Adds html pages to your project
          * @param page
          * @return A list of HTML pages
          */
         public Builder addHTMLPages(Page[] page) {
-            this.page = page;
+            this.pages = page;
+            String htmlHeadElement = "<!DOCTYPE html>\n";
+            for (Page p : pages) {
+                try {
+                    FileWriter fileWriter = new FileWriter("./" + projectFolder + "/" + p.getFileName());
+                    fileWriter.write(
+                            htmlHeadElement +
+                                    p.getHtml().getStartTag() + "\n" +
+                                    p.getHead().createHead() +
+                                    // Add Theme
+                                    "<body class=\"container h-100 bg-" + theme.getThemeColor() +" text-" + theme.getFontColor() + "\">\n" +
+                                    p.getNav().createNav(theme, pages) +
+                                    p.getHeader().createHeader() +
+                                    p.getMain().createMain() +
+                                    p.getAside().createAside() +
+                                    p.getFooter().createFooter(theme) +
+                                    "    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2\" crossorigin=\"anonymous\"></script>\n" +
+                                    "</body>\n" +
+                                    p.getHtml().getEndTag());
+                    fileWriter.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
             return this;
         }
 
         /**
          * Adds a theme for the project
-         *
          * @param theme
          * @return a specified theme
          */
@@ -151,11 +143,35 @@ public class WebsiteBuilder {
 
         /**
          * Adds a robots.txt file to your project
-         *
          * @return robots.txt string value
          */
         public Builder addRobots() {
             this.robots = "Robots.txt";
+
+                try {
+                    FileWriter fileWriter = new FileWriter("./" + projectFolder + "/" + robots);
+                    fileWriter.write("User-agent: * \n Allow: /");
+                    fileWriter.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+            return this;
+        }
+
+        /**
+         * Adds a stylesheet file to your project
+         * @return Styles
+         */
+        public Builder addStylesheetFile(Styles styles) {
+            this.styles = styles;
+            try {
+                FileWriter fileWriter = new FileWriter("./" + projectFolder + "/" + styles.getFilename());
+                fileWriter.write(String.valueOf(styles.getStylesContent()));
+                fileWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             return this;
         }
 

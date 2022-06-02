@@ -18,6 +18,7 @@ public class Head {
      */
     protected final static String DEFAULT_STYLES = "styles.css";
 
+    int i = 0;
 
     private StringBuilder head;
     private String style;
@@ -46,14 +47,18 @@ public class Head {
     }
 
     public StringBuilder createHead() {
-        head.append("<head>\n" +
-                "    <meta charset=\"UTF-8\">\n" +
-                "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n" +
-                "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
-                "    <link rel=\"stylesheet\" href=\""+style+"\">\n" +
-                "    <title>"+ title +"</title>\n" +
-                "    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor\" crossorigin=\"anonymous\">\n" +
-                "</head>\n");
+        if (i < 1) {
+            head.setLength(0);
+            head.append("<head>\n" +
+                    "    <meta charset=\"UTF-8\">\n" +
+                    "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n" +
+                    "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
+                    "    <link rel=\"stylesheet\" href=\"" + style + "\">\n" +
+                    "    <title>" + title + "</title>\n" +
+                    "    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor\" crossorigin=\"anonymous\">\n" +
+                    "</head>\n");
+            i = head.length();
+        }
         return head;
     }
 
