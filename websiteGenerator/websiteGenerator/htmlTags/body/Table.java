@@ -10,7 +10,7 @@ public class Table {
     public String table;
 
         /**
-         * Getter for the html table string
+         * Getter for html table string
          * @return string
          */
     public String getTable() {
@@ -78,7 +78,7 @@ public class Table {
         private final static String DEFAULT_BOOTSTRAP_TABLE_DESIGN = "table";
 
         private String table;
-        private ArrayList<String> tableHeaderRow;
+        private ArrayList<String> tableHeaderRow = new ArrayList<>();
         private ArrayList<ArrayList<String>> tableDataRows = new ArrayList<>();
         private String tableTagBootstrapDesignString = DEFAULT_BOOTSTRAP_TABLE_DESIGN;
 
