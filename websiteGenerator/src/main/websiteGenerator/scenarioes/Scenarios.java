@@ -192,7 +192,7 @@ public class Scenarios {
         Page[] HTMLpages = new Page[]{homePage, article, loginPage, registrationPage};
         WebsiteBuilder project = WebsiteBuilder.createWebsiteBuilder()
                 .addProjectFolder("testFolder")
-                .addTheme(Theme.DARK)
+//                .addTheme(Theme.DARK)
                 .addHTMLPages(HTMLpages)
                 .addRobots()
                 .addStylesheetFile(styles)

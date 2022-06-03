@@ -71,7 +71,7 @@ public class WebsiteBuilder {
     public static class Builder {
         private String projectFolder = "WebsiteBuilderProject";
         private Page[] pages;
-        private Theme theme;
+        private Theme theme = Theme.LIGHT;
         private String robots;
         private Styles styles;
 
