@@ -5,6 +5,11 @@ import websiteGenerator.htmlTags.Html;
 import websiteGenerator.util.HTMLLanguageOptions;
 import websiteGenerator.util.Theme;
 
+/**
+ * A class for the Login page
+ *
+ * @version 1.0.0
+ */
 public class Login extends Page {
     /**
      * The name of the file. Default is "login.html".

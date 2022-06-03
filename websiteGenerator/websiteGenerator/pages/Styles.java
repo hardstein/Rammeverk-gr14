@@ -1,13 +1,27 @@
 package websiteGenerator.pages;
 
+
+/**
+ * A class for the styles
+ *
+ * @version 1.0.0
+ */
 public class Styles {
     private StringBuilder stylesContent;
     private String filename;
 
+    /**
+     * @getter filename
+     * @return returns a string for the filename
+     */
     public String getFilename() {
         return filename;
     }
 
+    /**
+     * @getter styleContent
+     * @return returns a stringBuilder for the styleContent
+     */
     public StringBuilder getStylesContent() {
         return stylesContent;
     }

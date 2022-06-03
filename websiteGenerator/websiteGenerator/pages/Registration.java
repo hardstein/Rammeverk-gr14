@@ -5,6 +5,11 @@ import websiteGenerator.htmlTags.Html;
 import websiteGenerator.util.HTMLLanguageOptions;
 import websiteGenerator.util.Theme;
 
+/**
+ * A class for the registration
+ *
+ * @version 1.0.0
+ */
 public class Registration extends Page {
     /**
      * The name of the file. Default is "registration.html".

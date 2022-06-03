@@ -8,6 +8,8 @@ import websiteGenerator.util.Theme;
 
 /**
  * Class for an article page.
+ *
+ * @version 1.0.0
  */
 public class Article extends Page {
     /**

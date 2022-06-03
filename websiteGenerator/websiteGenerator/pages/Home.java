@@ -12,6 +12,8 @@ import websiteGenerator.util.Theme;
 public class Home extends Page {
     /**
      * The name of the file. Default is "home.html".
+     *
+     * @version 1.0.0
      */
     public static final String DEFAULT_HOME_FILENAME = "home.html";
 

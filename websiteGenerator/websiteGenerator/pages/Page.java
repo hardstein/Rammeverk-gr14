@@ -12,6 +12,8 @@ import java.io.IOException;
 
 /**
  * Abstract class for pages.
+ *
+ * @
  */
 public abstract class Page {
 
@@ -133,6 +135,14 @@ public abstract class Page {
         this.fileName = fileName;
     }
 
+    /**
+     *
+     * @param p the page
+     * @param pages the same page in a array
+     * @param theme the theme for the page
+     * @return
+     */
+
     public String createPageString(Page p, Page[] pages, Theme theme) {
         StringBuilder pageString = new StringBuilder();
 
@@ -159,6 +169,9 @@ public abstract class Page {
 
     }
 
+    /**
+     * makes a new file for the html page
+     */
     public void generateHTMLPageFile() {
         try {
             FileWriter fileWriter = new FileWriter(this.getFileName());
