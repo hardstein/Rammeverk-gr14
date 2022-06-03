@@ -35,26 +35,55 @@ public class Main {
         return body;
     }
 
+    /**
+     *
+     * @getter for main
+     * @return StringBuilder
+     */
     public StringBuilder getMain() {
         return main;
     }
 
+    /**
+     *
+     * @getter for introduction
+     * @return String
+     */
     public String getIntroduction() {
         return introduction;
     }
 
+    /**
+     *
+     * @getter for body
+     * @return String
+     */
     public String getBody() {
         return body;
     }
-
+    /**
+     *
+     * @getter for main
+     * @return String conclusion
+     */
     public String getConclusion() {
         return conclusion;
     }
 
+    /**
+     *
+     * @getter for form
+     * @return Form
+     */
     public Form getForm() {
         return form;
     }
 
+    /**
+     *
+     * @getter for font family
+     * @return FontFamily
+     */
     public FontFamily getFontFamily() {
         return fontFamily;
     }
@@ -74,10 +103,11 @@ public class Main {
         this.form = builder.form;
     }
 
+    /**
+     * Creates main
+     * @return main
+     */
     public StringBuilder createMain() {
-//        if (form != null)
-//            main.append(form.createForm());
-//        main.append("    </main>\n");
         return main;
     }
 
@@ -102,6 +132,11 @@ public class Main {
         private String conclusion;
         private Form form;
 
+        /**
+         * Adds font family
+         * @param fontFamily
+         * @return Builder object
+         */
         public Builder addFontFamily(FontFamily fontFamily) {
             this.fontFamily = fontFamily;
             StringBuilder mainWithFF = replaceAllWords(main, FONT, fontFamily.getFontFamily());
@@ -122,6 +157,11 @@ public class Main {
             return this;
         }
 
+        /**
+         * Adds introduction
+         * @param introduction
+         * @return Builder object
+         */
         public Builder addIntroduction(String introduction) {
             this.introduction = "        <p class=\"fw-light\">" + introduction + "</p>\n";
             int index = findIndexBeforeTag(main, "</main>");
@@ -129,12 +169,24 @@ public class Main {
             return this;
         }
 
+        /**
+         * Adds body text to main
+         * @param s
+         * @return Builder
+         */
         public Builder addBody(String s) {
             this.body = "        <p>" + s + "</p>\n";
             main.append(this.body);
             return this;
         }
 
+        /**
+         * Adds body text to main
+         *
+         * @param body
+         * @param fontSize
+         * @return Builder object
+         */
         public Builder addBody(String body, FontSize fontSize) {
             this.body = "        <p class=\"" + fontSize.getFontSize() + "\">" + body + "</p>\n";
             int index = findIndexBeforeTag(main, "</main>");
@@ -142,6 +194,13 @@ public class Main {
             return this;
         }
 
+        /**
+         * Adds body text to main
+         *
+         * @param body
+         * @param weight
+         * @return Builder object
+         */
         public Builder addBody(String body, FontWeight weight) {
             this.body = "        <p class=\"" + weight.getFontWeight() + "\">" + body + "</p>\n";
             int index = findIndexBeforeTag(main, "</main>");
@@ -149,6 +208,14 @@ public class Main {
             return this;
         }
 
+        /**
+         * Adds body txt in main
+         *
+         * @param body
+         * @param fontSize
+         * @param weight
+         * @return Builder object
+         */
         public Builder addBody(String body, FontSize fontSize, FontWeight weight) {
             this.body = "        <p class=\"" + fontSize.getFontSize() + " " + weight.getFontWeight() + "\">" + body + "</p>\n";
             int index = findIndexBeforeTag(main, "</main>");
@@ -156,6 +223,12 @@ public class Main {
             return this;
         }
 
+        /**
+         * Adds conclusion
+         *
+         * @param conclusion
+         * @return Builder object
+         */
         public Builder addConclusion(String conclusion) {
             this.conclusion = "        <p>" + conclusion + "</p>\n";
             int index = findIndexBeforeTag(main, "</main>");
@@ -163,6 +236,11 @@ public class Main {
             return this;
         }
 
+        /**
+         * Adds form to main
+         * @param form
+         * @return Builder object
+         */
         // Main with form
         public Builder addForm(Form form) {
             this.form = form;
@@ -173,16 +251,35 @@ public class Main {
             return this;
         }
 
+        /**
+         * Parse a text file to html content
+         * @param filepath
+         *
+         * @return Builder object
+         */
         public Main.Builder addTxtToHtml(String filepath) {
             this.main.append(Parse.txtToHtml(filepath));
             return this;
         }
+
+        /**
+         * Parse CSV to HTML content
+         *
+         * @param filepath
+         * @param parsingCharacter
+         * @return Builder object
+         */
 
         public Main.Builder addCSVToHtml(String filepath, String parsingCharacter ) {
             this.main.append(Parse.CSVtoHTMLTable(filepath, parsingCharacter));
             return this;
         }
 
+        /**
+         * Adds table to main
+         * @param table
+         * @return Builder object
+         */
         public Main.Builder addTable(Table table) {
             this.main.append(table.table);
             return this;

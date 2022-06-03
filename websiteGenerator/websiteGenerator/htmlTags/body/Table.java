@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 
 /**
- * class for defining and building a nav element for a Page {@link websiteGenerator.pages.Page}
+ * class for defining and building a Table element for a Page {@link websiteGenerator.pages.Page}
  *
  * @version 1.0.0
  */
@@ -81,7 +81,9 @@ public class Table {
     }
 
     public static class Builder {
-
+        /**
+         * Variable for default dic design
+         */
         public final static String BOOTSTRAP_DIV_DESIGN = "table-responsive-sm";
         private final static String DEFAULT_BOOTSTRAP_TABLE_DESIGN = "table";
 
@@ -90,27 +92,52 @@ public class Table {
         private ArrayList<ArrayList<String>> tableDataRows = new ArrayList<>();
         private String tableTagBootstrapDesignString = DEFAULT_BOOTSTRAP_TABLE_DESIGN;
 
+        /**
+         * Parse CSV file to Table
+         * @param filepath
+         * @param parsingCharacter
+         * @return Builder object
+         */
         public Builder addCSVToHTMLTable(String filepath, String parsingCharacter) {
             this.table = Parse.CSVtoHTMLTable(filepath, parsingCharacter);
             return this;
         }
 
+        /**
+         * Adds table header row
+         *
+         * @param headerRow
+         * @return Builder object
+         */
         public Builder addTableHeaderRow(String[] headerRow) {
             this.tableHeaderRow.addAll(Arrays.asList(headerRow));
             return this;
         }
 
+        /**
+         * Adds table data row
+         * @param dataRow
+         * @return Builder object
+         */
         public Builder addTableDataRow(String[] dataRow) {
             ArrayList<String> tableDataRow = new ArrayList<>(Arrays.asList(dataRow));
             this.tableDataRows.add(tableDataRow);
             return this;
         }
 
+        /**
+         * Adds custom boostrap design on table
+         * @param bootstrapTableValue
+         * @return Builder object
+         */
         public Builder addBoostrapTableDesign(String bootstrapTableValue) {
             this.tableTagBootstrapDesignString = bootstrapTableValue;
             return this;
         }
 
+        /**
+         * @return new Table object
+         */
         public Table build() {
 
             return new Table(this);
