@@ -74,11 +74,6 @@ public class Footer {
         return facebookSocialMediaLink;
     }
 
-    /**
-     * A constructor for adding properties from inner builder class to the Footer class properties
-     *
-     * @param builder the builder for footer element
-     */
     private Footer(Builder builder) {
         this.footer = builder.footer;
         this.contactName = builder.contactName;

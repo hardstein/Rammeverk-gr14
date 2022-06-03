@@ -1,7 +1,7 @@
 package websiteGenerator.htmlTags.body;
 
 /**
- * A class for semantic header tag
+ * class for defining and building a header element for a Page {@link websiteGenerator.pages.Page}
  *
  * @version 1.0.0
  */
@@ -12,18 +12,35 @@ public class Header {
     private final String heroHeading;
     private final String heroImageUrl;
 
+    /**
+     *
+     * @getter for image url string
+     * @return String
+     */
     public String getHeaderImageUrl() {
         return headerImageUrl;
     }
-
+    /**
+     *
+     * @getter for header heading
+     * @return String
+     */
     public String getHeaderHeading() {
         return headerHeading;
     }
 
+    /**
+     * @getter for hero heading
+     * @return String
+     */
     public String getHeroHeading() {
         return heroHeading;
     }
 
+    /**
+     * @getter for heroImageUrl
+     * @return String
+     */
     public String getHeroImageUrl() {
         return heroImageUrl;
     }
@@ -50,6 +67,10 @@ public class Header {
         return new Builder();
     }
 
+    /**
+     * Creating the header
+     * @return header
+     */
     public StringBuilder createHeader() {
         header.append("    </header>\n");
         return header;
@@ -112,6 +133,11 @@ public class Header {
             return this;
         }
 
+        /**
+         * Creates hero header
+         *
+         * @return Builder object
+         */
         public Builder createHeroHeader() {
             header.append("        <div class=\"bg-image text-center mb-1\" style=\"background-image: url('" + heroImageUrl + "'); padding: 7rem;\">\n")
                     .append("          <h1 class=\"mb-3 h1\">" + heroHeading + "</h1>\n")

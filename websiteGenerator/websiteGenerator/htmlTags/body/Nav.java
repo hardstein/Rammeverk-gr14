@@ -6,7 +6,7 @@ import websiteGenerator.util.Theme;
 import java.util.ArrayList;
 
 /**
- * A class for semantic nav tag
+ * class for defining and building a nav element for a Page {@link websiteGenerator.pages.Page}
  *
  * @version 1.0.0
  */

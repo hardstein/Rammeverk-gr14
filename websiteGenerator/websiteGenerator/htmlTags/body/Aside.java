@@ -38,11 +38,6 @@ public class Aside {
         return aside;
     }
 
-    /**
-     * A constructor for adding properties from inner builder class to the Aside class properties
-     *
-     * @param builder the builder for aside
-     */
     private Aside(Builder builder) {
         this.aside = builder.aside;
         this.asideTitle = builder.asideTitle;

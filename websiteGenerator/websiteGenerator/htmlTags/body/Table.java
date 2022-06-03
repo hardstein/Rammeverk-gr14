@@ -5,6 +5,12 @@ import websiteGenerator.util.Parse;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+
+/**
+ * class for defining and building a nav element for a Page {@link websiteGenerator.pages.Page}
+ *
+ * @version 1.0.0
+ */
 public class Table {
 
     public String table;

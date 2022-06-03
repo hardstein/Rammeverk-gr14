@@ -4,7 +4,7 @@ import static websiteGenerator.util.FindIndexBeforeTag.findIndexBeforeTag;
 import static websiteGenerator.util.ReplaceWord.replaceAllWords;
 
 /**
- * A class for semantic main tag
+ * class for defining and building a main element for a Page {@link websiteGenerator.pages.Page}
  *
  * @version 1.0.0
  */

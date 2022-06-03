@@ -2,6 +2,11 @@ package websiteGenerator.htmlTags.body;
 
 import static websiteGenerator.util.FindIndexBeforeTag.findIndexBeforeTag;
 
+/**
+ * class for defining and building a form element for a Page {@link websiteGenerator.pages.Page}
+ *
+ * @version 1.0.0
+ */
 public class Form {
     private final StringBuilder form;
     private final String emailField;
@@ -43,6 +48,9 @@ public class Form {
         return new Builder();
     }
 
+    /**
+     * A builder for {@link Form}
+     */
     public static class Builder {
         private StringBuilder form = new StringBuilder("   <form>" + "\n" + "   </form>\n");
         // Used to make sure id for a label and input is unique.
@@ -60,8 +68,9 @@ public class Form {
         private String buttonLabel = "Submit";
 
         /**
+         * Adds email input field
          *
-         * @return
+         * @return Builder object
          */
         public Builder addEmailField() {
             this.emailField =
@@ -75,11 +84,22 @@ public class Form {
             return this;
         }
 
+        /**
+         * Adds text label
+         *
+         * @param textLabel
+         * @return Builder object
+         */
         public Builder addTextLabel(String textLabel) {
             this.textLabel = textLabel;
             return this;
         }
 
+        /**
+         * Adds text input field
+         *
+         * @return Builder object
+         */
         public Builder addTextField() {
             this.textField =
                     "   <div class=\"form-group\">\n" +
@@ -92,6 +112,11 @@ public class Form {
             return this;
         }
 
+        /**
+         * Adds submit button
+         *
+         * @return Builder object
+         */
         public Builder addSubmitButton() {
             this.submitButton =
                     "      <button type=\"submit\" class=\"btn btn-primary\">" + buttonLabel + "</button>\n";
@@ -100,6 +125,11 @@ public class Form {
             return this;
         }
 
+        /**
+         * Adds password field
+         *
+         * @return Builder object
+         */
         public Builder addPasswordField() {
             this.passwordField =
                     "   <div class=\"form-group\">\n" +
@@ -112,6 +142,11 @@ public class Form {
             return this;
         }
 
+        /**
+         * Adds number field
+         *
+         * @return Builder object
+         */
         public Builder addNumberField() {
             this.numberField =
                     "   <div class=\"form-group mt-3 mb-3\">\n" +
@@ -123,6 +158,11 @@ public class Form {
             return this;
         }
 
+        /**
+         * Adds number label text
+         *
+         * @return Builder object
+         */
         public Builder addNumberLabel(String numberLabel) {
             this.numberLabel = numberLabel;
             return this;
