@@ -77,13 +77,13 @@ public class Scenarios {
                 .addMainHeading("Title in the article template")
                 .addIntroduction("Praesent placerat mattis purus id consectetur. Sed condimentum tempor mattis. Vestibulum convallis quis leo eu tincidunt. Nam in eros ac tortor ultricies rhoncus.")
                 .addFontFamily(TimesNewRoman)
-                .addTxtToHtml("Scenario5.txt")
+                .addTxtToHtml("src/main/websiteBuilder/scenarioes/Scenario5.txt")
                 .addConclusion("Duis hendrerit at augue et efficitur. Phasellus ut magna varius, rhoncus eros id, molestie lectus. Cras ultricies vestibulum accumsan. Nulla hendrerit justo metus, ut suscipit velit aliquam ut. ")
                 .build();
 
         // Scenario 6 (Create a CSV file and populate it with text from a CSV file )
         Table premiereLeagueTable = Table.createTableBuilder()
-                .addCSVToHTMLTable("Scenario6.csv", ",")
+                .addCSVToHTMLTable("src/main/websiteBuilder/scenarioes/Scenario6.csv", ",")
                 .build();
 
         System.out.println("This is the output for scenario 6:");
