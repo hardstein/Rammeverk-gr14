@@ -41,9 +41,6 @@ public abstract class Parse implements Parsers {
 
             htmlTable.append("</tr>");
             htmlTable.append("</thead>");
-
-            System.out.println(tableHeader[0]);
-
             htmlTable.append("</tbody>");
 
             while ((line = bufferedReader.readLine()) != null) {

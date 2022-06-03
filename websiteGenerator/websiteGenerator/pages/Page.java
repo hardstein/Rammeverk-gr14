@@ -7,6 +7,9 @@ import websiteGenerator.htmlTags.head.Head;
 import websiteGenerator.util.HTMLLanguageOptions;
 import websiteGenerator.util.Theme;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 /**
  * Abstract class for pages.
  */
@@ -128,6 +131,44 @@ public abstract class Page {
      */
     public void setFileName(String fileName) {
         this.fileName = fileName;
+    }
+
+    public String createPageString(Page p, Page[] pages, Theme theme) {
+        StringBuilder pageString = new StringBuilder();
+
+        String htmlHeadElement = "<!DOCTYPE html>\n";
+
+        pageString.append(
+                htmlHeadElement +
+                        p.getHtml().getStartTag() + "\n" +
+                        p.getHead().createHead() +
+                        // Add Theme
+                        "<body class=\"container h-100 bg-" + theme.getThemeColor() +" text-" + theme.getFontColor() + "\">\n" +
+                        p.getNav().createNav(theme, pages) +
+                        p.getHeader().createHeader() +
+                        p.getMain().createMain() +
+                        p.getAside().createAside() +
+                        p.getFooter().createFooter(theme) +
+                        "    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2\" crossorigin=\"anonymous\"></script>\n" +
+                        "</body>\n" +
+                        p.getHtml().getEndTag()
+        );
+
+        return pageString.toString();
+
+
+    }
+
+    public void generateHTMLPageFile() {
+        try {
+            FileWriter fileWriter = new FileWriter(this.getFileName());
+            Page[] page = new Page[] {this};
+            fileWriter.write(this.createPageString(this, page, theme));
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     /**

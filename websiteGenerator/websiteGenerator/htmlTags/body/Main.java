@@ -178,6 +178,16 @@ public class Main {
             return this;
         }
 
+        public Main.Builder addCSVToHtml(String filepath, String parsingCharacter ) {
+            this.main.append(Parse.CSVtoHTMLTable(filepath, parsingCharacter));
+            return this;
+        }
+
+        public Main.Builder addTable(Table table) {
+            this.main.append(table.table);
+            return this;
+        }
+
         /**
          * Builds the complete Main object
          *

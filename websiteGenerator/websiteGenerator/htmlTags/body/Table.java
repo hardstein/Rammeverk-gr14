@@ -26,8 +26,8 @@ public class Table {
 
          StringBuilder createdTable = new StringBuilder();
 
-         createdTable.append("<div class=\"").append(Builder.BOOTSTRAP_DIV_DESIGN).append("\"");;
-         createdTable.append("<table class=\"").append(builder.tableTagBootstrapDesignString).append("\"");
+         createdTable.append("<div class=\"").append(Builder.BOOTSTRAP_DIV_DESIGN).append("\">");
+         createdTable.append("<table class=\"").append(builder.tableTagBootstrapDesignString).append("\">");
          createdTable.append("<thead>");
 
          for (int i = 0; i < builder.tableHeaderRow.size(); i++) {
@@ -55,6 +55,7 @@ public class Table {
          }
          createdTable.append("</tbody>");
          createdTable.append("</table>");
+         createdTable.append("</div>");
 
 
          this.table = createdTable.toString();

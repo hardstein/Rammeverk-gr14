@@ -1,6 +1,8 @@
 package scenarioes;
 
 import websiteGenerator.htmlTags.body.Table;
+import websiteGenerator.htmlTags.body.Main;
+import websiteGenerator.pages.Article;
 import websiteGenerator.util.Parse;
 
 import java.io.BufferedReader;
@@ -32,6 +34,10 @@ public class MainTwo {
                 .addTableHeaderRow(tableHeader1)
                 .addTableDataRow(tableData2)
                 .build();
+
+        Main tableMain = Main.createElementBuilder().addTable(createdTable).build();
+        Article tablePage = Article.createArticlePageBuilder().addMain(tableMain).build();
+
 
         System.out.println(createdTable.getTable());
 
