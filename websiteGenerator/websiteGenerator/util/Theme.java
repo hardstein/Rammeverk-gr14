@@ -1,6 +1,14 @@
 package websiteGenerator.util;
 
+/**
+ *  Enum for deciding thems for pages
+ *
+ *  @version 1.0.0
+ */
 public enum Theme {
+    /**
+     * enum values for dark and light theme.
+     */
     DARK("dark"),
     LIGHT("light");
 
@@ -10,29 +18,25 @@ public enum Theme {
 
     Theme(String themeColor) {
         this.themeColor = themeColor;
-//        this.fontColor =  themeColor.equals("navbar-dark") ? "white" : "black";
         this.fontColor =  themeColor.equals("dark") ? "white" : "black";
     }
+
+    /**
+     * @return String for theme color
+     */
 
     public String getThemeColor() {
         return themeColor;
     }
 
-    public void setThemeColor(String themeColor) {
-        this.themeColor = themeColor;
-    }
+    /**
+     * @return String for font color
+     */
 
     public String getFontColor() {
         return fontColor;
     }
 
-    public void setFontColor(String fontColor) {
-        this.fontColor = fontColor;
-    }
 
-    //    DARK,
-//    LIGHT,
-//    FORREST,
-//    WATER,
-//    RETARDTHEME
+
 }

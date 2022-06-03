@@ -1,5 +1,10 @@
 package websiteGenerator.util;
 
+/**
+ * Enum for tranforming text from upper to lowercase
+ *
+ * @version 1.0.0
+ */
 public enum FontTransform {
     // TODO
     LOWERCASED("text-lowercase"),
@@ -10,11 +15,12 @@ public enum FontTransform {
         this.fontTransform = fontTransform;
     }
 
+    /**
+     *
+     * @return returns (skriv her)
+     */
     public String getFontTransform() {
         return fontTransform;
     }
 
-    public void setFontTransform(String fontTransform) {
-        this.fontTransform = fontTransform;
-    }
 }

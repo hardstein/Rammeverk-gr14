@@ -1,5 +1,10 @@
 package websiteGenerator.util;
 
+/**
+ * Enum for deciding htmllanguage on site
+ *
+ *  @version 1.0.0
+ */
 public enum HTMLLanguageOptions {
     EN("en"), 
     NB("nb");  

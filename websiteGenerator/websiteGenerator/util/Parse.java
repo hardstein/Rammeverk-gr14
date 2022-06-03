@@ -10,7 +10,12 @@ import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public abstract class Parse implements Parsers {
+/**
+ * abstract class for parsing files to html
+ *
+ * @version 1.0.0
+ */
+public abstract class Parse {
 
     /**
      *
@@ -68,6 +73,12 @@ public abstract class Parse implements Parsers {
 
         return htmlTable.toString();
     }
+
+    /**
+     * Parses the txt file and addes html paragraph tags in paragraph in txt file
+     * @param fileName
+     * @return String
+     */
 
     public static String txtToHtml(String fileName)  {
 

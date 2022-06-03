@@ -1,5 +1,11 @@
 package websiteGenerator.util;
 
+/**
+ * Enum for setting font weight
+ *
+ *  @version 1.0.0
+ */
+
 public enum FontWeight {
 
     BOLD("fw-bold"),

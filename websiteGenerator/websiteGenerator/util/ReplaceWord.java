@@ -2,7 +2,11 @@ package websiteGenerator.util;
 
 import java.util.regex.Pattern;
 
-public class ReplaceWord {
+/**
+ * This is an abstract class for replacing words
+ *  @version 1.0.0
+ */
+public abstract class ReplaceWord {
     // Borrowed: https://www.javacodeexamples.com/java-stringbuilder-replace-replace-all-example-stringbuffer/1546
 
     /**

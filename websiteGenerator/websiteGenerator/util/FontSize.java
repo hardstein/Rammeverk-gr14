@@ -1,5 +1,11 @@
 package websiteGenerator.util;
 
+/**
+ * Enum for changing on fontsize text
+ *
+ * @version 1.0.0
+ */
+
 public enum FontSize {
     FONTSIZE1("fs-1"),
     FONTSIZE2("fs-2"),
@@ -13,11 +19,12 @@ public enum FontSize {
         this.fontSize = fontSize;
     }
 
+    /**
+     * @getter
+     * @return A string of the fontsize type
+     */
     public String getFontSize() {
         return fontSize;
     }
 
-    public void setFontSize(String fontSize) {
-        this.fontSize = fontSize;
-    }
 }

@@ -2,6 +2,8 @@ package websiteGenerator.util;
 
 /**
  * Enum class for font family.
+ *
+ * @version 1.0.0
  */
 public enum FontFamily {
     /**
@@ -16,23 +18,17 @@ public enum FontFamily {
     private String fontFamily;
 
     /**
-     * Constructor for font family.
+     * @Constructor for font family.
      */
     FontFamily(String fontFamily) {
         this.fontFamily = fontFamily;
     }
 
     /**
-     * Getter for font family.
+     * @Getter for font family.
      */
     public String getFontFamily() {
         return fontFamily;
     }
 
-    /**
-     * Setter for font family.
-     */
-    public void setFontFamily(String fontFamily) {
-        this.fontFamily = fontFamily;
-    }
 }
