@@ -8,8 +8,17 @@ package websiteGenerator.util;
 
 public enum FontWeight {
 
+    /**
+     * Value for bold text
+     */
     BOLD("fw-bold"),
+    /**
+     * Value for normal text
+     */
     NORMAL("fw-normal"),
+    /**
+     * Value for light text
+     */
     LIGHT("fw-light");
 
     private String fontWeight;
@@ -18,11 +27,11 @@ public enum FontWeight {
         this.fontWeight = fontWeight;
     }
 
+    /**
+     * @return String fontweight
+     */
     public String getFontWeight() {
         return fontWeight;
     }
 
-    public void setFontWeight(String fontWeight) {
-        this.fontWeight = fontWeight;
-    }
 }

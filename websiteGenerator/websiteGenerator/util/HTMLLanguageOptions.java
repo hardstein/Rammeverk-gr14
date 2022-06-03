@@ -6,7 +6,13 @@ package websiteGenerator.util;
  *  @version 1.0.0
  */
 public enum HTMLLanguageOptions {
-    EN("en"), 
+    /**
+     * Value for english language
+     */
+    EN("en"),
+    /**
+     * Value for norwegian language
+     */
     NB("nb");  
 
     private String lang;
@@ -15,11 +21,12 @@ public enum HTMLLanguageOptions {
         this.lang = lang;
     }
 
+    /**
+     *
+     * @return String og language
+     */
     public String getLang() {
         return lang;
     }
 
-    public void setLang(String lang) {
-        this.lang = lang;
-    }
 }
