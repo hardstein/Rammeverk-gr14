@@ -1,4 +1,4 @@
-## How to use the WebsiteBuilder:
+## How to use WebsiteBuilder:
 
 To start building a website, start with the semantic tags. These are Head, Header, Nav, Main, Form, Table and Footer.
 
