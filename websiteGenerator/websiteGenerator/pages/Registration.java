@@ -38,45 +38,17 @@ public class Registration extends Page {
     }
 
     /**
-     * Class Builder used to create a home page object.
+     * Class Builder used to create a Registration page object.
      */
     public static class Builder {
-        /**
-         * The name of the file. Default is "article.html".
-         */
         private String fileName = DEFAULT_REGISTRATION_FILENAME;
-        /**
-         * The html-tag in the html file, used to set language the file.
-         * Default is english (EN).
-         */
         private Html html = Html.createHTMLTag(DEFAULT_LANGUAGE);
-        /**
-         * The header-tag used by the html file.
-         */
         private Header header = DEFAULT_HEADER;
-        /**
-         * The color theme used by the html file.
-         */
         private Theme theme;
-        /**
-         * The head-tag used by the html file.
-         */
         private Head head = DEFAULT_HEAD;
-        /**
-         * The main-tag used by the html file.
-         */
         private Main main = DEFAULT_MAIN;
-        /**
-         * The nav-tag used by the html file.
-         */
         private Nav nav = DEFAULT_NAV;
-        /**
-         * The aside-tag used by the html file.
-         */
         private Aside aside = DEFAULT_ASIDE;
-        /**
-         * The footer-tag used by the html file.
-         */
         private Footer footer = DEFAULT_FOOTER;
 
         /**

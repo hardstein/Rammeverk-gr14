@@ -8,12 +8,12 @@ import websiteGenerator.util.Theme;
 
 /**
  * Class for a Home page.
+ *
+ * @version 1.0.0
  */
 public class Home extends Page {
     /**
      * The name of the file. Default is "home.html".
-     *
-     * @version 1.0.0
      */
     public static final String DEFAULT_HOME_FILENAME = "home.html";
 
@@ -41,42 +41,14 @@ public class Home extends Page {
      */
     public static class Builder {
 
-        /**
-         * The name of the file. Default is "article.html".
-         */
         private String fileName = DEFAULT_HOME_FILENAME;
-        /**
-         * The html-tag in the html file, used to set language the file.
-         * Default is english (EN).
-         */
         private Html html = Html.createHTMLTag(DEFAULT_LANGUAGE);
-        /**
-         * The header-tag used by the html file.
-         */
         private Header header = DEFAULT_HEADER;
-        /**
-         * The color theme used by the html file.
-         */
         private Theme theme;
-        /**
-         * The head-tag used by the html file.
-         */
         private Head head = DEFAULT_HEAD;
-        /**
-         * The main-tag used by the html file.
-         */
         private Main main = DEFAULT_MAIN;
-        /**
-         * The nav-tag used by the html file.
-         */
         private Nav nav = DEFAULT_NAV;
-        /**
-         * The aside-tag used by the html file.
-         */
         private Aside aside = DEFAULT_ASIDE;
-        /**
-         * The footer-tag used by the html file.
-         */
         private Footer footer = DEFAULT_FOOTER;
 
         /**

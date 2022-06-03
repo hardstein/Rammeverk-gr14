@@ -26,15 +26,24 @@ public class Styles {
         return stylesContent;
     }
 
-    public Styles(Builder builder) {
+
+    private Styles(Builder builder) {
         this.stylesContent = builder.stylesContent;
         this.filename = builder.filename;
     }
 
+    /**
+     * this is a factory for builder.
+     *
+     * @return a new Builder
+     */
     public static Builder createStylesBuilder() {
         return new Builder();
     }
 
+    /**
+     * Class Builder used to create a Styles page object.
+     */
     public static class Builder {
         private StringBuilder stylesContent = new StringBuilder("/* This is the stylesheet. There is no functionally at this time.*/");
         private String filename = "styles.css";

@@ -13,7 +13,7 @@ import java.io.IOException;
 /**
  * Abstract class for pages.
  *
- * @
+ * @version 1.0.0
  */
 public abstract class Page {
 
@@ -142,7 +142,6 @@ public abstract class Page {
      * @param theme the theme for the page
      * @return
      */
-
     public String createPageString(Page p, Page[] pages, Theme theme) {
         StringBuilder pageString = new StringBuilder();
 
