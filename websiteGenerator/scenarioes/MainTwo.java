@@ -23,9 +23,9 @@ public class MainTwo {
                 addCSVToHTMLTable("planets_100.csv", ";").
                 build();*/
 
-        //System.out.println(csvTable.getTable());
+        /*System.out.println(csvTable.getTable());*/
 
-        String[] tableHeader1 = new String[]
+/*      String[] tableHeader1 = new String[]
                 {"Club","MP", "W", "D", "L", "Pts"};
         String[] tableData2 = new String[]
                 {"Man City", "38", "29", "6", "3", "93"};
@@ -37,10 +37,16 @@ public class MainTwo {
 
         Main tableMain = Main.createElementBuilder().addTable(createdTable).build();
         Article tablePage = Article.createArticlePageBuilder().addMain(tableMain).build();
+        tablePage.generateHTMLPageFile();*/
+
+        Main tableMain = Main.createElementBuilder()
+                .addCSVToHtml("planets_100.csv", ";")
+                .build();
+        Article tablePage = Article.createArticlePageBuilder().addMain(tableMain).build();
         tablePage.generateHTMLPageFile();
 
 
-        System.out.println(createdTable.getTable());
+        /*System.out.println(createdTable.getTable());*/
 
         System.out.println(Parse.txtToHtml("Scenario5.txt"));
 

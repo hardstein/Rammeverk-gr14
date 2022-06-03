@@ -100,7 +100,7 @@ public class Table {
             return this;
         }
 
-        public Builder addTableDesign(String bootstrapTableValue) {
+        public Builder addBoostrapTableDesign(String bootstrapTableValue) {
             this.tableTagBootstrapDesignString = bootstrapTableValue;
             return this;
         }

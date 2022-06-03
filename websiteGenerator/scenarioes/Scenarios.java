@@ -20,7 +20,7 @@ import static websiteGenerator.util.FontWeight.LIGHT;
 /**
  * @hidden demonstration of framework, not a part of the library
  */
-public class Main {
+public class Scenarios {
     public static void main(String[] args) throws IOException {
 
         String heroImageUrl = "https://images.unsplash.com/photo-1534171472159-edb6d1e0b63c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60";
@@ -81,7 +81,7 @@ public class Main {
         // Different main content on pages:
         // Article:
         // Scenario 5 Part 1. (create an article page and populate it with text from a txt file)
-        websiteGenerator.htmlTags.body.Main articleMain = websiteGenerator.htmlTags.body.Main.createElementBuilder()
+        Main articleMain = Main.createElementBuilder()
                 .addMainHeading("Title in the article template")
                 .addIntroduction("Praesent placerat mattis purus id consectetur. Sed condimentum tempor mattis. Vestibulum convallis quis leo eu tincidunt. Nam in eros ac tortor ultricies rhoncus.")
                 .addFontFamily(TimesNewRoman)
@@ -113,7 +113,7 @@ public class Main {
 
         // Scenario 2 ( choose text size and weight )
         // Scenario 12 ( Add functionality for changing the font family in the article)
-        websiteGenerator.htmlTags.body.Main homeMain = websiteGenerator.htmlTags.body.Main.createElementBuilder()
+        Main homeMain = Main.createElementBuilder()
                 .addMainHeading("Main Title")
                 .addIntroduction("The homepage is nice")
                 .addBody("A sentence in font size 3, choose between FONTSIZE1 - FONTSIZE6.", FONTSIZE3)
@@ -149,13 +149,13 @@ public class Main {
                 .build();
 
         // Scenario 10 part 2 ( create a main section with a signup up user form )
-        websiteGenerator.htmlTags.body.Main registrationMain = websiteGenerator.htmlTags.body.Main.createElementBuilder()
+        Main registrationMain = Main.createElementBuilder()
                 .addMainHeading("Sign up")
                 .addForm(registrationForm)
                 .build();
 
         // Scenario 11 part 2 ( create a main section with a login form )
-        websiteGenerator.htmlTags.body.Main loginMain = websiteGenerator.htmlTags.body.Main.createElementBuilder()
+        Main loginMain = Main.createElementBuilder()
                 .addMainHeading("Login")
                 .addForm(loginForm)
                 .build();

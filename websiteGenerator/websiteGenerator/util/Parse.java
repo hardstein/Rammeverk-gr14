@@ -79,7 +79,6 @@ public abstract class Parse {
      * @param fileName
      * @return String
      */
-
     public static String txtToHtml(String fileName)  {
 
         StringBuilder htmlTxt = new StringBuilder();

@@ -6,6 +6,8 @@ import websiteGenerator.util.Theme;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.InvalidPathException;
+import java.nio.file.Paths;
 
 /**
  * Class that creates and generats a project folder
@@ -45,11 +47,6 @@ public class WebsiteBuilder {
         return new Builder();
     }
 
-    /**
-     * Constructor for the builder.
-     *
-     * @param builder
-     */
     private WebsiteBuilder(Builder builder) {
         this.pages = builder.pages;
         this.projectFolder = builder.projectFolder;
@@ -58,7 +55,7 @@ public class WebsiteBuilder {
         this.styles = builder.styles;
     }
 
-    public void createProjectFolder() {
+    private static void createProjectFolder(String projectFolder) {
         File file = new File(projectFolder);
 
         boolean bool = file.mkdir();
@@ -69,13 +66,13 @@ public class WebsiteBuilder {
         }
     }
 
+
     /**
      * A builder for WebsiteBuilder {@link WebsiteBuilder}
      */
     public static class Builder {
         private String projectFolder = "WebsiteBuilderProject";
         private Page[] pages;
-//        private Page[] page;
         private Theme theme;
         private String robots;
         private Styles styles;
@@ -87,14 +84,8 @@ public class WebsiteBuilder {
          */
         public Builder addProjectFolder(String projectFolderName) {
             this.projectFolder = projectFolderName;
-            File file = new File(projectFolder);
+            WebsiteBuilder.createProjectFolder(this.projectFolder);
 
-            boolean bool = file.mkdir();
-            if (bool) {
-                System.out.println(projectFolder + " folder was created successfully");
-            } else {
-                System.out.println("Error, folder was not created. It might already exist");
-            }
             return this;
         }
 

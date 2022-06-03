@@ -7,9 +7,12 @@ package websiteGenerator.util;
  */
 public enum Theme {
     /**
-     * enum values for dark and light theme.
+     * enum values for dark
      */
     DARK("dark"),
+    /**
+     * enum value for light
+     */
     LIGHT("light");
 
     private String themeColor;
