@@ -26,13 +26,9 @@ public class Scenarios {
         // Demonstration of our API (We will show a solution for all the scenarios here)
         // You can find scenario: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 
-        //Creating page content
-
         // These will be the same for all pages (footer, nav) :
         // Scenario 7: (create a footer that includes -> contact info, copyright, social media)
         Footer footer = Footer.createElementBuilder()
-//                .addContactInformationContainer()
-//                .addSocialMediaLinksContainer()
                 .addContactName("Group 14")
                 .addContactEmail("gr14@email.com")
                 .addContactPhoneNumber(14326969)
@@ -77,8 +73,6 @@ public class Scenarios {
                 .addSubmitButton()
                 .build();
 
-        // Different main content on pages:
-        // Article:
         // Scenario 5 Part 1. (create an article page and populate it with text from a txt file)
         Main articleMain = Main.createElementBuilder()
                 .addMainHeading("Title in the article template")
@@ -101,7 +95,6 @@ public class Scenarios {
                 .addHeaderImageUrl("background.png")
                 .build();
 
-        // Home:
         // Scenario 1 part 1 (Adding hero)
         Header homeHeader = Header.createElementBuilder()
                 .addHeroHeading("Hero-Title")
