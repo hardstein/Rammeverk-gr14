@@ -24,11 +24,6 @@ public class Html {
         return new Html(lang);
     }
 
-    /**
-     * Construcotr for class
-     *
-     * @param language this value will represent the lang attibute in the html tag
-     */
     private Html(String language) {
         this.startTag = "<html lang=" + "\"" + language + "\">"; 
     }

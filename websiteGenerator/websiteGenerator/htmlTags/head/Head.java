@@ -9,14 +9,9 @@ import websiteGenerator.util.Theme;
  * @version 1.0.0
  */
 public class Head {
-    /**
-     * The default value for title in head tag.
-     */
-    protected final static String DEFAULT_TITLE = "WebsiteBuilder Page";
-    /**
-     * The default value for style in head tag.
-     */
-    protected final static String DEFAULT_STYLES = "styles.css";
+
+    protected  final static String DEFAULT_TITLE = "WebsiteBuilder Page";
+    protected  final static String DEFAULT_STYLES = "styles.css";
 
     int i = 0;
 
@@ -24,14 +19,22 @@ public class Head {
     private String style;
     private String title;
 
+    /**
+     * @return StringBuilder with head
+     */
     public StringBuilder getHead() {
         return head;
     }
 
+    /**
+     * @return String with style
+     */
     public String getStyle() {
         return style;
     }
-
+    /**
+     * @return String with title
+     */
     public String getTitle() {
         return title;
     }
@@ -42,10 +45,19 @@ public class Head {
         this.title = builder.title;
     }
 
+    /**
+     * creates a builder
+     * @return Builder object
+     */
     public static Builder createHeadBuilder() {
         return new Builder();
     }
 
+    /**
+     * Making the complete head string
+     *
+     * @return StringBuilder
+     */
     public StringBuilder createHead() {
         if (i < 1) {
             head.setLength(0);
@@ -62,21 +74,38 @@ public class Head {
         return head;
     }
 
+    /**
+     *  Builder for Head tag
+     */
     public static class Builder {
         private StringBuilder head = new StringBuilder();
         private String style = DEFAULT_STYLES;
         private String title = DEFAULT_TITLE;
 
+        /**
+         *
+         * @param style
+         * @return Builder object
+         */
         public Builder addStyle(String style) {
             this.style = style;
             return this;
         }
 
+        /**
+         *
+         * @param title
+         * @return Builder object
+         */
         public Builder addTitle(String title) {
             this.title = title;
             return this;
         }
 
+        /**
+         *
+         * @return Head object
+         */
         public Head build() {
             return new Head(this);
         }
