@@ -29,15 +29,16 @@ public class Table {
          createdTable.append("<div class=\"").append(Builder.BOOTSTRAP_DIV_DESIGN).append("\">");
          createdTable.append("<table class=\"").append(builder.tableTagBootstrapDesignString).append("\">");
          createdTable.append("<thead>");
+         createdTable.append("<tr>");
 
          for (int i = 0; i < builder.tableHeaderRow.size(); i++) {
 
-             createdTable.append("<tr>");
              createdTable.append("<th>");
              createdTable.append(builder.tableHeaderRow.get(i));
              createdTable.append("</th>");
-             createdTable.append("</tr>");
+
          }
+         createdTable.append("</tr>");
          createdTable.append("</thead>");
          createdTable.append("<tbody>");
 

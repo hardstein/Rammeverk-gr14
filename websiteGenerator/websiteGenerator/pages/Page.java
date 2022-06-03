@@ -173,10 +173,15 @@ public abstract class Page {
      * makes a new file for the html page
      */
     public void generateHTMLPageFile() {
+
+        if (this.theme == null) {
+            this.theme = Theme.LIGHT;
+        }
+
         try {
             FileWriter fileWriter = new FileWriter(this.getFileName());
             Page[] page = new Page[] {this};
-            fileWriter.write(this.createPageString(this, page, theme));
+            fileWriter.write(this.createPageString(this, page, this.theme));
             fileWriter.close();
         } catch (IOException e) {
             e.printStackTrace();

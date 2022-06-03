@@ -37,6 +37,7 @@ public class MainTwo {
 
         Main tableMain = Main.createElementBuilder().addTable(createdTable).build();
         Article tablePage = Article.createArticlePageBuilder().addMain(tableMain).build();
+        tablePage.generateHTMLPageFile();
 
 
         System.out.println(createdTable.getTable());
