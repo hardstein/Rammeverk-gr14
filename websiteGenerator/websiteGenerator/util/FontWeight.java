@@ -3,7 +3,7 @@ package websiteGenerator.util;
 /**
  * Enum for setting font weight
  *
- *  @version 1.0.0
+ * @version 1.0.0
  */
 
 public enum FontWeight {
@@ -21,7 +21,7 @@ public enum FontWeight {
      */
     LIGHT("fw-light");
 
-    private String fontWeight;
+    private final String fontWeight;
 
     FontWeight(String fontWeight) {
         this.fontWeight = fontWeight;

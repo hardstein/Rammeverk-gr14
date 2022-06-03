@@ -14,11 +14,11 @@ import java.nio.file.Paths;
  */
 public class WebsiteBuilder {
 
-    private String projectFolder;
-    private Page[] pages;
-    private Theme theme;
-    private String robots;
-    private Styles styles;
+    private final String projectFolder;
+    private final Page[] pages;
+    private final Theme theme;
+    private final String robots;
+    private final Styles styles;
 
     /**
      * Getter for pages attribute
@@ -79,6 +79,7 @@ public class WebsiteBuilder {
 
         /**
          * Adds a projectFolder
+         *
          * @param projectFolderName
          * @return projectFolder name
          */
@@ -91,6 +92,7 @@ public class WebsiteBuilder {
 
         /**
          * Adds html pages to your project
+         *
          * @param page
          * @return A list of HTML pages
          */
@@ -110,6 +112,7 @@ public class WebsiteBuilder {
 
         /**
          * Adds a theme for the project
+         *
          * @param theme
          * @return a specified theme
          */
@@ -120,24 +123,26 @@ public class WebsiteBuilder {
 
         /**
          * Adds a robots.txt file to your project
+         *
          * @return robots.txt string value
          */
         public Builder addRobots() {
             this.robots = "Robots.txt";
 
-                try {
-                    FileWriter fileWriter = new FileWriter("./" + projectFolder + "/" + robots);
-                    fileWriter.write("User-agent: * \n Allow: /");
-                    fileWriter.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+            try {
+                FileWriter fileWriter = new FileWriter("./" + projectFolder + "/" + robots);
+                fileWriter.write("User-agent: * \n Allow: /");
+                fileWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
             return this;
         }
 
         /**
          * Adds a stylesheet file to your project
+         *
          * @return Styles
          */
         public Builder addStylesheetFile(Styles styles) {

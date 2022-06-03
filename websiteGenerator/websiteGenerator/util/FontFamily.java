@@ -15,7 +15,7 @@ public enum FontFamily {
      */
     ARIAL("arial");
 
-    private String fontFamily;
+    private final String fontFamily;
 
     /**
      * @Constructor for font family.

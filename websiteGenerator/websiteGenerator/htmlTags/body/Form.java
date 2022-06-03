@@ -33,6 +33,7 @@ public class Form {
 
     /**
      * Used the get the content from the form build.
+     *
      * @return StringBuilder form
      */
     public StringBuilder createForm() {
@@ -52,7 +53,7 @@ public class Form {
      * A builder for {@link Form}
      */
     public static class Builder {
-        private StringBuilder form = new StringBuilder("   <form>" + "\n" + "   </form>\n");
+        private final StringBuilder form = new StringBuilder("   <form>" + "\n" + "   </form>\n");
         // Used to make sure id for a label and input is unique.
         int i = 0;
         int j = 0;

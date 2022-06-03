@@ -6,40 +6,39 @@ package websiteGenerator.htmlTags.body;
  * @version 1.0.0
  */
 public class Header {
-    private StringBuilder header;
+    private final StringBuilder header;
     private final String headerImageUrl;
     private final String headerHeading;
     private final String heroHeading;
     private final String heroImageUrl;
 
     /**
-     *
-     * @getter for image url string
      * @return String
+     * @getter for image url string
      */
     public String getHeaderImageUrl() {
         return headerImageUrl;
     }
+
     /**
-     *
-     * @getter for header heading
      * @return String
+     * @getter for header heading
      */
     public String getHeaderHeading() {
         return headerHeading;
     }
 
     /**
-     * @getter for hero heading
      * @return String
+     * @getter for hero heading
      */
     public String getHeroHeading() {
         return heroHeading;
     }
 
     /**
-     * @getter for heroImageUrl
      * @return String
+     * @getter for heroImageUrl
      */
     public String getHeroImageUrl() {
         return heroImageUrl;
@@ -69,6 +68,7 @@ public class Header {
 
     /**
      * Creating the header
+     *
      * @return header
      */
     public StringBuilder createHeader() {
@@ -80,7 +80,7 @@ public class Header {
      * Builder class for building a header {@link Header}
      */
     public static class Builder {
-        private StringBuilder header = new StringBuilder("    <header>\n");
+        private final StringBuilder header = new StringBuilder("    <header>\n");
         private String headerImageUrl = "";
         private String headerHeading = "Heading";
         private String heroHeading = "Hero Heading";

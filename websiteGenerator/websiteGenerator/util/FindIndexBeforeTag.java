@@ -8,7 +8,8 @@ package websiteGenerator.util;
 public abstract class FindIndexBeforeTag {
     /**
      * This method will find the index before a specified word in a StringBuilder.
-     * @param sb The StringBuilder to find an index.
+     *
+     * @param sb   The StringBuilder to find an index.
      * @param word The string to find the index in front of.
      * @return int with the index before the word inside the StringBuilder.
      */

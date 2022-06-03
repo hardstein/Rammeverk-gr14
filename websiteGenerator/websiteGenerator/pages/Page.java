@@ -18,38 +18,38 @@ import java.io.IOException;
 public abstract class Page {
 
 
-   /**
-    * The default value for language in HTML tag to "en" english.
-    */
+    /**
+     * The default value for language in HTML tag to "en" english.
+     */
     protected final static HTMLLanguageOptions DEFAULT_LANGUAGE = HTMLLanguageOptions.EN;
-   /**
-    * The default value the page head tag.
-    */
+    /**
+     * The default value the page head tag.
+     */
     protected final static Head DEFAULT_HEAD = Head.createHeadBuilder().build();
-   /**
-    * The default value the page header tag.
-    */
+    /**
+     * The default value the page header tag.
+     */
     protected final static Header DEFAULT_HEADER = Header.createElementBuilder().build();
-   /**
-    * The default value the page nav tag.
-    */
+    /**
+     * The default value the page nav tag.
+     */
     protected final static Nav DEFAULT_NAV = Nav.createElementBuilder().build();
-   /**
-    * The default value the page main tag.
-    */
+    /**
+     * The default value the page main tag.
+     */
     protected final static Main DEFAULT_MAIN = Main.createElementBuilder().build();
-   /**
-    * The default value the page aside tag.
-    */
+    /**
+     * The default value the page aside tag.
+     */
     protected final static Aside DEFAULT_ASIDE = Aside.createElementBuilder().build();
-   /**
-    * The default value the page footer tag.
-    */
+    /**
+     * The default value the page footer tag.
+     */
     protected final static Footer DEFAULT_FOOTER = Footer.createElementBuilder().build();
-   /**
-    * The html element of the page.
-    */
-   protected Html html;
+    /**
+     * The html element of the page.
+     */
+    protected Html html;
     /**
      * The file name of a page.
      */
@@ -83,21 +83,23 @@ public abstract class Page {
      */
     protected Footer footer;
 
-   /**
-    * Sets the html element for the page.
-    * @param html The page html element.
-    */
-   public void setHtml(Html html) {
-      this.html = html;
-   }
+    /**
+     * Sets the html element for the page.
+     *
+     * @param html The page html element.
+     */
+    public void setHtml(Html html) {
+        this.html = html;
+    }
 
-   /**
-    * Gets the html of the page.
-    * @return The html element of the page.
-    */
-   public Html getHtml() {
-      return html;
-   }
+    /**
+     * Gets the html of the page.
+     *
+     * @return The html element of the page.
+     */
+    public Html getHtml() {
+        return html;
+    }
 
     /**
      * Gets the head element of the page.
@@ -136,8 +138,7 @@ public abstract class Page {
     }
 
     /**
-     *
-     * @param p the page
+     * @param p     the page
      * @param pages the same page in a array
      * @param theme the theme for the page
      * @return
@@ -152,7 +153,7 @@ public abstract class Page {
                         p.getHtml().getStartTag() + "\n" +
                         p.getHead().createHead() +
                         // Add Theme
-                        "<body class=\"container h-100 bg-" + theme.getThemeColor() +" text-" + theme.getFontColor() + "\">\n" +
+                        "<body class=\"container h-100 bg-" + theme.getThemeColor() + " text-" + theme.getFontColor() + "\">\n" +
                         p.getNav().createNav(theme, pages) +
                         p.getHeader().createHeader() +
                         p.getMain().createMain() +
@@ -179,7 +180,7 @@ public abstract class Page {
 
         try {
             FileWriter fileWriter = new FileWriter(this.getFileName());
-            Page[] page = new Page[] {this};
+            Page[] page = new Page[]{this};
             fileWriter.write(this.createPageString(this, page, this.theme));
             fileWriter.close();
         } catch (IOException e) {

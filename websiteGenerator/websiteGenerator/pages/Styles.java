@@ -7,20 +7,20 @@ package websiteGenerator.pages;
  * @version 1.0.0
  */
 public class Styles {
-    private StringBuilder stylesContent;
-    private String filename;
+    private final StringBuilder stylesContent;
+    private final String filename;
 
     /**
-     * @getter filename
      * @return returns a string for the filename
+     * @getter filename
      */
     public String getFilename() {
         return filename;
     }
 
     /**
-     * @getter styleContent
      * @return returns a stringBuilder for the styleContent
+     * @getter styleContent
      */
     public StringBuilder getStylesContent() {
         return stylesContent;
@@ -45,7 +45,7 @@ public class Styles {
      * Class Builder used to create a Styles page object.
      */
     public static class Builder {
-        private StringBuilder stylesContent = new StringBuilder("/* This is the stylesheet. There is no functionally at this time.*/");
+        private final StringBuilder stylesContent = new StringBuilder("/* This is the stylesheet. There is no functionally at this time.*/");
         private String filename = "styles.css";
 
         public Builder addFilename(String filename) {

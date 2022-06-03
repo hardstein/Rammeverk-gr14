@@ -15,10 +15,11 @@ public class Table {
 
     public String table;
 
-        /**
-         * Getter for html table string
-         * @return string
-         */
+    /**
+     * Getter for html table string
+     *
+     * @return string
+     */
     public String getTable() {
         return table;
     }
@@ -28,46 +29,46 @@ public class Table {
 
         this.table = builder.table;
 
-     if(!(builder.tableHeaderRow.isEmpty() || builder.tableDataRows.isEmpty())) {
+        if (!(builder.tableHeaderRow.isEmpty() || builder.tableDataRows.isEmpty())) {
 
-         StringBuilder createdTable = new StringBuilder();
+            StringBuilder createdTable = new StringBuilder();
 
-         createdTable.append("<div class=\"").append(Builder.BOOTSTRAP_DIV_DESIGN).append("\">");
-         createdTable.append("<table class=\"").append(builder.tableTagBootstrapDesignString).append("\">");
-         createdTable.append("<thead>");
-         createdTable.append("<tr>");
+            createdTable.append("<div class=\"").append(Builder.BOOTSTRAP_DIV_DESIGN).append("\">");
+            createdTable.append("<table class=\"").append(builder.tableTagBootstrapDesignString).append("\">");
+            createdTable.append("<thead>");
+            createdTable.append("<tr>");
 
-         for (int i = 0; i < builder.tableHeaderRow.size(); i++) {
+            for (int i = 0; i < builder.tableHeaderRow.size(); i++) {
 
-             createdTable.append("<th>");
-             createdTable.append(builder.tableHeaderRow.get(i));
-             createdTable.append("</th>");
+                createdTable.append("<th>");
+                createdTable.append(builder.tableHeaderRow.get(i));
+                createdTable.append("</th>");
 
-         }
-         createdTable.append("</tr>");
-         createdTable.append("</thead>");
-         createdTable.append("<tbody>");
+            }
+            createdTable.append("</tr>");
+            createdTable.append("</thead>");
+            createdTable.append("<tbody>");
 
-         for (int i = 0; i < builder.tableDataRows.size(); i++) {
+            for (int i = 0; i < builder.tableDataRows.size(); i++) {
 
-             createdTable.append("<tr>");
-             for (int j = 0; j < builder.tableDataRows.get(i).size(); j++) {
+                createdTable.append("<tr>");
+                for (int j = 0; j < builder.tableDataRows.get(i).size(); j++) {
 
-                 createdTable.append("<td>");
-                 createdTable.append(builder.tableDataRows.get(i).get(j));
-                 createdTable.append("</td>");
-             }
-             createdTable.append("</tr>");
+                    createdTable.append("<td>");
+                    createdTable.append(builder.tableDataRows.get(i).get(j));
+                    createdTable.append("</td>");
+                }
+                createdTable.append("</tr>");
 
-         }
-         createdTable.append("</tbody>");
-         createdTable.append("</table>");
-         createdTable.append("</div>");
+            }
+            createdTable.append("</tbody>");
+            createdTable.append("</table>");
+            createdTable.append("</div>");
 
 
-         this.table = createdTable.toString();
+            this.table = createdTable.toString();
 
-     }
+        }
 
     }
 
@@ -88,12 +89,13 @@ public class Table {
         private final static String DEFAULT_BOOTSTRAP_TABLE_DESIGN = "table";
 
         private String table;
-        private ArrayList<String> tableHeaderRow = new ArrayList<>();
-        private ArrayList<ArrayList<String>> tableDataRows = new ArrayList<>();
+        private final ArrayList<String> tableHeaderRow = new ArrayList<>();
+        private final ArrayList<ArrayList<String>> tableDataRows = new ArrayList<>();
         private String tableTagBootstrapDesignString = DEFAULT_BOOTSTRAP_TABLE_DESIGN;
 
         /**
          * Parse CSV file to Table
+         *
          * @param filepath
          * @param parsingCharacter
          * @return Builder object
@@ -116,6 +118,7 @@ public class Table {
 
         /**
          * Adds table data row
+         *
          * @param dataRow
          * @return Builder object
          */
@@ -127,6 +130,7 @@ public class Table {
 
         /**
          * Adds custom boostrap design on table
+         *
          * @param bootstrapTableValue
          * @return Builder object
          */
@@ -143,5 +147,5 @@ public class Table {
             return new Table(this);
         }
 
-        }
+    }
 }

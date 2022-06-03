@@ -1,4 +1,5 @@
 package websiteGenerator.pages;
+
 import websiteGenerator.htmlTags.body.*;
 import websiteGenerator.htmlTags.head.Head;
 import websiteGenerator.htmlTags.Html;
@@ -42,7 +43,7 @@ public class Registration extends Page {
      */
     public static class Builder {
         private String fileName = DEFAULT_REGISTRATION_FILENAME;
-        private Html html = Html.createHTMLTag(DEFAULT_LANGUAGE);
+        private final Html html = Html.createHTMLTag(DEFAULT_LANGUAGE);
         private Header header = DEFAULT_HEADER;
         private Theme theme;
         private Head head = DEFAULT_HEAD;

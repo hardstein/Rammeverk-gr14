@@ -10,7 +10,7 @@ import websiteGenerator.util.HTMLLanguageOptions;
 public class Html {
 
     private String startTag;
-    private String language; 
+    private String language;
     private final String endTag = "</html>";
 
     /**
@@ -25,7 +25,7 @@ public class Html {
     }
 
     private Html(String language) {
-        this.startTag = "<html lang=" + "\"" + language + "\">"; 
+        this.startTag = "<html lang=" + "\"" + language + "\">";
     }
 
     /**
@@ -63,5 +63,5 @@ public class Html {
     public String getEndTag() {
         return this.endTag;
     }
-    
+
 }

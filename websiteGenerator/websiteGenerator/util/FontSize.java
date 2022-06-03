@@ -32,7 +32,7 @@ public enum FontSize {
      */
     FONTSIZE6("fs-6");
 
-    private String fontSize;
+    private final String fontSize;
 
     FontSize(String fontSize) {
         this.fontSize = fontSize;

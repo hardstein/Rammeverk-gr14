@@ -1,6 +1,7 @@
 package websiteGenerator.htmlTags.head;
 
 //import websiteGenerator.util.GetHTMLTagContent;
+
 import websiteGenerator.util.Theme;
 
 /**
@@ -10,14 +11,14 @@ import websiteGenerator.util.Theme;
  */
 public class Head {
 
-    protected  final static String DEFAULT_TITLE = "WebsiteBuilder Page";
-    protected  final static String DEFAULT_STYLES = "styles.css";
+    protected final static String DEFAULT_TITLE = "WebsiteBuilder Page";
+    protected final static String DEFAULT_STYLES = "styles.css";
 
     int i = 0;
 
-    private StringBuilder head;
-    private String style;
-    private String title;
+    private final StringBuilder head;
+    private final String style;
+    private final String title;
 
     /**
      * @return StringBuilder with head
@@ -32,6 +33,7 @@ public class Head {
     public String getStyle() {
         return style;
     }
+
     /**
      * @return String with title
      */
@@ -47,6 +49,7 @@ public class Head {
 
     /**
      * creates a builder
+     *
      * @return Builder object
      */
     public static Builder createHeadBuilder() {
@@ -75,15 +78,14 @@ public class Head {
     }
 
     /**
-     *  Builder for Head tag
+     * Builder for Head tag
      */
     public static class Builder {
-        private StringBuilder head = new StringBuilder();
+        private final StringBuilder head = new StringBuilder();
         private String style = DEFAULT_STYLES;
         private String title = DEFAULT_TITLE;
 
         /**
-         *
          * @param style
          * @return Builder object
          */
@@ -93,7 +95,6 @@ public class Head {
         }
 
         /**
-         *
          * @param title
          * @return Builder object
          */
@@ -103,7 +104,6 @@ public class Head {
         }
 
         /**
-         *
          * @return Head object
          */
         public Head build() {

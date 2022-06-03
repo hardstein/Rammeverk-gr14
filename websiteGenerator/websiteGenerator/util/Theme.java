@@ -1,9 +1,9 @@
 package websiteGenerator.util;
 
 /**
- *  Enum for deciding thems for pages
+ * Enum for deciding thems for pages
  *
- *  @version 1.0.0
+ * @version 1.0.0
  */
 public enum Theme {
     /**
@@ -15,13 +15,13 @@ public enum Theme {
      */
     LIGHT("light");
 
-    private String themeColor;
+    private final String themeColor;
 
-    private String fontColor;
+    private final String fontColor;
 
     Theme(String themeColor) {
         this.themeColor = themeColor;
-        this.fontColor =  themeColor.equals("dark") ? "white" : "black";
+        this.fontColor = themeColor.equals("dark") ? "white" : "black";
     }
 
     /**
@@ -39,7 +39,6 @@ public enum Theme {
     public String getFontColor() {
         return fontColor;
     }
-
 
 
 }

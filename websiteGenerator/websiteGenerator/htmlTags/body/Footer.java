@@ -12,7 +12,7 @@ import static websiteGenerator.util.ReplaceWord.replaceAllWords;
  */
 public class Footer {
     static String colorWordToReplace = "zcolorx";
-    private StringBuilder footer;
+    private final StringBuilder footer;
     private final String contactName;
     private final int contactPhoneNumber;
     private final String contactEmail;
@@ -94,7 +94,6 @@ public class Footer {
     }
 
     /**
-     *
      * @param theme
      * @return StringerBuilder with replaced words at "colorWordToReplace" for "theme.getFontColor()"
      */
@@ -106,7 +105,7 @@ public class Footer {
      * A builder for {@link Footer}
      */
     public static class Builder {
-        private StringBuilder footer = new StringBuilder("""
+        private final StringBuilder footer = new StringBuilder("""
                     <footer class="footer color mt-auto d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top text-zcolorx">
                             <div>
                             </div>

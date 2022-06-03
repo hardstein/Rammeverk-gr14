@@ -18,7 +18,6 @@ import java.util.Scanner;
 public abstract class Parse {
 
     /**
-     *
      * @param filename
      * @param parsingCharacter
      * @return html string containing the table from the CSV file
@@ -76,10 +75,11 @@ public abstract class Parse {
 
     /**
      * Parses the txt file and addes html paragraph tags in paragraph in txt file
+     *
      * @param fileName
      * @return String
      */
-    public static String txtToHtml(String fileName)  {
+    public static String txtToHtml(String fileName) {
 
         StringBuilder htmlTxt = new StringBuilder();
 
@@ -92,7 +92,7 @@ public abstract class Parse {
             htmlTxt.append("<p>").append("\n");
             while ((line = buffer.readLine()) != null) {
 
-                if(line.equals("")) {
+                if (line.equals("")) {
                     htmlTxt.append("</p>").append("\n").append("<p>");
                 }
 
@@ -102,8 +102,7 @@ public abstract class Parse {
             htmlTxt.append("</p>").append("\n");
             htmlTxt.append("</section>").append("\n");
 
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
 
             e.printStackTrace();
         }

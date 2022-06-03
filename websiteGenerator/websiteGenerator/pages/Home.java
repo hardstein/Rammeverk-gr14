@@ -25,24 +25,26 @@ public class Home extends Page {
         super.main = builder.main;
         super.aside = builder.aside;
         super.footer = builder.footer;
-        super.html = builder.html; 
+        super.html = builder.html;
         super.head = builder.head;
     }
 
     /**
      * this is a factory for builder.
+     *
      * @return a new Builder
      */
     public static Builder createPageBuilder() {
         return new Builder();
     }
+
     /**
      * Class Builder used to create a home page object.
      */
     public static class Builder {
 
         private String fileName = DEFAULT_HOME_FILENAME;
-        private Html html = Html.createHTMLTag(DEFAULT_LANGUAGE);
+        private final Html html = Html.createHTMLTag(DEFAULT_LANGUAGE);
         private Header header = DEFAULT_HEADER;
         private Theme theme;
         private Head head = DEFAULT_HEAD;
@@ -53,6 +55,7 @@ public class Home extends Page {
 
         /**
          * Add file name to a page.
+         *
          * @param fileName a string used as the name for the file.
          * @return Builder object when done.
          */
@@ -63,6 +66,7 @@ public class Home extends Page {
 
         /**
          * Add a theme to a page.
+         *
          * @param theme emun used to specify the theme.
          * @return Builder object when done.
          */
@@ -73,6 +77,7 @@ public class Home extends Page {
 
         /**
          * Set ISO language code for the file.
+         *
          * @param lang enum used to select a language of the web page.
          * @return Builder object when done.
          */
@@ -83,6 +88,7 @@ public class Home extends Page {
 
         /**
          * Add header-tag to the file.
+         *
          * @param header The header used in the page.
          * @return Builder object when done.
          */
@@ -93,6 +99,7 @@ public class Home extends Page {
 
         /**
          * Add main-tag to the file.
+         *
          * @param main The main used in the page.
          * @return Builder object when done.
          */
@@ -103,6 +110,7 @@ public class Home extends Page {
 
         /**
          * Add nav-tag to the file.
+         *
          * @param nav The nav used in the page.
          * @return Builder object when done.
          */
@@ -113,6 +121,7 @@ public class Home extends Page {
 
         /**
          * Add aside-tag to the file.
+         *
          * @param aside The aside used in the page.
          * @return Builder object when done.
          */
@@ -123,6 +132,7 @@ public class Home extends Page {
 
         /**
          * Add footer-tag to the file.
+         *
          * @param footer The footer used in the page.
          * @return Builder object when done.
          */
@@ -133,6 +143,7 @@ public class Home extends Page {
 
         /**
          * Add head-tag to the file.
+         *
          * @param head The head used in the page.
          * @return Builder object when done.
          */
@@ -143,6 +154,7 @@ public class Home extends Page {
 
         /**
          * Builds the page.
+         *
          * @return Home with values set by the user, or default.
          */
         public Home build() {

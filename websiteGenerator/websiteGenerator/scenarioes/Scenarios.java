@@ -182,7 +182,6 @@ public class Scenarios {
                 .build();
 
 
-
         Styles styles = Styles.createStylesBuilder()
                 .addFilename("styles.css")
                 .build();

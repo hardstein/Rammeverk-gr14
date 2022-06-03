@@ -1,5 +1,7 @@
 package websiteGenerator.htmlTags.body;
+
 import websiteGenerator.util.*;
+
 import static websiteGenerator.util.FindIndexBeforeTag.findIndexBeforeTag;
 import static websiteGenerator.util.ReplaceWord.replaceAllWords;
 
@@ -20,6 +22,7 @@ public class Main {
 
     /**
      * Getter for main heading
+     *
      * @return heading for main tag
      */
     public String getMainHeading() {
@@ -36,53 +39,48 @@ public class Main {
     }
 
     /**
-     *
-     * @getter for main
      * @return StringBuilder
+     * @getter for main
      */
     public StringBuilder getMain() {
         return main;
     }
 
     /**
-     *
-     * @getter for introduction
      * @return String
+     * @getter for introduction
      */
     public String getIntroduction() {
         return introduction;
     }
 
     /**
-     *
-     * @getter for body
      * @return String
+     * @getter for body
      */
     public String getBody() {
         return body;
     }
+
     /**
-     *
-     * @getter for main
      * @return String conclusion
+     * @getter for main
      */
     public String getConclusion() {
         return conclusion;
     }
 
     /**
-     *
-     * @getter for form
      * @return Form
+     * @getter for form
      */
     public Form getForm() {
         return form;
     }
 
     /**
-     *
-     * @getter for font family
      * @return FontFamily
+     * @getter for font family
      */
     public FontFamily getFontFamily() {
         return fontFamily;
@@ -105,6 +103,7 @@ public class Main {
 
     /**
      * Creates main
+     *
      * @return main
      */
     public StringBuilder createMain() {
@@ -124,7 +123,7 @@ public class Main {
      * Builder class for building a header {@link Main}
      */
     public static class Builder {
-        private StringBuilder main = new StringBuilder("    <main style=\"font-family:"+ FONT +"\">\n" + "    </main>\n");
+        private final StringBuilder main = new StringBuilder("    <main style=\"font-family:" + FONT + "\">\n" + "    </main>\n");
         private FontFamily fontFamily;
         private String mainHeading;
         private String introduction;
@@ -134,6 +133,7 @@ public class Main {
 
         /**
          * Adds font family
+         *
          * @param fontFamily
          * @return Builder object
          */
@@ -144,6 +144,7 @@ public class Main {
             main.insert(0, mainWithFF);
             return this;
         }
+
         /**
          * Adds the main heading
          *
@@ -159,6 +160,7 @@ public class Main {
 
         /**
          * Adds introduction
+         *
          * @param introduction
          * @return Builder object
          */
@@ -171,6 +173,7 @@ public class Main {
 
         /**
          * Adds body text to main
+         *
          * @param s
          * @return Builder
          */
@@ -238,6 +241,7 @@ public class Main {
 
         /**
          * Adds form to main
+         *
          * @param form
          * @return Builder object
          */
@@ -253,8 +257,8 @@ public class Main {
 
         /**
          * Parse a text file to html content
-         * @param filepath
          *
+         * @param filepath
          * @return Builder object
          */
         public Main.Builder addTxtToHtml(String filepath) {
@@ -270,13 +274,14 @@ public class Main {
          * @return Builder object
          */
 
-        public Main.Builder addCSVToHtml(String filepath, String parsingCharacter ) {
+        public Main.Builder addCSVToHtml(String filepath, String parsingCharacter) {
             this.main.append(Parse.CSVtoHTMLTable(filepath, parsingCharacter));
             return this;
         }
 
         /**
          * Adds table to main
+         *
          * @param table
          * @return Builder object
          */

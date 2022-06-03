@@ -1,4 +1,5 @@
 package websiteGenerator.htmlTags.body;
+
 import static websiteGenerator.util.FindIndexBeforeTag.findIndexBeforeTag;
 
 /**
@@ -7,7 +8,7 @@ import static websiteGenerator.util.FindIndexBeforeTag.findIndexBeforeTag;
  * @version 1.0.0
  */
 public class Aside {
-    private StringBuilder aside;
+    private final StringBuilder aside;
     private final String asideTitle;
     private final String asideText;
 
@@ -54,7 +55,6 @@ public class Aside {
     }
 
     /**
-     *
      * @return StringBuilder with the content of aside
      */
     public StringBuilder createAside() {
@@ -65,7 +65,7 @@ public class Aside {
      * A builder for {@link Aside}
      */
     public static class Builder {
-        private StringBuilder aside = new StringBuilder("    <aside>\n" + "    </aside>\n");
+        private final StringBuilder aside = new StringBuilder("    <aside>\n" + "    </aside>\n");
         private String asideTitle;
         private String asideText;
 
